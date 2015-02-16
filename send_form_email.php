@@ -79,7 +79,7 @@ if($return_array['success'] == '1')
     header( 'Location: success.html' ) ;
 
 } else {
-    header( 'Location: failed.html' ) ;
+    header( 'Location: failure.html' ) ;
 }
 ?>
 
