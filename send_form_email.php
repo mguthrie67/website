@@ -1,10 +1,7 @@
 <?php 
 // EDIT THE 2 LINES BELOW AS REQUIRED
 $send_email_to = "guthries@me.com";
-$email_subject = "Your email subject line";
-
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+$email_subject = "WEBSITE REQUEST";
 
 function send_email($name,$email,$email_message)
 {
@@ -79,9 +76,10 @@ $return_array = validate($name,$email,$message);
 if($return_array['success'] == '1')
 {
 	send_email($name,$email,$message);
+    header( 'Location: success.html' ) ;
+
+} else {
+    header( 'Location: failed.html' ) ;
 }
-header('Content-type: text/json');
-echo json_encode($return_array);
-die();
 ?>
 
