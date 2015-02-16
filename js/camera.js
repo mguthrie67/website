@@ -8,7 +8,7 @@
 		
 		autoAdvance			: true,	//true, false
 		
-		mobileAutoAdvance	: true, //true, false. Auto-advancing for mobile devices
+		mobileAutoAdvance	: false, //true, false. Auto-advancing for mobile devices
 		
 		barDirection		: 'leftToRight',	//'leftToRight', 'rightToLeft', 'topToBottom', 'bottomToTop'
 		
