@@ -1,7 +1,7 @@
 <?php 
 // EDIT THE 2 LINES BELOW AS REQUIRED
-$send_email_to = "guthries@me.com";
-$email_subject = "WEBSITE REQUEST";
+$send_email_to = "info@17ways.com.au";
+$email_subject = "****** WEBSITE REQUEST *******";
 
 function send_email($name,$email,$email_message)
 {
