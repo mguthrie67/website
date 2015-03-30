@@ -82,29 +82,75 @@
 
                     <ul id="filters" class="option-set" data-option-key="filter">
                         <li><a href="#filter" data-option-value="*" class="selected">All</a></li>
-                        <li><a href="#filter" data-option-value=".ceo">CEO Series</a></li>
-                        <li><a href="#filter" data-option-value=".cto">CTO Series</a></li>
-                        <li><a href="#filter" data-option-value=".tech">Technical Series</a></li>
+                        <li><a href="#filter" data-option-value=".CEO">CEO Series</a></li>
+                        <li><a href="#filter" data-option-value=".CTO">CTO Series</a></li>
+                        <li><a href="#filter" data-option-value=".TECH">Technical Series</a></li>
                     </ul>
                     <div class="clear"></div>
                 </div>
                 <div class="row">
+
+
+
                     <!-- portfolio_block -->
                     <div class="projects">
-                        <div class="span6 element ceo height_2column" data-category="ceo">
-                            <div class="hover_img">
-                                <a href="phptest.html"><img src="images/datacenter1.gif" alt="" /></a>
 
-                            </div>
-                            <div class="item_description">
-                                <h6><a href="single_portfolio.html">2015-03-12 Brief History of the Data Centre</a></h6>
-                                <div class="descr">A brief introduction to the role of the Data Centre in the corporate IT world.</div>
-                            </div>
-                        </div>
+<?php
+#####################################################################################################
+# PHP to read the files and generate the lists                                                      #
+#####################################################################################################
+
+# Read current directory
+$directory = '.';
+
+# Get a list excluding . .. and this file itself
+$scanned_directory = array_diff(scandir($directory), array('..', '.', 'index.html'));
+
+# go through each file and read it
+foreach ($scanned_directory as $f) {
+
+# Format of file is key : value
+# the first 5 lines have the meta data and the rest of the file is the actual article
+# just read the first 5 lines
+
+    $array=array();
+    $filehandle=@fopen($f, 'r');
+    if ($filehandle) {
+       for ($i=0;$i<5;$i++) {
+          $x=explode(":", fgets($filehandle,1024));   # break line into key : value
+          $array[$x[0]] = $x[1];
+       }
+       fclose($filehandle);
+
+# Now we have array with the key : value pairs so print out the html
+       print '<div class="span6 element ';
+       print trim($array["Series"]);
+       print ' height_2column" data-category="';
+       print trim($array["Series"]);
+       print '">';
+       print '<div class="hover_img"><a href="';
+       print 'fixmelater.html';
+       print '"><img src="../images/Library/';
+       print trim($array['Image']);
+       print '" alt="" /></a>';
+       print '</div><div class="item_description"><h6><a href="';
+       print 'fixmelater.html';
+       print '">';
+       print trim($array['Title']);
+       print '</a></h6><div class="descr">';
+       print trim($array['Abstract']);
+       print '</div></div></div>';
+
+    }
+}
+
+?>
+
+
                         <div class="span6 element cto height_2column" data-category="cto">
                             <div class="hover_img">
                                 <img src="images/portfolio/2.jpg" alt="" />
-                                <span class="portfolio_zoom"><a href="images/portfolio/2.jpg" rel="prettyPhoto[portfolio1]"></a></span>
+                                <span class="portfolio_zoom"><a href="../images/portfolio/2.jpg" rel="prettyPhoto[portfolio1]"></a></span>
                                 <span class="portfolio_link"><a href="single_portfolio.html">View item</a></span>
                             </div>
                             <div class="item_description">
@@ -115,7 +161,7 @@
                         <div class="span6 element tech height_2column" data-category="tech">
                             <div class="hover_img">
                                 <img src="images/portfolio/3.jpg" alt="" />
-                                <span class="portfolio_zoom"><a href="images/portfolio/3.jpg" rel="prettyPhoto[portfolio1]"></a></span>
+                                <span class="portfolio_zoom"><a href="../images/portfolio/3.jpg" rel="prettyPhoto[portfolio1]"></a></span>
                                 <span class="portfolio_link"><a href="single_portfolio.html">View item</a></span>
                             </div>
                             <div class="item_description">
@@ -126,7 +172,7 @@
                         <div class="span6 element ceo height_2column" data-category="ceo">
                             <div class="hover_img">
                                 <img src="images/portfolio/4.jpg" alt="" />
-                                <span class="portfolio_zoom"><a href="images/portfolio/4.jpg" rel="prettyPhoto[portfolio1]"></a></span>
+                                <span class="portfolio_zoom"><a href="../images/portfolio/4.jpg" rel="prettyPhoto[portfolio1]"></a></span>
                                 <span class="portfolio_link"><a href="single_portfolio.html">View item</a></span>
                             </div>
                             <div class="item_description">
@@ -137,7 +183,7 @@
                         <div class="span6 element cto height_2column" data-category="cto">
                             <div class="hover_img">
                                 <img src="images/portfolio/5.jpg" alt="" />
-                                <span class="portfolio_zoom"><a href="images/portfolio/5.jpg" rel="prettyPhoto[portfolio1]"></a></span>
+                                <span class="portfolio_zoom"><a href="../images/portfolio/5.jpg" rel="prettyPhoto[portfolio1]"></a></span>
                                 <span class="portfolio_link"><a href="single_portfolio.html">View item</a></span>
                             </div>
                             <div class="item_description">
@@ -148,7 +194,7 @@
                         <div class="span6 element tech height_2column" data-category="tech">
                             <div class="hover_img">
                                 <img src="images/portfolio/6.jpg" alt="" />
-                                <span class="portfolio_zoom"><a href="images/portfolio/6.jpg" rel="prettyPhoto[portfolio1]"></a></span>
+                                <span class="portfolio_zoom"><a href="../images/portfolio/6.jpg" rel="prettyPhoto[portfolio1]"></a></span>
                                 <span class="portfolio_link"><a href="single_portfolio.html">View item</a></span>
                             </div>
                             <div class="item_description">

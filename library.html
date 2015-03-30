@@ -89,11 +89,27 @@
                     <div class="clear"></div>
                 </div>
                 <div class="row">
+
+                    <!--PHP to generate the list-->
+
+<?php
+echo "Hello";
+$dir = ".";
+$dh  = opendir($dir);
+while (false !== ($filename = readdir($dh))) {
+    print "<h1>";
+    print $filename;
+    print "</h1>";
+}
+
+?>
+
+
                     <!-- portfolio_block -->
                     <div class="projects">
                         <div class="span6 element ceo height_2column" data-category="ceo">
                             <div class="hover_img">
-                                <a href="phptest.html"><img src="images/datacenter1.gif" alt="" /></a>
+                                <a href="phptest.html"><img src="images/Library/CEO/datacenter1.gif" alt="" /></a>
 
                             </div>
                             <div class="item_description">
