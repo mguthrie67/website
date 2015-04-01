@@ -146,6 +146,76 @@
         </div>
         <!--//planning-->
 
+        <h2 class="title">Recent Updates</h2>
+        <div class="container">
+            <ul>
+
+
+<?php
+#####################################################################################################
+# PHP to read the files and generate the list of new documents                                      #
+#####################################################################################################
+date_default_timezone_set('UTC');
+
+# main array of the html line and the date created from the meta file
+$datelist=array();
+
+# go through each file and read it
+foreach (glob("Library/Meta/*.meta") as $f) {
+
+# Format of file is key : value
+# the first 5 lines have the meta data
+# just read the first 5 lines
+
+    $array=array();
+
+# read the lines from the file
+
+    $filehandle=@fopen($f, 'r');
+    if ($filehandle) {
+       for ($i=0;$i<5;$i++) {
+          $x=explode(":", fgets($filehandle,1024));   # break line into key : value
+          $array[$x[0]] = trim($x[1]);
+       }
+
+# close file
+
+       fclose($filehandle);
+
+    }
+
+# date bit
+   $datebit=date_create($array["Date"]);
+   $dateprint = date_format($datebit,"l jS M Y : ");
+#   $dateprint = \DateTime::createFromFormat("d.m.Y", $array["Date"])->format("Ydm");
+
+# Now we have array with the key : value pairs so print out the html
+    $val= '<li>' . $dateprint . $array["Series"] . ' Series - <a href="Library/' . $array["Series"] . "/" . $array["Title"] . '.html" title="' . $array["Abstract"] . '">' . $array["Title"] . "</a></li>";
+
+# add to big list eg $datelist["CEO Series - Something"] = 20151213
+    $datelist[$val]=$array["Date"];
+
+# sort the array
+
+   arsort($datelist);
+
+# get first 3 entries
+
+   $printlist=array_slice($datelist, 0 , 3);
+}
+
+# print it
+
+foreach($printlist as $x => $x_value) {
+   echo $x;
+
+}
+
+?>
+            </ul>
+            <br>
+
+        </div>
 
         <!--Recent Gallery-->
         <div class="wrap recent_gal_block">
@@ -183,6 +253,8 @@
             </div>
         </div>
         <!--//Recent Gallery-->
+
+
 
         <!--Welcome-->
         <div class="wrap welcome_bg">
