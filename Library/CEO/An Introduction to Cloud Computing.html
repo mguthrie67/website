@@ -1,0 +1,228 @@
+<?php include('../_header.html');?>
+
+                <h1>An Introduction to Cloud Computing</h1>
+                <h3>Part of our CEO Series of articles aimed at business people who need to know more about technology.</h3>
+                <p>
+                    It is hard to read anything related to technology without coming across the term Cloud Computing.
+                    In this article we try to explain what Cloud Computing is all about and to highlight the benefits
+                    and challenges of adopting Cloud for your business.
+                </p>
+                <p>In <a href="cloud vs converged.html">Cloud vs Converged</a> we compare cloud computing to the latest
+                    incarnation of traditional Data Centre technology - Converged Infrastructure.</p>
+
+                <h2>What Is Cloud?</h2>
+<img src="../../images/Library/CEO/cloud.jpg" alt="Cloud Computing">
+<br><br>
+                <p>
+
+                    Cloud Computing is the term for any technology solution where the infrastructure is provided for you by a third party.
+                    More specifically Cloud usually means one of three things:
+</p>
+                    <h3>1. Software As A Service (SaaS)</h3>
+<p>
+    Software As A Service has been around for a long time. Originally just called Hosting, in this model you subscribe to a service
+    that provides a full application. Salesforce, Microsoft 365 and Google Docs are examples of SaaS. SaaS came out originally because
+    many companies lacked the resources and technical expertise to run large software platforms. To address this vendors offered a
+    service whereby they would run the software for you on their infrastructure for a fee.
+</p>
+
+<h3>2. Platform As A Service (PaaS)</h3>
+<p>Platform As A Service is the step below SaaS. In this model rather than providing a whole working application for you, the vendor
+provides a component that you can use in your application. Typically this is something like a database or a web server that you then build
+on top of with your own application.
+</p>
+<h3>3. Infrastructure As A Service (IaaS)</h3>
+<p>
+    Dropping another level down is Infrastructure As A Service. IaaS providers give you access to raw infrastructure on which you can run your
+    applications and databases. IaaS comes from Internet companies such as Google, Microsoft and Amazon and is the area of most current focus.
+</p>
+<img src="../../images/Library/CEO/asaservice.png" alt="As A Service Comparison"><br><br>
+                <blockquote><span>Watch out for vendors who talk about IaaS but quote adoption rates and levels of success
+                    that include the much more mature SaaS.</span></blockquote>
+
+<h2>History of IaaS</h2>
+<p>Infrastructure As A Service is the most interesting aspect of the Cloud and the area that will have the largest impact on corporate IT.
+While traditional corporate IT departments were focussed on building applications with large backend databases running on expensive
+servers with fault tolerant hardware that could withstand failures, the newer Internet companies like Amazon and Google were approaching
+things in a very different way. Instead of centralised, carefully managed databases and controlled releases of new code, they took almost
+the opposite approach. Distributed databases and an expectation that hardware would fail became the norm and a whole new approach to
+building applications was used. The key factor for companies like Facebook or Twitter is the ability to get things out quickly and to
+keep evolving their platforms. The infrastructure that supports this needs to be highly scalable. They based their infrastructure on
+large farms of cheap PCs, rather than the small number of reliable, but expensive servers that are typical in the corporate IT world.
+</p>
+<p>They had so much success with this that some companies realised they could sell (or rent) their infrastructure to other companies
+as IaaS. Amazon are the current leader in this space with Microsoft, IBM, Google and others still a little behind.</p>
+
+<h2>Types of Cloud</h2>
+<p>SaaS is a very different beast to PaaS and IaaS. Because a whole application is delivered with SaaS there is no need for anything
+to integrate with it to make it work. It can be delivered using any technology that you like under the covers and all you ever deal with
+are the user interfaces that it provides, typically but not always, web pages. In the case of PaaS and IaaS you need technology to interact with
+it for it to be useful. This means you need agreed ways of communicating and all of the standard difficulties of IT are exposed to you
+such as security, performance and resilience to outages. If you are using PaaS or IaaS then there are different kinds of Cloud that you can
+    deal with.</p>
+<h3>Public Cloud</h3>
+<p>
+This is the plain vanilla version. You arrange with a vendor such as Amazon, Google or Microsoft to provide you with
+some services, typically a virtual machine running Linux or Windows. You connect to this either over the Internet or through
+a more secure private network and you install and run your applications on this virtual machine. The users of the application
+connect to it in much the same way. The virtual machines that you use run on very scalable hardware managed by the Cloud provider
+who also runs virtual machines for other customers on the same equipment. The biggest advantage, apart from not having to run your own
+Data Centre, is that you can scale up and down as you need to. If you normally need 10 virtual machines to run your application but at
+month end you need 100 then no problem. You only pay for what you use at the time.
+</p>
+<img src="../../images/Library/CEO/PublicCloud.jpg" alt="Public Cloud Diagram"><br><br>
+<h3>Private Cloud</h3>
+<p>
+Alternative known as "Not the Cloud". In this model companies run their own Cloud within their Data Centre. Rather than using Amazon or Microsoft
+as their provider they provision this internally. There are a few reasons for doing this. The main one is to be "Cloud Ready" as companies look
+to redevelop their applications for the Cloud but are not yet fully comfortable with moving there or are awaiting regulatory approval to do so.
+Another reason for running a Private Cloud is as part of a Hybrid Cloud solution which is covered next.
+</p>
+<img src="../../images/Library/CEO/PrivateCloud.jpg" alt="Private Cloud Diagram"><br><br>
+<p>One of the issues with Private Cloud is that the definitions are very loose. Some organisations have re-defined their existing
+infrastructure to be Private Cloud without actually changing anything. This is one of the things that makes understanding true Cloud adoption rates
+very difficult.</p>
+<p>This quote from Larry Ellison, Chairman of Oracle<sup>1</sup> perhaps sums up some of the difficulties with understanding Cloud:
+</p>
+<p>
+<i>“The interesting thing about cloud computing is that we’ve redefined cloud computing to include everything that we already do.
+I can’t think of anything that isn’t cloud computing with all of these announcements...Maybe
+    I’m an idiot, but I have no idea what anyone is talking about. What is it? It’s complete gibberish.
+It’s insane. When is this idiocy going to stop?”</i>
+</p>
+<h3>Hybrid Cloud</h3>
+<p>
+Hybrid Cloud is a mixture of Private Cloud and one or more Public Clouds. With Hybrid Cloud you can choose dynamically what runs on
+your own, private infrastructure and what runs on the Public Cloud. You can use Public Cloud for your burst capacity or as a
+disaster recovery option for your Private Cloud. Hybrid Cloud is a very sensible option for companies looking to hedge some of the
+risks with Public Cloud while still getting the benefit of the burst capacity and lower overheads.
+</p>
+<img src="../../images/Library/CEO/HybridCloud.jpg" alt="Hybrid Cloud Diagram"><br><br>
+
+<h3>Cloud Brokers</h3>
+The way you deploy your applications on the Cloud depends on which Cloud provider you use. This gives CTOs quite a headache.
+Do you commit to a single provider and lock yourself in to one technology, do you develop everything twice for two providers to maintain
+flexibility or do you use a Cloud Broker which is yet another piece of software that you are tied into? A Cloud Broker works by being able to
+deploy your applications to multiple Cloud providers. So rather than having to learn the different languages that Amazon and Microsoft etc
+speak, you can just learn the language that the Cloud Broker speaks and it will translate it for you depending on which Cloud provider you
+want to use this time. With no standards yet defined for Cloud providers a Cloud Broker is a good idea. Unfortunately the market here is
+immature and still evolving so picking the right Cloud Broker is not easy, nor guaranteed to be the right choice in the future.
+<h3>Other Cloud Types</h3>
+<p>As Larry Ellison pointed out above there is a lot of jargon and nonsense associated with Cloud Computing. There are other terms
+used to describe the Cloud world such as Community Cloud, Intercloud and even fog and Legacy Cloud (as in, not Cloud at all).
+We suggest you avoid people who use these terms excessively, they are the same people who used to promise us a paperless office
+and told us we'd all die in Y2K.</p>
+
+
+<blockquote>The Cloud isn't magic. Your applications don't really run in a Cloud, they run in a Data Centre, just one that
+someone else looks after instead of you.</blockquote>
+<h2>Adoption Rates</h2>
+<p>It is hard to get a proper picture of Cloud adoption rates by corporates for a number of reasons. Most figures come from surveys
+which are usually directed at CIOs. Due to its nature, a lot of SaaS usage is initiated and managed directly by business units often without
+the knowledge of the IT department. It is probably safe to say that most figures on the adoption of SaaS are understated. There is a large level
+of hype around Cloud and CIOs are under pressure from CEOs to ensure that the company has a strategy around moving to the Cloud and
+adopting IaaS. We will address some of the challenges with this below but it is rare to find an organisation that is not doing something
+with the Cloud (Only 8% of organisations don't have a plan to use Cloud<sup>2</sup>).</p>
+<p>
+While the numbers can be hard to understand and often conflicting, it is clear that corporates are putting a lot of effort into the Cloud.
+    Australia leads the way with 86% of companies running at least one production application in the Cloud<sup>3</sup> compared to
+    only 50% in the USA and 60% in Europe. A large amount of this is SaaS which is different to IaaS and a lot more mature.
+    4 out of 5 corporates around the world are intending to use the Cloud for mission critical applications in the next 2 years<sup>3</sup>.
+</p>
+<p>We have collated some general statistics to show the overall picture<sup>4-6</sup>:</p>
+<img src="../../images/Library/CEO/cloudstats.jpg" alt="Cloud statistics"><br><br>
+
+<p>There is no doubt that Cloud is getting a lot of attention.</p>
+
+<h2>Strengths - Why Use The Cloud?</h2>
+There are a number of major factors driving the move to the Cloud, the most common being:<br><br>
+<ol>
+    <li>Move from Capex to Opex</li>
+    <li>Cost</li>
+    <li>Flexibility</li>
+    <li>Burst Capacity</li>
+</ol>
+Most of these really apply to IaaS and less so to SaaS. Lets take a look at each of these in turn.
+<h3>1. Move from Capex to Opex</h3>
+<p>
+    A lot of organisations are drawn to Cloud because it removes the need to purchase large expensive Data Centre equipment.
+    The ability to pay a monthly fee for infrastructure on a pay-per-use basis is appealing.
+</p>
+<blockquote>At 17 Ways we believe this argument is overstated and often not true.</blockquote>
+
+<p>While having large, lumpy IT infrastructure costs on the books is unappealing, there are other ways to address this problem.
+IT leasing is readily available and achieves the same thing. We recommend that you look at this before committing to a Cloud
+    strategy that is based upon moving from Capex to Opex. If you run a Private Cloud, which we recommend, then you will
+    need to address this problem anyway. One of the major issues with Public Cloud is the uncertainty of your costs. The models
+    are usually based upon usage with different rates for fixed baseline, variable use and one-off workloads. We recommend
+    that you look very closely at the cost of running your Public Cloud and negotiate hard with the providers before committing
+    to anything. Getting rid of major capital expenditure may be appealing to begin with but replacing it with far higher
+    monthly charges will not be well received.
+</p>
+
+<h3>2. Cost</h3>
+<p>
+50% of corporate decision makers believe that moving to the Cloud will be cheaper. We expect that many of them will be disappointed.
+New technologies are rarely cheaper, at least to begin with. A significant part of the cost of running infrastructure is people -
+Gartner estimate it is 41% of the total cost<sup>7</sup>. It is a harsh reality that this cost is likely to go up before it comes
+down. Managing Cloud environments is still an immature area and people with these skills command a higher salary. You need to properly
+understand your people costs and not just focus on the infrastructure costs.
+</p>
+<p>
+    We know of an organisation with an infrastructure department of around 50 people that is looking to move to the Cloud.
+    The high level cost estimates include redeploying these 50 staff to other activities. However on closer inspection only
+    3 of the 50 staff are directly involved in hardware deployment. The other 47 are working on ancilliary activities such as monitoring,
+    patching and security services. While those 3 people won't be needed once the Cloud strategy is fully implemented, the rest
+    of the team will likely have to grow significantly to manage the new Cloud world.
+</p>
+<p>
+    Total Cost of Ownership (TCO) needs to really mean that. Many of the TCO numbers used to support a Cloud migration only address
+    the cost of infrastructure and neglect to include additional costs for people and knock on effects to other departments. Often
+    the extra cost of redeveloping applications to work in the Cloud is left out of the calculation.
+</p>
+<p>We believe the Cloud and especially IaaS offer real benefits to organisations, however the area is still very immature
+and it is important that corporates especially look at the full picture before making decisions on Cloud migration.</p>
+<h3>3. Flexibility</h3>
+<p>The Cloud offers major benefits due to its flexibility. If you can overcome the other challenges then you have a great
+platform to work on. The ability to deploy environments dynamically and without the risk of impacting other systems is
+probably the main driver for moving to the Cloud. The area that benefits most from this is IT Development and Testing.
+IT staff constantly need to run up new copies of the system to test out and often only need them for a short amount of time.
+With proper automation tools this flexibility can have a massive impact on productivity.</p>
+<h3>4. Burst Capacity</h3>
+<p>The ability to scale up and down as you need to is another massive benefit of the Public Cloud. Be cautious of the
+variable nature of your costs and ensure that you properly monitor your usage. You will only get a real benefit here
+if you develop your applications to scale across the Cloud. Don't expect that you can pick up existing applications and
+they will just work in the Cloud as this is unlikely to be true.</p>
+<blockquote>Flexibility and Burst Capacity are the real benefits of Public Cloud. Focus on applications that will benefit from this.</blockquote>
+<h2>Challenges</h2>
+
+<h2>Recommendations</h2>
+<ol>
+    <li>Take a cautious approach to the Cloud and apply healthy scepticism to anyone selling you Cloud services.</li>
+    <li>Think through all aspects of the changes and include extra monitoring and management as a factor.</li>
+    <li>Be prepared for significant organisational change if you are to make the most use of the Cloud.</li>
+    <li>Use SaaS services wherever possible. They are generally more mature than other Cloud services and can offer real opportunity
+    for better and cheaper service.</li>
+    <li>Consider the data ownership issues thoroughly even for SaaS.</li>
+    <li>Have a migration or exit plan for any relationship with a Cloud provider.</li>
+    <li>Prioritise new applications that fit the Cloud model over migration of older applications. Be aware that
+    IaaS is not going to be suitable for all of your applications.</li>
+    <li>Negotiate with Cloud providers. Do not accept their offerings as fixed and inflexible.</li>
+    <li>Look at leasing equipment if you want to move from Opex to Capex.</li>
+</ol>
+
+<h3>References</h3>
+(1)- <a href="http://www.cnet.com/news/oracles-ellison-nails-cloud-computing/">CNET - Oracles Ellison nails Cloud computing</a>
+<br>
+(2) - <a href="https://www.kpmg.com/AU/en/IssuesAndInsights/ArticlesPublications/cloud-computing/Documents/clarity-in-the-cloud-business-adoption.pdf">KPMG - Clarity in the Cloud 2011</a>
+<br>
+(3) - <a href="http://www.theage.com.au/it-pro/cloud/cloud-computing-is-now-mainstream-and-australia-is-ahead-say-new-reports-20141103-11fze9.html">The Age - Cloud Computing is Now Mainstream - Nov 2014</a>
+<br>
+(4) - <a href="http://www.cisco.com/c/en/us/solutions/collateral/service-provider/global-cloud-index-gci/Cloud_Index_White_Paper.html">Cisco - Cloud Index White Paper</a>
+<br>
+(5) - <a href="http://www.rightscale.com/blog/cloud-industry-insights/cloud-computing-trends-2015-state-cloud-survey">Rightscale - Cloud Computing trends - 2015</a>
+<br>
+(6) - <a href="http://www.abc.net.au/technology/articles/2014/10/24/4113810.htm">ABC - Cloud Adoption in Australia</a>
+<br>
+(7) - <a href="http://www.computerworld.com.au/article/417420/gartner_shares_nine_it_infrastructure_cost_saving_tips/">Computerworld - Gartner shares nine IT infrastructure cost saving tips</a>
+<?php include('../_footer.html');?>
