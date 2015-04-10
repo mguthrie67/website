@@ -80,6 +80,87 @@
         </div>
         <br>
 
+        <h2 class="title">Recent Updates</h2>
+        <div class="container">
+            <table>
+
+
+                <?php
+#####################################################################################################
+# PHP to read the files and generate the list of new documents                                      #
+# I'm sorry! There was no other way! At least it is hidden from the browser.                        #
+#####################################################################################################
+date_default_timezone_set('UTC');
+
+# main array of the html line and the date created from the meta file
+$datelist=array();
+
+# Lets use a table to give the css guys a heart attack
+echo "<table>";
+
+                # go through each file and read it
+                foreach (glob("Library/Meta/*.meta") as $f) {
+
+                # Format of file is key : value
+                # the first 5 lines have the meta data
+                # just read the first 5 lines
+
+                $array=array();
+
+                # read the lines from the file
+
+                $filehandle=@fopen($f, 'r');
+                if ($filehandle) {
+                for ($i=0;$i<5;$i++) {
+                $x=explode(":", fgets($filehandle,1024));   # break line into key : value
+                $array[$x[0]] = trim($x[1]);
+                }
+
+                # close file
+
+                fclose($filehandle);
+
+                }
+
+                # date bit
+                $datebit=date_create($array["Date"]);
+                $dateprint = date_format($datebit,"l jS M Y");
+                #   $dateprint = \DateTime::createFromFormat("d.m.Y", $array["Date"])->format("Ydm");
+
+                # Now we have array with the key : value pairs so print out the html
+                $val= '<tr><td>' . $dateprint . '&nbsp;&nbsp;<td>' . $array["Series"] . ' Series <td>&nbsp;&nbsp; <a href="Library/' . $array["Series"] . "/" . $array["Title"] . '.html" title="' . $array["Abstract"] . '">' . $array["Title"] . "</a></tr>";
+
+                # add to big list eg $datelist["CEO Series - Something"] = 20151213
+                $datelist[$val]=$array["Date"];
+
+                # sort the array
+
+                arsort($datelist);
+
+                # get first 3 entries
+
+                $printlist=array_slice($datelist, 0 , 3);
+                }
+
+                # print it
+
+                foreach($printlist as $x => $x_value) {
+                echo $x;
+
+                }
+
+                echo "</table>";
+
+            ?>
+            </ul>
+
+            <a href="Library/index.html" style="text-decoration: none; background-color: #4D4D4D; color: white; padding: 2px; padding-left: 8px; padding-right: 8px; margin-top: 5px; border: none; display: inline-block;">More...</a>
+            <br><br>
+
+        </div>
+
+
+
         <h2 class="title">What We Do</h2>
 
         17 Ways are a technology startup based in Sydney. We provide a range of services to medium and large scale Australian businesses.
@@ -135,84 +216,6 @@
             </div>
         </div>
 
-        <h2 class="title">Recent Updates</h2>
-        <div class="container">
-            <table>
-
-
-<?php
-#####################################################################################################
-# PHP to read the files and generate the list of new documents                                      #
-# I'm sorry! There was no other way! At least it is hidden from the browser.                        #
-#####################################################################################################
-date_default_timezone_set('UTC');
-
-# main array of the html line and the date created from the meta file
-$datelist=array();
-
-# Lets use a table to give the css guys a heart attack
-echo "<table>";
-
-# go through each file and read it
-foreach (glob("Library/Meta/*.meta") as $f) {
-
-# Format of file is key : value
-# the first 5 lines have the meta data
-# just read the first 5 lines
-
-    $array=array();
-
-# read the lines from the file
-
-    $filehandle=@fopen($f, 'r');
-    if ($filehandle) {
-       for ($i=0;$i<5;$i++) {
-          $x=explode(":", fgets($filehandle,1024));   # break line into key : value
-          $array[$x[0]] = trim($x[1]);
-       }
-
-# close file
-
-       fclose($filehandle);
-
-    }
-
-# date bit
-   $datebit=date_create($array["Date"]);
-   $dateprint = date_format($datebit,"l jS M Y");
-#   $dateprint = \DateTime::createFromFormat("d.m.Y", $array["Date"])->format("Ydm");
-
-# Now we have array with the key : value pairs so print out the html
-    $val= '<tr><td>' . $dateprint . '&nbsp;&nbsp;<td>' . $array["Series"] . ' Series <td>&nbsp;&nbsp; <a href="Library/' . $array["Series"] . "/" . $array["Title"] . '.html" title="' . $array["Abstract"] . '">' . $array["Title"] . "</a></tr>";
-
-# add to big list eg $datelist["CEO Series - Something"] = 20151213
-    $datelist[$val]=$array["Date"];
-
-# sort the array
-
-   arsort($datelist);
-
-# get first 3 entries
-
-   $printlist=array_slice($datelist, 0 , 3);
-}
-
-# print it
-
-foreach($printlist as $x => $x_value) {
-   echo $x;
-
-}
-
-                echo "</table>";
-
-?>
-            </ul>
-
-            <a href="Library/index.html" style="text-decoration: none; background-color: #4D4D4D; color: white; padding: 2px; padding-left: 8px; padding-right: 8px; margin-top: 5px; border: none; display: inline-block;">More...</a>
-            <br><br>
-
-        </div>
 
         <div class="wrap recent_gal_block">
             <div class="container">
