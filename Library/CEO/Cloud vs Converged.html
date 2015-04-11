@@ -288,16 +288,117 @@ reference for you in any discussion around Cloud vs Converged (or Traditional) D
             <td style="font-weight: bold">Public Cloud: IaaS/PaaS</td>
             <td>Development and Testing</td>
             <td>You may not believe it, but it is likely that your most variable workload is actually within the IT department.
-            They need to create environments all the time and the Public Cloud can be a good place for this.</td>
+                They need to create environments all the time and the Public Cloud can be a good place for this.</td>
             <td>Major projects. Investigating problems.</td>
             <td>
                 <ul>
                     <li><b>Data</b> - Be careful about putting copies of production data in the Cloud without thinking through the consequences</li>
                     <li><b>Cost</b> - Ensure you have a good model around cost management to avoid unexpected surprises</li>
                     <li><b>Similarity to Production</b> - Make sure your test environments are a good copy of production or you could end up
-                    with unexpected problems despite your extensive testing</li>
+                        with unexpected problems despite your extensive testing</li>
             </td>
         </tr>
+
+
+        <tr>
+            <td style="font-weight: bold">Private Cloud: IaaS</td>
+            <td>General</td>
+            <td>Private Cloud is a sensible first step towards using Hybrid Cloud. Remember that your Cloud won't
+                be the same as any of the Public Cloud offerings so it isn't a straightforward migration from
+                Private Cloud to Public. If you use Converged Infrastructure to run your Private Cloud (recommended)
+                then you can get many of the scale benefits of Public Cloud without the problems.</td>
+            <td>General use. Start with Development and Testing.</td>
+            <td>
+                <ul>
+                    <li><b>Cloud Broker</b> - If you intend to migrate to the Public Cloud then consider using a
+                        Cloud Broker or at least have a migration plan in mind from the outset</li>
+                    <li><b>Hardware</b> - We recommend that you use Converged Infrastructure</li>
+                    <li><b>Cost</b> - As with any shared infrastructure you will need a suitable recovery model</li>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="font-weight: bold">Private Cloud: PaaS</td>
+            <td>Database, Middleware, Web Server</td>
+            <td>Running an internal Database-as-a-Service or similar platform gives you the ability to consolidate
+            separate platforms reducing operating costs and often also licencing costs.</td>
+            <td>Database-as-a-Service, WebContainer-as-a-Service</td>
+            <td>
+                <ul>
+                    <li><b>Adoption</b> - Make sure you engage with the likely users of the system and
+                    get a commitment to actually use it</li>
+                    <li><b>Scale</b> - Size your systems appropriately and plan an upgrade path</li>
+                    <li><b>Cost</b> - Consider leasing the hardware and have a recovery model that matches predicted take up</li>
+                    <li><b>Migration</b> - Review workloads and assist teams with their migrations</li>
+                    <li><b>Licences</b> - although the final cost will likely be cheaper, consider whether you need
+                    additional licences during the migration</li>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="font-weight: bold">Hybrid Cloud: IaaS/PaaS</td>
+            <td>Development and Testing</td>
+            <td colspan="3">As per Public Cloud IaaS</td>
+        </tr>
+
+
+        <tr>
+            <td style="font-weight: bold">Hybrid Cloud: IaaS/PaaS</td>
+            <td>New Applications</td>
+            <td>New applications are the best candidates for Cloud. Ensure that they really are suitable for the Cloud
+                and avoid trying to shoehorn something that isn't suitable in. As a business person be wary of technologists
+                recommending a Cloud solution. Cloud is a great thing for IT people to get on their resume at the moment.
+                Use our checklist above to see if it is a good fit or not.</td>
+            <td>New apps capable of taking advantage of Web-scale.</td>
+            <td>
+                <ul>
+                    <li><b>Suitability</b> - Cloud is still a risky proposition, make sure this app is suitable</li>
+                </ul>
+                <br>
+                Then the standard list of Cloud issues:
+                <br><br>
+                <ul>
+                    <li><b>Data</b> - Location, ownership and security</li>
+                    <li><b>Security</b> - Access and procedural controls</li>
+                    <li><b>Performance</b> - Guarantees and escalation of issues</li>
+                    <li><b>Vendors</b> - Vendor management and avoiding vendor lock-in</li>
+                    <li><b>Integration</b> - Interaction with other systems</li>
+                    <li><b>Governance</b> - Management and controls across a new environment</li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="font-weight: bold">Hybrid Cloud: IaaS/PaaS</td>
+            <td>Existing applications</td>
+            <td>The Cloud. Not even once.</td>
+            <td>As a kid you had a pet fish called Trevor. Your mates suddenly all got dogs. You put a lead on
+                Trevor and dragged him around the streets so you could join in with everyone else. When you had a
+                proper look, your mate Dave had his cat, Mr Tiggles on a lead and <Gazza></Gazza> was pulling around a packet of
+                strawberries. Don't do it. Leave Trevor at home and upgrade his fish bowl to Converged Infrastructure.</td>
+            <td>
+                Web-Scale is a different beast. In some cases you will have applications that should have been
+                build on Web-Scale to begin with, migrate them immediately, but more than likely you are going to regret moving existing applications
+                to the web.
+            </td>
+        </tr>
+
+
+        <tr>
+            <td style="font-weight: bold">Converged Infrastructure</td>
+            <td>General Workload</td>
+            <td></td>
+            <td>As a kid you had a pet fish called Trevor. Your mates suddenly all got dogs. You put a lead on
+                Trevor and dragged him around the streets so you could join in with everyone else. When you had a
+                proper look, your mate Dave had his cat, Mr Tiggles on a lead and Bonzo was pulling around a packet of
+                strawberries. Don't do it. Leave Trevor at home and upgrade his fish bowl to Converged Infrastructure.</td>
+            <td>
+                Web-Scale is a different beast. In some cases you will have applications that should have been
+                build on Web-Scale to begin with, migrate them immediately, but more than likely you are going to regret moving existing applications
+                to the web.
+            </td>
+        </tr>
+
 
 
     </tbody>
@@ -305,7 +406,28 @@ reference for you in any discussion around Cloud vs Converged (or Traditional) D
 
 <h2>Summary</h2>
 <p>
-Rather than looking at the technology and trying to work out where we can use it, lets look at the different problems we are using technology to solve and
-see which option works best.
+All new technologies with enough effort behind them eventually becomes great. Apple launched their first portable
+    hand-help computer in 1993. I went to the launch in Australia and it was absolute crap (the Apple Newton). However the
+    concept was right and now the idea of <b>NOT</b> having a computer in your pocket seems strange.
+    <blockquote>Cloud is a fantastic idea and it will ultimately dominate Corporate Technology, but let
+someone else go first to iron out the problems. It is not a game changer, just a different delivery mechanism,
+    there is no need to be an early adopter.</blockquote>
+</p>
+<p>
+    At 17 Ways we believe that your current focus should be on Converged Infrastructure. For the next 5-10 years
+    this represents the safe, reliable and guaranteed way to deliver your systems. As a decision maker in
+    the corporate world, you should be looking for things that work now and avoiding fads and buzzwords.
+    </p>
+<p>The Cloud is a whole range of
+    different technology and we advocate Software-as-a-Service as being the best of these. If you can find a
+    vendor who provides everything that you need and delivers it over the Internet then you should use them (but
+    check out our list of things to consider).
+    </p>
+<p>
+Use Private Cloud now as your way to get ready for Public Cloud when others have resolved the issues.
+    We recommend using Converged Infrastructure for your Private Cloud as it will flush out
+    many of the issues that you need to face later such as organisational change within your IT
+    support groups, recovery models and managing a variable workload.
+    <blockquote>Learn how it will work on the Public Cloud by practicing first on your own infrastructure.</blockquote>
 </p>
 <?php include('../_footer.html');?>
