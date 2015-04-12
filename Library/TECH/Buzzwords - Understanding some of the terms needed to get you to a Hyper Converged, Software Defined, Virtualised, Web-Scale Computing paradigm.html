@@ -1,0 +1,91 @@
+<?php include('../_header.html');?>
+
+<h1>Buzzwords - Understanding some of the terms needed to get you to a Hyper Converged, Software Defined, Virtualised, Web-Scale Computing paradigm</h1>
+<h3>Part of our Tech Series of articles aimed at technologists</h3>
+<p>Have you ever had that helpless feeling when the mechanic tells you your car needs a new flux capacitor?
+    You are not sure what a flux capacitor does but it sounds like it is going to be expensive. It's a pretty
+    similar feeling to when your IT department comes to ask you for a lazy couple of million dollars to do cloud-this
+    or Hyper Converged-that. In this article we'll help you navigate some of the current terminology around
+    Hyper Converged and Web-Scale Computing.
+</p>
+<h2>Web-Scale Computing</h2>
+<p>The Googles and Amazons and Facebooks of the world started building their own massive computing platforms based on cheap,
+    commodity infrastructure. The first part of Web-Scale Computing is to have massive farms of cheap infrastructure where
+    it doesn't matter if servers fail. The second part is that you can just keep adding these cheap infrastructure building
+    blocks as you need them. The third part is that you have some special software running over the top of your farm of cheap
+    infrastructure to make it all work together. When Google talk about the Container for Data Centers it is not some fancy
+    you technology, it is something that looks like a shipping container they drop into the data center and fill with cheap
+    commodity servers.
+</p>
+<h2>Non-Converged Infrastructure</h2>
+<p>To understand converged and Hyper Converged infrastructure, it is useful to understand what non-converged infrastructure is.
+Basically non-converged is where your network and your servers and your storage all come in
+separate boxes, and are possibly all from separate vendors. The challenge for your IT department is to make sure they
+all work well together.
+</p>
+
+<h2>Converged Infrastructure</h2>
+<p>Converged infrastructure is where some of your infrastructure vendors get together to put their network and servers and
+    storage together in a single box, making sure it all plays nicely together. There are some very good cost, performance
+    and operational reasons to do this.
+    Products like VBLOCK from VCE and Exadata from Oracle are really starting to gain traction with big corporates.</p>
+<h2>Hyper Converged Infrastructure</h2>
+<p>This is a relatively new market that goes one step further than Converged Infrastructure. These new-ish technology
+    startups are not only putting your server, network and storage together in a single box but are also adding in
+    technology from other devices that de-duplicate and compress data and optimize network traffic. This Hyper Converged
+    infrastructure runs on commodity x86 hardware. As with Web-Scale Computing, these vendors also have special
+    software that glues the systems together.</p>
+<p>Obviously not every business can build Google or Amazon or Facebook sized Web Scale Computing platforms,
+    however with Hyper Converged infrastructure businesses of any size can start getting some of the same benefits,
+    using commodity x86 server building blocks in clusters that can easily scale out and provide a single pool
+    of network, server and storage resources to run systems on.
+    New Vendors playing in the space include SimpliVity, Nutanix and Scale Computing.
+</p>
+
+<h2>Data Tiering</h2>
+<p>Some of your data is used every day, some is almost never touched. Instead of having all of your data on one type of
+    storage, you have the data you use every day on faster and more expensive storage, and the data you almost never
+    use on slower and cheaper storage.
+    When you stop using data all the time it moves to the cheaper storage, and when you start using data more it
+    moves it to the faster storage.</p>
+<h2>Forklift Upgrades</h2>
+<p>This term was coined in the mainframe era when an upgrade involved using a forklift to remove the old mainframe
+    and bring in a new one. It has a similar meeting nowadays,
+    where a system is difficult to upgrade because you have to move it to new server platforms and re-install
+    and upgrade your software.</p>
+<h2>Vanity Hardware</h2>
+<p>Hardware you buy just for the name. The vendors sound like they are big and safe, and it is what everyone else is buying.</p>
+<h2>Scale-Out Architecture</h2>
+<p>
+    In practical terms this means adding in extra building blocks of infrastructure when you need more capacity.
+    In the context of this article, Scale-Out is desirable as you can easily add cheap, commodity capacity
+    when you need it, as opposed to trying to Scale
+    Up your existing systems that may have no more room to grow and will possibly require outages to your systems to be upgraded.
+</p>
+<h2>Software-Defined Storage/Network/Data Centre</h2>
+<p>You might remember on your old computer you used to have an operating system like MS-DOS where you would have to go
+    type in commands to do stuff. Along came Windows and your computer looked slicker, you could just click on things
+    and you didn't have to be as clever to get your computer to do what you wanted.
+    Software-Defined infrastructure is a little like that, it hides a lot of the complexity of your
+    infrastructure systems and makes them easier to use. </p>
+<p>For example, where you previously had a highly qualified (and highly paid) Storage Engineer working on your network fabric, assigning LUNs and
+    controlling data replication policies you now have a simple software layer that someone less skilled can operate, and hides the complexity beneath.</p>
+<p>Of course that is not all Software Defined is. Software Defined also pools, virtualizes and controls your network,
+    server and storage resources. It allows you to aggregate, divide up and control your IT resources.</p>
+<h2>North-South and East-West Traffic</h2>
+<p>North-South traffic is data that passes from a server in your data center out to a client computer, for example a laptop
+    on someone's desk. East-West traffic is data that passes between servers in your data center. The reason East-West traffic is
+    important in the context of this article is that server virtualization and cloud computing is seeing an increase in
+    large-scale movement of data between servers.</p>
+<h2>Server Virtualisation</h2>
+<p>Traditionally servers would run a single dedicated operating system. Sometimes these servers would be very lightly utilised,
+    using only a few percent of their total CPU capacity. In an effort to get better use out of these servers, software was developed to allow you to run
+    multiple instances of an operating system on a single server.</p>
+<p>It's a bit like the difference between cars and buses. You can use a car whenever you need it and don't have to share
+    it with anyone, but a lot of the time it sits idle in your garage.
+    With a bus, multiple people can use the same transport and it is on the road most of the time.
+    Because of the utilisation, bus trips are cheaper than using a car.</p>
+<h2>x86 Hardware</h2>
+<p>x86 is used to denote an Intel CPU, however in the context of this article it has come to be used as a term for cheap,
+    commodity servers that are made by many different vendors and are based on an Intel CPU.</p>
+    <?php include('../_footer.html');?>
