@@ -209,7 +209,7 @@ reference for you in any discussion around Cloud vs Converged (or Traditional) D
         <tr>
             <th>Solution</th>
             <th>Use</th>
-            <th width="35%">Why</th>
+            <th>Why</th>
             <th>Examples</th>
             <th>Things to Consider</th>
         <tr>
@@ -232,7 +232,7 @@ reference for you in any discussion around Cloud vs Converged (or Traditional) D
         <tr>
             <td style="font-weight: bold">Cloud: SaaS</td>
             <td>Specialised systems</td>
-            <td>If you need to use a system that a vendor excels in then even if it core you should consider SaaS.</td>
+            <td>If you need to use a system that a vendor excels in then even if it is core you should consider SaaS.</td>
             <td>Market Data systems e.g. Reuters. Customer Relationship Management.</td>
             <td>
                 <ul>
@@ -364,6 +364,8 @@ reference for you in any discussion around Cloud vs Converged (or Traditional) D
                     <li><b>Vendors</b> - Vendor management and avoiding vendor lock-in</li>
                     <li><b>Integration</b> - Interaction with other systems</li>
                     <li><b>Governance</b> - Management and controls across a new environment</li>
+                    <li><b>Regulation</b> - Make sure you are allowed to do this, not just in your home location but in any country or
+                    regulation in which you operate</li>
                 </ul>
             </td>
         </tr>
@@ -371,15 +373,16 @@ reference for you in any discussion around Cloud vs Converged (or Traditional) D
         <tr>
             <td style="font-weight: bold">Hybrid Cloud: IaaS/PaaS</td>
             <td>Existing applications</td>
-            <td>The Cloud. Not even once.</td>
+            <td>Applications in need of major change anyway that are suitable for the Cloud.</td>
             <td>As a kid you had a pet fish called Trevor. Your mates suddenly all got dogs. You put a lead on
                 Trevor and dragged him around the streets so you could join in with everyone else. When you had a
-                proper look, your mate Dave had his cat, Mr Tiggles on a lead and <Gazza></Gazza> was pulling around a packet of
+                proper look, your mate Dave had his cat, Mr Tiggles on a lead and Gazza was pulling around a punnet of
                 strawberries. Don't do it. Leave Trevor at home and upgrade his fish bowl to Converged Infrastructure.</td>
             <td>
                 Web-Scale is a different beast. In some cases you will have applications that should have been
                 build on Web-Scale to begin with, migrate them immediately, but more than likely you are going to regret moving existing applications
-                to the web.
+                to the web. You will put a lot of time and effort in and the users of the applications won't be able to tell the
+                difference. Your IT team will have bragging rights in the pub but you will have wasted a lot of money.
             </td>
         </tr>
 
@@ -387,15 +390,46 @@ reference for you in any discussion around Cloud vs Converged (or Traditional) D
         <tr>
             <td style="font-weight: bold">Converged Infrastructure</td>
             <td>General Workload</td>
-            <td></td>
-            <td>As a kid you had a pet fish called Trevor. Your mates suddenly all got dogs. You put a lead on
-                Trevor and dragged him around the streets so you could join in with everyone else. When you had a
-                proper look, your mate Dave had his cat, Mr Tiggles on a lead and Bonzo was pulling around a packet of
-                strawberries. Don't do it. Leave Trevor at home and upgrade his fish bowl to Converged Infrastructure.</td>
+            <td>Most applications (see exceptions below)</td>
+            <td>Most of your applications will port straight onto Converged Infrastructure with no change. if you set it up correctly then your
+                costs will be lower, your service better and more predictable and you will have realised most of the benefits of the Cloud
+                without any of the headaches.</td>
             <td>
-                Web-Scale is a different beast. In some cases you will have applications that should have been
-                build on Web-Scale to begin with, migrate them immediately, but more than likely you are going to regret moving existing applications
-                to the web.
+                <ul>
+                    <li><b>Service Design</b> - Design your solution properly at the outset</li>
+                    <li><b>On-Boarding Process</b> - Have a proper process for migrating to your Converged Infrastructure</li>
+                    <li><b>Operating Model</b> - Change the way you work to get the full benefits of Converged Infrastructure</li>
+                </ul>
+                <br>
+                See <a href="../CTO/Realising%20the%20Full%20Potential%20of%20Converged%20Infrastructure.html"> Realising the Full Potential of Converged Infrastructure</a> for details.
+            </td>
+        </tr>
+
+        <tr>
+            <td style="font-weight: bold">Converged Infrastructure</td>
+            <td>Virtual Desktops (VDI)</td>
+            <td>With VDI you can move the desktop computing power away from the desk and run it in the Data Centre. Instead of a computer on the
+            desk you have a little cheap box that connects to the keyboard, mouse and screens and communicated to the real computer
+            back in the Data Centre. VDI gives much better control of your desktop environment, real-time back ups of everything on the PC,
+            faster deployment and is also a great solution for remote access.</td>
+            <td>Remote access. General desktop use.</td>
+            <td>
+                <ul>
+                    <li><b>Suitability</b> - Not every user will be suited to VDI, in particular avoid people who use a lot
+                    of streaming videos</li>
+                    <li><b>Migration</b> - You wil need a proper plan, every user needs their PC swapped for a new VDI box</li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="font-weight: bold">Traditional Separate Infrastructure</td>
+            <td>Specialised Applications</td>
+            <td>If your application has very specialised needs then consider keeping it separate. If it needs to located in the same Data Centre
+            as the Stock Exchange for maximum performance or it has a specialised piece of hardware attached to it, or needs to be physically
+            secured such a SWIFT payment system, then keep it that way.</td>
+            <td>Real time trading systems, Video intensive applications, low latency applications.</td>
+            <td>
             </td>
         </tr>
 
@@ -406,8 +440,9 @@ reference for you in any discussion around Cloud vs Converged (or Traditional) D
 
 <h2>Summary</h2>
 <p>
-All new technologies with enough effort behind them eventually becomes great. Apple launched their first portable
-    hand-help computer in 1993. They launched it in Australia just afterwards and it was absolute crap (the Apple Newton). However the
+All new technologies with enough effort behind them eventually becomes great. The same will be true for the Cloud.
+    Apple launched their first portable
+    hand-help computer (the Apple Newton) in 1993. It was a disaster. However the
     concept was right and now the idea of <b>NOT</b> having a powerful computer in your pocket seems strange.
     <blockquote>Cloud is a fantastic idea and it will ultimately dominate Corporate Technology, but let
 someone else go first to iron out the problems. It is not a game changer, just a different delivery mechanism,
@@ -420,7 +455,7 @@ someone else go first to iron out the problems. It is not a game changer, just a
     <li><b>PHP</b> - a version of the dreadful Perl language, runs a lot of the back end of the Internet including
     things like Facebook.</li>
     <li><b>CSS</b> - a way to separate formatting from content when writing a web page. There are a hundred
-    ways to do the same thing and 70 of them don't work in all browsers.</li>
+    ways to do the same thing and 50% of them don't work in all browsers.</li>
 </ul>
 </p>
 <p>
@@ -442,6 +477,6 @@ Use Private Cloud now as your way to get ready for Public Cloud when others have
     We recommend using Converged Infrastructure for your Private Cloud as it will flush out
     many of the issues that you need to face later such as organisational change within your IT
     support groups, recovery models and managing a variable workload.
-    <blockquote>Learn how it will work on the Public Cloud by practicing first on your own infrastructure.</blockquote>
+    <blockquote>Learn how it will work on the Public Cloud by practicing first on your own Converged Infrastructure.</blockquote>
 </p>
 <?php include('../_footer.html');?>

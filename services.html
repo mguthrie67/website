@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>17 Ways</title>
+    <title>Services | 17 Ways</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="17 Ways are a Sydney based technology company providing solutions to medium and large scale Australian business. We provide hardware, software and advice to give you the best return on your technology investments.">
     <meta name="author" content="17 Ways">
@@ -43,7 +43,7 @@
                             <ul class="nav sf-menu">
 
                                 <li class="first"><a href="index.html">Home</a></li>
-                                <li class="sub-menu first"><a href="javascript:{}">Services</a>
+                                <li class="sub-menu first current"><a href="javascript:{}">Services</a>
                                     <ul>
                                         <li><a href="hardware.html"><span>-</span>Hardware</a></li>
                                         <li><a href="software.html"><span>-</span>Software</a></li>
@@ -72,96 +72,17 @@
         </div>
     </div>
 
+    <div class="breadcrumb">
+        <div>
+            <a href="index.html">Home</a><span>/</span>Services
+        </div>
+    </div>
+
+
     <div class="page_container">
         <div class="container">
-            <!--Big picture-->
-            <img src="images/pic6.jpg" width="940" height="479" alt="17 Ways Data Centre Picture">
-            <div class="clear"></div>
-        </div>
-        <br>
 
-        <h2 class="title">Recent Articles</h2>
-        <div class="container">
-            <table>
-
-
-                <?php
-#####################################################################################################
-# PHP to read the files and generate the list of new documents                                      #
-# I'm sorry! There was no other way! At least it is hidden from the browser.                        #
-#####################################################################################################
-date_default_timezone_set('UTC');
-
-# main array of the html line and the date created from the meta file
-$datelist=array();
-
-# Lets use a table to give the css guys a heart attack
-echo "<table>";
-
-                # go through each file and read it
-                foreach (glob("Library/Meta/*.meta") as $f) {
-
-                # Format of file is key : value
-                # the first 5 lines have the meta data
-                # just read the first 5 lines
-
-                $array=array();
-
-                # read the lines from the file
-
-                $filehandle=@fopen($f, 'r');
-                if ($filehandle) {
-                for ($i=0;$i<5;$i++) {
-                $x=explode(":", fgets($filehandle,1024));   # break line into key : value
-                $array[$x[0]] = trim($x[1]);
-                }
-
-                # close file
-
-                fclose($filehandle);
-
-                }
-
-                # date bit
-                $datebit=date_create($array["Date"]);
-                $dateprint = date_format($datebit,"l jS M Y");
-                #   $dateprint = \DateTime::createFromFormat("d.m.Y", $array["Date"])->format("Ydm");
-
-                # Now we have array with the key : value pairs so print out the html
-                $val= '<tr><td>' . $dateprint . '&nbsp;&nbsp;<td>' . $array["Series"] . ' Series <td>&nbsp;&nbsp; <a href="Library/' . $array["Series"] . "/" . $array["Title"] . '.html" title="' . $array["Abstract"] . '">' . $array["Title"] . "</a></tr>";
-
-                # add to big list eg $datelist["CEO Series - Something"] = 20151213
-                $datelist[$val]=$array["Date"];
-
-                # sort the array
-
-                arsort($datelist);
-
-                # get first 3 entries
-
-                $printlist=array_slice($datelist, 0 , 3);
-                }
-
-                # print it
-
-                foreach($printlist as $x => $x_value) {
-                echo $x;
-
-                }
-
-                echo "</table>";
-
-            ?>
-            </ul>
-
-            <a href="Library/index.html" style="text-decoration: none; background-color: #4D4D4D; color: white; padding: 2px; padding-left: 8px; padding-right: 8px; margin-top: 5px; border: none; display: inline-block;">More...</a>
-            <br><br>
-
-        </div>
-
-
-
-        <h2 class="title">What We Do</h2>
+        <h1 class="title">Services</h1>
 
         17 Ways are a technology startup based in Sydney. We provide a range of services to medium and large scale Australian businesses.
         We focus on the following three services:
@@ -216,43 +137,6 @@ echo "<table>";
             </div>
         </div>
 
-
-        <div class="wrap recent_gal_block">
-            <div class="container">
-                <h2 class="title">About Us</h2>
-                We first met while working together at Macquarie Bank in 1997. During the course of the next 17 years
-                we each had very successful careers delivering <b>options, solutions and results</b>
-                across all of the businesses within the Macquarie Group.
-
-                We left Macquarie at the end of 2014 and formed 17 Ways with a
-                mission to use our skills, experience and contacts to provide technology solutions to Australian
-                businesses.
-                <br><br>
-
-                <div class="clear"></div>
-                <img src="images/people/3together.jpg" width="940" height="370" alt="17 Ways Senior Partners" usemap="#3together">
-                <map name="3together">
-                    <area shape="rect" coords="110,79,297,322" href="about.html#guthrie" alt="Mark Guthrie">
-                    <area shape="rect" coords="375,79,568,301" href="about.html#tufts" alt="John Tufts">
-                    <area shape="rect" coords="620,56,833,302" href="about.html#mallyon" alt="Tim Mallyon">
-                </map>
-            </div>
-        </div>
-
-
-
-        <div class="wrap welcome_bg">
-            <div class="container">
-                <div class="welcome_block">
-                    <p class="fleft">Find out about our team</p>
-                    <a class="fright" href="about.html">Learn More</a>
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </div>
-        <!--//Welcome-->
-
-    </div>
 
     <!--//page_container-->﻿		<!--footer-->
     <div id="footer">
