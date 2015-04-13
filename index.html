@@ -25,7 +25,7 @@
     <![endif]-->
 
 </head>
-<body>
+<>
 
 <!-- Top menu bar -->
 <div class="container box_shadow">
@@ -128,7 +128,7 @@ echo "<table>";
                 #   $dateprint = \DateTime::createFromFormat("d.m.Y", $array["Date"])->format("Ydm");
 
                 # Now we have array with the key : value pairs so print out the html
-                $val= '<tr><td>' . $dateprint . '&nbsp;&nbsp;<td>' . $array["Series"] . ' Series <td>&nbsp;&nbsp; <a href="Library/' . $array["Series"] . "/" . $array["Title"] . '.html" title="' . $array["Abstract"] . '">' . $array["Title"] . "</a></tr>";
+                $val= '<tr><td>' . $dateprint . '&nbsp;&nbsp;<td>' . $array["Series"] . ' Series <td style="padding-left: 9px;"> <a href="Library/' . $array["Series"] . "/" . $array["Title"] . '.html" title="' . $array["Abstract"] . '">' . $array["Title"] . "</a></tr>";
 
                 # add to big list eg $datelist["CEO Series - Something"] = 20151213
                 $datelist[$val]=$array["Date"];
@@ -174,7 +174,7 @@ echo "<table>";
                         <img class="icon_block" src="images/pic2.jpg" width="250" height="166" alt="Hardware"/>
                         <span class="link_title">Hardware</span>
                         <span class="service_txt">17 Ways are a reseller of converged and commodity hardware solutions.
-                            We are partners with a number of the leading international companies in this space.
+                            We are working with a number of the leading international companies in this space.
                             In addition to providing the best solutions for your business we can also provide integration
                             and migration support and can advise on the organisational change required
                             to get the most out of your infrastructure solutions. Alternatively, if you prefer, we
@@ -189,7 +189,7 @@ echo "<table>";
                         <img class="icon_block" src="images/pic3.jpg" width="256" height="166" alt="Software"/>
                         <span class="link_title">Software</span>
                         <span class="service_txt">17 Ways offer a full range of software development and
-                            maintenance services. With senior staff based in Sydney and a team of highly
+                            maintenance services. With senior staff based in Sydney and access to a team of highly
                             skilled programmers and testers based in the Philippines, we can provide a high
                             quality service to companies that need custom software
                             development.
@@ -230,12 +230,7 @@ echo "<table>";
                 <br><br>
 
                 <div class="clear"></div>
-                <img src="images/people/3together.jpg" width="940" height="370" alt="17 Ways Senior Partners" usemap="#3together">
-                <map name="3together">
-                    <area shape="rect" coords="110,79,297,322" href="about.html#guthrie" alt="Mark Guthrie">
-                    <area shape="rect" coords="375,79,568,301" href="about.html#tufts" alt="John Tufts">
-                    <area shape="rect" coords="620,56,833,302" href="about.html#mallyon" alt="Tim Mallyon">
-                </map>
+
             </div>
         </div>
 
@@ -279,6 +274,7 @@ echo "<table>";
             </div>
         </div>
     </div>
+
     <!--//footer-->
 
 
