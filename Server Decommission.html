@@ -15,6 +15,7 @@
     <link href="css/site.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
 
+
     <!-- Font -->
     <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -40,7 +41,7 @@
                             <ul class="nav sf-menu">
 
                             <li class="first"><a href="index.html">Home</a></li>
-                            <li class="sub-menu first current"><a href="javascript:{}">Services</a>
+                            <li class="sub-menu first"><a href="javascript:{}">Services</a>
                                 <ul>
                                     <li><a href="hardware.html"><span>-</span>Hardware</a></li>
                                     <li><a href="software.html"><span>-</span>Software</a></li>
@@ -74,86 +75,40 @@
 
     <div class="breadcrumb">
         <div>
-            <a href="index.html">Home</a><span>/</span><a href="services.html">Services</a><span>/</span><a href="hardware.html">Hardware</a><span>/</span>Data Destruction
+            <a href="index.html">Home</a><span>/</span><a href="services.html">Services</a><span>/</span><a href="hardware.html">Hardware</a><span>/</span>Server Decommission
         </div>
     </div>
 
     ﻿		<!--page_container-->
     <div class="page_container">
         <div class="container">
-            <!--slider-->
+            <h1>Server Decommission</h1>
+            <img src="images/destroy.jpg"><br><br>
+            <p>Decommissioning servers can be a painful process. At 17 Ways we can make this easy for you. We provide a complete service which includes
+            data destruction, server removal and disposal as well as rack disposal.</p>
+            <h2>Get A Quote</h2>
+<p>We charge based upon 3 components.
+            <ul class="myList">
+            <li>The first is the size of the server which is measure in Rack Units (RUs). One
+RU is 4.445cm (1.75"). A typical server is about 4 RUs. </li>
+            <li>The second is the number of hard drives as these have to be individually destroyed to ensure
+            that data cannot be recovered. We also provide a certificate of destruction and a photograph confirming
+            that the drive has been rendered unusable.</li>
+            <li>If you need racks removed, please include the number as well to get a full quote.</li>
+            </ul>
+            </p>
+            <form method="post">
+                <table>
+                <tr><td>RUs:</td><td><INPUT TYPE=TEXT SIZE=10 NAME="dest_RU" onChange=destruct_calc(this.form)></td></tr>
 
+                <tr><td>Hard Drives: &nbsp;&nbsp;</td><td><INPUT TYPE=TEXT SIZE=10 NAME="dest_Drives" readonly onChange=destruct_calc(this.form) ></td></tr>
 
-                    <img src="images/destroy2.jpg" width="400" height="273" alt="Hardware Destruction">
-                                      <div class="clear"></div>
+                <tr><td>Racks: </td><td><INPUT TYPE=TEXT SIZE=10 NAME="dest_Racks" onChange=destruct_calc(this.form)></td></tr>
 
-            <!--//slider-->
-        </div>
-        <br>
-
-        <!--planning-->
-        <H1>Why Decommissioning Your Old Servers Makes Sense</H1>
-
-        <blockquote>Obsolete servers are a drain on your budget and resources.
-            They are costing you money to keep alive. Let us show you the
-            benefits of getting rid of your old servers.</blockquote>
-
-
-        <p></p>Decommissioning "comatose" servers in your data center is
-        not always an easy task. You need to audit your server fleet, work out
-        which devices are not used, co-ordinate with business owners to turn off
-        the devices and then decommission the servers. Not all IT divisions do this
-        in a structured and regular way, and there is always the risk of "what if we turn off the wrong server?".
-        </p>
-<p>
-        However, when you stop to consider the total cost of unused servers,
-    it will likely make good business sense to put the effort into decommissioning those servers.
-</p>
-<p></p>
-        The immediate cost saving that jumps out is the power savings, approximately $400
-        per annum for a 4RU server <a href="http://www.gartner.com/newsroom/id/1015715">
-        http://www.gartner.com/newsroom/id/1015715</a>. However, there are a number of other
-        one-off and recurring costs that should be taken into account.
-        </p>
-        <p>
-
-        Costs include:
-
-        <ul class="myList">
-        <li>Power
-            <li>Cooling / Heating</li>
-            <li>Data Centre space lease or ownership costs per square meter</li>
-            <li>Network ports, usually at least 2 per server</li>
-            <li>SAN connections, usually at least 2 per server</li>
-            <li>Backups</li>
-            <li>Monitoring</li>
-            <li>Patching</li>
-            <li>Operating System License</li>
-            <li>Database License</li>
-            <li>Hardware Maintenance Agreement</li>
-            <li>SAN Storage</li>
-            <li>Administration and Support</li>
-        </ul>
-        </p>
-        <p>
-        While we do not enumerate all of these costs due to their variance from server to server,
-            a conservative estimate based on a 4RU x86 server running Windows 2012 Enterprise and
-
-            Microsoft SQL with SAN attached storage would give $5,000 per annum in recurring
-            costs and $1,000 in one-off costs.
-        </p>
-        <blockquote>Zombie servers in your Data Centre could be costing you over $5000 each every year to run.</blockquote>
-
-<p>
-        Costs to decommission servers will vary based on scale, however a good starting
-    point is 8 hours per IT resource per server at $125 per hour ($1,000 per server), and
-    $800 per 4RU server for removal from data center and disposal. This gives a total of
-    approximately $1,800 per server in decommission costs.
-</p>
-        <blockquote>Even a high estimate of the decommissioning cost is less than $2000.</blockquote>
-<p>
-        Get a free estimate with our <a href="server%20decommission%20quote.html">Server Decommission Calculator</a>.
-</p>
+                <tr><td>Cost: </td><td><INPUT TYPE=TEXT SIZE=10 NAME="dest_Cost" readonly></td></tr>
+                </table>
+            </form>
+<p>Costs are indicative and only apply to servers under 25 RUs in size. <a href="contacts.html">Contact us</a> for precise quotes.</p>
     </div>
 
     <!--//page_container-->﻿		<!--footer-->
@@ -193,6 +148,8 @@
 <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
 <script src="js/htweet.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="js/destruction.js"></script>
+
 
 </body>
 
