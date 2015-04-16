@@ -1,20 +1,19 @@
 <?php 
 // EDIT THE 2 LINES BELOW AS REQUIRED
 $send_email_to = "info@17ways.com.au";
-$email_subject = "****** WEBSITE REQUEST *******";
 
-function send_email($name,$email,$email_message)
+function send_email($name,$email,$subject,$email_message)
 {
   global $send_email_to;
-  global $email_subject;
-  $headers = "MIME-Version: 1.0" . "\r\n";
 
+  $headers = "MIME-Version: 1.0" . "\r\n";
   $headers .= "Content-type:text/html;charset=iso-8859-1" . "\r\n";
   $headers .= "From: ".$email. "\r\n";
-  $message = "<strong>Email = </strong>".$email."<br>";
-  $message .= "<strong>Name = </strong>".$name."<br>";  
-  $message .= "<strong>Message = </strong>".$email_message."<br>";
-  @mail($send_email_to, $email_subject, $message,$headers);
+  $message = "<p style='font-family:Verdana;font-size:13px;'>";
+  $message .= "<table noborder><tr><td><strong>Email Address: </strong><td>".$email."</tr>";
+  $message .= "<tr><td><strong>Sender: </strong><td>".$name."</tr></table><br>";  
+  $message .= $email_message."<br></p>";
+  @mail($send_email_to, $subject, $message,$headers);
   return true;
 }
 
@@ -69,18 +68,19 @@ function validate($name,$email,$message)
 
 $name = $_POST['name'];
 $email = $_POST['email'];
-$message = $_POST['message'];
+$message = nl2br($_POST['message']);
+$subject = "INCOMING WEB >>>> " . $_POST['subject'];
+
 
 
 $return_array = validate($name,$email,$message);
 
 if($return_array['success'] == '1')
 {
-	send_email($name,$email,$message);
+	send_email($name,$email,$subject,$message);
     header( 'Location: success.html' ) ;
 
 } else {
     header( 'Location: failure.html' ) ;
 }
 ?>
-
