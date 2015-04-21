@@ -77,24 +77,23 @@
                     <a href="../index.html">Home</a><span>/</span>Library
                 </div>
             </div>
-            <div class="container">
+            <div>
 
-                <div id="options">
+                <div>
 
                     <ul id="filters" class="option-set" data-option-key="filter">
-                        <li><a href="#filter" data-option-value="*" class="selected" title="Show all articles">All</a></li>
-                        <li><a href="#filter" data-option-value=".CEO" title="Articles aimed at decision makers who need more information on IT trends.">CEO Series</a></li>
-                        <li><a href="#filter" data-option-value=".CTO" title="Articles for senior technology decision makers">CTO Series</a></li>
-                        <li><a href="#filter" data-option-value=".TECH" title="Articles for technologists">Technical Series</a></li>
+                        <li><a href="index.html" data-option-value="*" class="selected" title="Show all articles">All</a></li>
+                        <li><a href="CEO" data-option-value=".CEO" title="Articles aimed at decision makers who need more information on IT trends.">CEO Series</a></li>
+                        <li><a href="CTO" data-option-value=".CTO" title="Articles for senior technology decision makers">CTO Series</a></li>
+                        <li><a href="TECH" data-option-value=".TECH" title="Articles for technologists">Technical Series</a></li>
                     </ul>
                     <div class="clear"></div>
                 </div>
-                <div class="row">
+                <br>
+                <div class="piccontainer">
 
 
-
-                    <!-- portfolio_block -->
-                    <div class="projects">
+                    <div class="piccontainer">
 
 <?php
 #####################################################################################################
@@ -123,12 +122,8 @@ foreach (glob("Meta/*.meta") as $f) {
        $realfile = pathinfo($f, PATHINFO_FILENAME) . ".html";   # change abc.meta into abc.html
 
 # Now we have array with the key : value pairs so print out the html
-       print '<div class="span6 element ';
-       print trim($array["Series"]);
-       print ' height_2column" data-category="';
-       print trim($array["Series"]);
-       print '">' . PHP_EOL;
-       print '<div class="hover_img"><a href="';
+       print '<div class="picbox">' . PHP_EOL;
+       print '<div><a href="';
        print trim($array["Series"]) . "/";
        print $realfile . PHP_EOL;
        print '"><img src="../images/Library/';

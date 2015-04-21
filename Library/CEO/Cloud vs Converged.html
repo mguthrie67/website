@@ -38,15 +38,39 @@
                             <dd>Your own set of infrastructure that you manage (or have close control over).</dd>
                         <dt>Converged Infrastructure</dt>
                             <dd>Systems that combine storage, compute, memory and management capability into a single large capacity box that is cheaper to run than previous generations of Data Centre technology.</dd>
+                        <dt>Hyper-Converged Infrastructure</dt>
+                            <dd>Similar in concept to Converged Infrastructure except the systems are more highly integrated and tend to come in smaller sizes that can be added together
+                            as a cluster.</dd>
                     </dl>
                 </p>
 </div>
 <h2>Web-Scale vs Traditional Data Centre</h2>
 <p>Web-scale emerged to solve a different set of problems from those that the traditional corporate IT world had been working on for many decades.
 </p>
+<img src="../../images/Library/CEO/webscaleandcorporate.png"><br><br>
+<p>
+    Web-scale was built to solve the problems that the Internet companies were facing with scale and resilience. They threw lots of cheap hardware at the problem
+    and built some clever software over the top to manage it all. Opening this up to others to use is what we now term IaaS or often just "the Cloud". Corporate IT
+    was solving a different set of problems and Converged Infrastructure has emerged to address this. Hyper-Converged is very similar but looks a lot more like
+    Web-scale.
+</p>
+<p>
+    So completing our definitions we have:
+    <ul class="myList">
+        <li><b>Web-scale</b> - the Internet companies' way of doing IT.</li>
+        <li><b>The Cloud</b> - other companies using the Internet companies' Web-scale systems.</li>
+        <li><b>Converged Infrastructure</b> - Your own large capacity boxes.</li>
+        <li><b>Hyper-Converged Infrastructure</b> - You own small boxes that you can link together in a cluster like Web-scale. Web-scale for the Corporate Data Centre.</li>
+    </ul>
+For most of this article we will consider Converged and Hyper-Converged to be largely the same thing. What we are trying to explore here is when should you use the Cloud and
+when should you use your own Data Centre.
+</p>
+<p>
+    Let's look at the different problems that Internet Companies and Corporates face.
+</p>
 <img src="../../images/Library/CEO/webscalevtraditional.png"><br><br>
 <p>
-    Having said that, many of the approaches developed for Web-scale are equally applicable to corporates and in that sense Web-scale represents a disruptive and extremely healthy threat to the
+    Despite the apparent differences, many of the approaches developed for Web-scale are equally applicable to corporates and in that sense Web-scale represents a disruptive and extremely healthy threat to the
 traditional models of corporate IT.
     <blockquote>The secret to getting the most out of the new technology is to identify where it will work for you; i.e. the overlap in the picture above.</blockquote>
 </p>
@@ -64,8 +88,8 @@ Lets look at this from another angle and consider the drivers that are typically
     <thead>
         <tr>
             <th width="25%">Aspect</th>
-            <th width="35%">Web-Scale</th>
-            <th width="35%">Traditional Data Centre</th>
+            <th width="35%">Internet Companies</th>
+            <th width="35%">Traditional Corporates</th>
         <tr>
     </thead>
     <tbody>
@@ -169,13 +193,13 @@ Lets look at this from another angle and consider the drivers that are typically
     </tbody>
 </table>
 <blockquote>
-    Look down the two lists and tick which more closely matches the problem that you are trying to solve. Add up the totals and if Web-Scale
-    scores higher than Traditional then the Cloud is probably the right answer for you. If not, look again at the Traditional Data Centre approach.
+    Look down the two lists and tick which more closely matches the problem that you are trying to solve. Add up the totals and if the left column
+    scores higher than the right then the Cloud is probably the right answer for you. If not, look again at the Traditional Data Centre approach.
 </blockquote>
 
 <h2>Applications</h2>
 <p>
-The focus of many companies Cloud strategy starts with the infrastructure. This is driven by a belief that by adopting the Cloud, costs will reduce,
+The focus of many companies' Cloud strategy starts with the infrastructure. This is driven by a belief that by adopting the Cloud, costs will reduce,
 speed to market will increase and performance will become truly scalable. The problem with this is that infrastructure achieves none of these things. It is
 applications that will be the true deliverers of the Cloud benefits, infrastructure is merely the layer upon which your applications run. Its a bit like
 adopting a new guage of train tracks. Sure it might be a better size and easier to lay the rails but until you have some trains that will fit on it you
@@ -185,9 +209,9 @@ are wasting your time.
 <p>
     The standardisation that the Cloud can bring to your deployments is of great value for new applications but for existing applications it is a huge problem.
     In the traditional Data Centre model the infrastructure provides an extremely flexible service for the applications. If an application needs a certain
-    package installed, the infrastructure team install it, if it needs the database search to be case sensitive, then it get it. In the Cloud model the
+    package installed, the infrastructure team install it, if it needs the database search to be case sensitive, then it gets it. In the Cloud model the
     application development teams are forced down a standardised path. Be very careful if you are presented with a TCO figure for your company's Cloud migration.
-    It is very likely that this figure only include infrastructure cost and exclude what can be massive additional costs for the Development teams.
+    It is very likely that this figure only includes infrastructure cost and excludes what can be massive additional cost for the Development teams.
 </p>
 <p>
     The Cloud isn't a revolutionary technology like PCs or the Internet, it is a new way to do the same old thing. As an end user you can't really tell if
@@ -374,10 +398,7 @@ reference for you in any discussion around Cloud vs Converged (or Traditional) D
             <td style="font-weight: bold">Hybrid Cloud: IaaS/PaaS</td>
             <td>Existing applications</td>
             <td>Applications in need of major change anyway that are suitable for the Cloud.</td>
-            <td>As a kid you had a pet fish called Trevor. Your mates suddenly all got dogs. You put a lead on
-                Trevor and dragged him around the streets so you could join in with everyone else. When you had a
-                proper look, your mate Dave had his cat, Mr Tiggles on a lead and Gazza was pulling around a punnet of
-                strawberries. Don't do it. Leave Trevor at home and upgrade his fish bowl to Converged Infrastructure.</td>
+            <td>Web portals. Static web content. Standalone applications with limited connectivity.</td>
             <td>
                 Web-Scale is a different beast. In some cases you will have applications that should have been
                 build on Web-Scale to begin with, migrate them immediately, but more than likely you are going to regret moving existing applications
@@ -444,31 +465,33 @@ All new technologies with enough effort behind them eventually becomes great. Th
     Apple launched their first portable
     hand-help computer (the Apple Newton) in 1993. It was a disaster. However the
     concept was right and now the idea of <b>NOT</b> having a powerful computer in your pocket seems strange.
-    <blockquote>Cloud is a fantastic idea and it will ultimately dominate Corporate Technology, but let
-someone else go first to iron out the problems. It is not a game changer, just a different delivery mechanism,
-    there is no need to be an early adopter. Converged Infrastructure is here now. Use it.</blockquote>
 </p>
+    <blockquote>Cloud is a fantastic idea and it will ultimately dominate Corporate Technology, but let
+someone else go first to iron out the problems. It won't change the experience to the end user,
+    there is no need to be an early adopter. Converged Infrastructure is here now. Use it.</blockquote>
+
 <p>
-    Good examples of awful technology that came good are:
-    <ul class="myList">
-    <li><b>Javascript</b> - a poor rip off of the Java language, now runs your browser, and many other things.</li>
-    <li><b>PHP</b> - a version of the dreadful Perl language, runs a lot of the back end of the Internet including
-    things like Facebook.</li>
-    <li><b>CSS</b> - a way to separate formatting from content when writing a web page. There are a hundred
-    ways to do the same thing and 50% of them don't work in all browsers.</li>
-</ul>
+    There are plenty of examples of bad technology that has come good over time. The standout probably being Javascript which
+    started as a terrible language suitable only for popping up annoying boxes on webpages but it is now central to all
+    web development and has become a powerful and well supported language.
+
 </p>
 <p>
     These technologies are among the worst ever invented but through good positioning and massive effort to
     improve them, they have become the 3 technologies that drive the Internet (and this page uses them all).
 </p>
 <p>
-    At 17 Ways we believe that your current focus should be on Converged Infrastructure. For the next 5-10 years
-    this represents the safe, reliable and guaranteed way to deliver your systems. As a decision maker in
-    the corporate world, you should be looking for things that work now and avoiding fads and buzzwords.
+    At 17 Ways we believe you should focus first on your requirements and especially on performance and availability.
+    You need to look at the mandatory and optional requirements and before committing to a Cloud strategy you need
+    to be sure that it is the right answer to the problems you are trying to solve. We believe that too many
+    organisations are currently forcing a Cloud strategy onto systems that would run better, cheaper, faster and with less
+    risk if they were deployed on Converged Infrastructure. We have seen many examples of organisations who have
+    move workload to the Cloud and unfortunately have failed to realise the benefits that they expected in terms of
+    cost, performance and availability.
+
     </p>
 <p>The Cloud is a whole range of
-    different technology and we advocate Software-as-a-Service as being the best of these. If you can find a
+    different technologies and we advocate Software-as-a-Service as being the best of these. If you can find a
     vendor who provides everything that you need and delivers it over the Internet then you should use them (but
     check out our list of things to consider).
     </p>

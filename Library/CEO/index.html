@@ -29,13 +29,13 @@
     <div class="header">
         <div class="wrap">
             <div class="container">
-                <div class="fleft"><a href="index.html"><img id="TopLogo" src="../../images/logo_slogan.png" alt="17 Ways" /></a></div>
+                <div class="fleft"><a href="../../index.html"><img id="TopLogo" src="../../images/logo_slogan.png" alt="17 Ways" /></a></div>
                 <div class="navbar fright">
                     <nav id="main_menu">
                         <div class="menu_wrap">
                             <ul class="nav sf-menu">
 
-                                <li class="first"><a href="../index.html">Home</a></li>
+                                <li class="first"><a href="../../index.html">Home</a></li>
                                 <li class="sub-menu first"><a href="javascript:{}">Services</a>
                                     <ul>
                                         <li><a href="../../hardware.html"><span>-</span>Hardware</a></li>
@@ -44,7 +44,7 @@
                                     </ul>
                                 </li>
 
-                                <li class="sub-menu first"><a href="../Library/index.html">Library</a>
+                                <li class="sub-menu first"><a href="../index.html">Library</a>
                                     <ul>
                                         <li><a href="../CEO"><span>-</span>CEO Series</a></li>
                                         <li><a href="../CTO"><span>-</span>CTO Series</a></li>
@@ -76,9 +76,9 @@
                     <a href="../../index.html">Home</a><span>/</span>Library
                 </div>
             </div>
-            <div class="container">
+            <div>
 
-                <div id="options">
+                <div>
 
                     <ul id="filters">
                         <li><a href="../index.html" title="Show all articles">All</a></li>
@@ -88,12 +88,11 @@
                     </ul>
                     <div class="clear"></div>
                 </div>
-                <div class="row">
+                <br>
+                <div class="piccontainer">
 
 
-
-                    <!-- portfolio_block -->
-                    <div class="projects">
+                    <div class="piccontainer">
 
 <?php
 #####################################################################################################
@@ -123,11 +122,7 @@ foreach (glob("../Meta/*.meta") as $f) {
 
 # Now we have array with the key : value pairs so print out the html
        if (trim($array["Series"])=="CEO") {
-           print '<div class="span6 element ';
-           print trim($array["Series"]);
-           print ' height_2column" data-category="';
-           print trim($array["Series"]);
-           print '">' . PHP_EOL;
+           print '<div class="picbox">' . PHP_EOL;
            print '<div class="hover_img"><a href="../';
            print trim($array["Series"]) . "/";
            print $realfile . PHP_EOL;
