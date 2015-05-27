@@ -18,7 +18,8 @@ if ($name<>"") {
 # download                 #
 ############################
     header('Content-Type: application/download');
-    header('Content-Disposition: attachment; filename="mailout.html"');
+    $n = $name . ' mailout.html';
+    header('Content-Disposition: attachment; filename=\"' . $n .'\"');
     header("Content-Length: " . filesize("../mailout/001/mailout.html"));
 
 # load file
@@ -31,6 +32,9 @@ if ($name<>"") {
     echo $mailout;
 
 }
+
+#onsubmit="setTimeout(function () { window.location.reload(); }, 1000)"
+
 ?>
 <html>
 <head>
@@ -48,7 +52,7 @@ if ($name<>"") {
 <body>
 <h1>Enter Names for Campaign 001</h1>
 <br><br>
-<form method="post" onsubmit="setTimeout(function () { window.location.reload(); }, 500)" action="<?php echo $PHP_SELF;?>">
+<form method="post"  action="<?php echo $PHP_SELF;?>">
 <center>
 Name:&nbsp;&nbsp;<input type="text" size="20" name="name"><br />
 <input type="submit" value="Generate" name="submit">
