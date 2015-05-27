@@ -184,7 +184,7 @@ foreach ($hits as $k => $v) {
 
 echo "</table></center>";
 
-echo "<h2>Who's Hasn't Read It (Cunts)</h2>";
+echo "<h2>Who Hasn't Read It (Cunts)</h2>";
 
 
 echo "<center><table class='campaign'>";
