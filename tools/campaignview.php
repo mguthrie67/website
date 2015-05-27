@@ -276,6 +276,13 @@ foreach ($days as $k => $v) {
 
 echo "</center><br><br>";
 
+echo "<h3>Download Raw Files</h3>";
+
+echo "<center><a href='../mailout/" . $campaign . "/logfile.txt'>Log File</a></center><br>";
+echo "<center><a href='../mailout/" . $campaign . "/users.txt'>User File</a></center><br>";
+
+echo "<br><br>";
+
 ?>
 
 
