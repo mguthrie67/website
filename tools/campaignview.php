@@ -101,7 +101,45 @@ foreach ($hits as $k => $v) {
 
 }
 
+### Look for multiple days
 
+# empty arrays
+$multidayscnt=array();   # count
+$multidaysdate=array();  # date
+
+foreach ($log as &$l) {
+   $pieces=explode(":", $l);
+   $day=$pieces[0];
+   $who=$pieces[1];
+   $bits=explode(" ", $day);
+   $d=$bits[0];
+
+   $multidayscnt[$who]=0;
+   $multidaysdate[$who]=$d;   # ends up set to last day so we over count by 1
+}
+
+# go through log and check for multiple days
+foreach ($log as &$l) {
+   $pieces=explode(":", $l);
+   $day=$pieces[0];
+   $who=$pieces[1];
+   $bits=explode(" ", $day);
+   $d=$bits[0];
+
+   if ($multidaysdate[$who]<>$d) {    # found another day
+          $multidayscnt[$who]=$multidayscnt[$who]+1;
+          $multidaysdate[$who]=$d;      # set check to this day
+    }
+}
+
+$multiday=0;
+
+foreach ($multidayscnt as $k => $v) {
+    if ($v>1) {
+       $multiday=$multiday+1;
+    }
+
+}
 
 # Summary
 
@@ -117,12 +155,16 @@ $totusers = count($users);
 
 $percentread = $hit * 100 / $totusers;
 $mpercentread = $mhit * 100 / $totusers;
+$percentreadday = $multiday * 100 / $totusers;
 
 echo "<tr><td>Total targets<td>" . $totusers . "</tr>";
 echo "<tr><td>Percentage who have read our email<td>" . $percentread . "%</tr>";
-echo "<tr><td>Percentage who have read it multiple times<td>" . $mpercentread . "%</tr>";
+echo "<tr><td>Percentage who have read it multiple times<sup>*</sup><td>" . $mpercentread . "%</tr>";
+echo "<tr><td>Percentage who have read it on multiple days<td>" . $percentreadday . "%</tr>";
 
 echo "</table></center>";
+
+echo "<br>* - Outlook and other mail clients often read the email multiple times. The multiple day value at the bottom of the table is a more accurate assessment of human interaction.";
 
 echo "<h2>Recent Reads</h2>";
 
