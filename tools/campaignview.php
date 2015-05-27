@@ -21,6 +21,10 @@ $excludeip="122.109.192.181";   # fake
 
 $campaign = $_GET["campaign"];
 
+if ($campaign=="") {
+   die("<h1>No campaign specified.</h1>Please add ?campaign=xxx to your URL.");
+}
+
 $purpose=file_get_contents("../mailout/" . $campaign . "/purpose.txt");
 
 echo "<h1>Campaign " . $campaign . " - " . $purpose . "</h1>";
