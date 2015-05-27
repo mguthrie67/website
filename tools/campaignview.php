@@ -5,6 +5,7 @@
     <link href="../css/bootstrap.css" rel="stylesheet">
     <link href="../css/site.css" rel="stylesheet">
     <link href="../css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../css/reports.css" rel="stylesheet">
 
     <!-- Font -->
     <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
@@ -88,7 +89,7 @@ $mhit=0;
 $mmiss=0;
 
 foreach ($hits as $k => $v) {
-    if ($v>1) {
+    if ($v<=1) {
        $mmiss=$mmiss+1;
     } else {
        $mhit=$mhit+1;
@@ -100,7 +101,9 @@ foreach ($hits as $k => $v) {
 
 # Summary
 
-echo "<table border=1>";
+echo "<h2>Summary</h2>";
+
+echo "<center><table class='campaign'>";
 
 # all users
 
@@ -111,11 +114,95 @@ $totusers = count($users);
 $percentread = $hit * 100 / $totusers;
 $mpercentread = $mhit * 100 / $totusers;
 
-echo "<tr><td>Total Targets<td>" . $totusers . "</tr>";
-echo "<tr><td>Percentage Read<td>" . $percentread . "%</tr>";
-echo "<tr><td>Percentage Multiple Read<td>" . $mpercentread . "%</tr>";
+echo "<tr><td>Total targets<td>" . $totusers . "</tr>";
+echo "<tr><td>Percentage who have read our email<td>" . $percentread . "%</tr>";
+echo "<tr><td>Percentage who have read it multiple times<td>" . $mpercentread . "%</tr>";
 
-echo "</table>";
+echo "</table></center>";
+
+echo "<h2>Recent Reads</h2>";
+
+# ok... back to the logs we go...
+
+# get the end of the log and reverse it
+
+$endlog = array_slice($log, -5);
+
+$endlog = array_reverse($endlog);
+
+echo "<center><table class='campaign'>";
+
+foreach ($endlog as &$i) {
+   $pieces=explode(":", $i);
+   $name=$pieces[1];
+   $ts=$pieces[0];
+   $ts=str_replace("-", ":", $ts);
+
+   # check the dates
+   date_default_timezone_set('Australia/Sydney');
+   $parts=explode(" ", $ts);
+   $datebit=$parts[0];
+   $timebit=$parts[1];
+
+   $format = "d/m/Y";
+   $date1  = DateTime::createFromFormat($format, $datebit);
+   $date2  = date("d/m/Y");
+   $date3  = DateTime::createFromFormat($format, $date2);
+   $date4  = date("d/m/Y", time() - 60 * 60 * 24);
+   $date5  = DateTime::createFromFormat($format, $date4);
+
+   if ($date1 == $date3) {
+      $ts="Today " . $timebit;
+   }
+
+   if ($date1 == $date5) {
+      $ts="Yesterday " . $timebit;
+   }
+
+   echo "<tr><td>" . $name . "<td><span style='float: right;'>" . $ts . "</span></tr>";
+}
+
+echo "</table></center>";
+
+echo "<h2>Who's Read It</h2>";
+
+echo "<center><table class='campaign'>";
+
+foreach ($hits as $k => $v) {
+    if ($v>0) {
+        echo "<tr><td>" . $k . "<td><span style='float: right;'>";
+        if ($v===1) {
+            echo "Once";
+        } elseif ($v===2) {
+            echo "Twice";
+        } else {
+            echo $v . " times";
+        }
+        echo "</span></tr>";
+    }
+}
+
+echo "</table></center>";
+
+echo "<h2>Who's Hasn't Read It (Cunts)</h2>";
+
+
+echo "<center><table class='campaign'>";
+
+foreach ($hits as $k => $v) {
+    if ($v===0) {
+        if ($k <> "UNKNOWN") {
+            echo "<tr><td>" . $k . "</tr>";
+        }
+    }
+}
+
+echo "</table></center>";
+
+# Graph by day
+
+echo "<h2>Historic View</h2>";
+
 
 
 ?>
