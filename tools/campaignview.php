@@ -201,9 +201,80 @@ echo "</table></center>";
 
 # Graph by day
 
+# get the data
+
+      # initialise empty array with dates
+
+$days=array();
+
+foreach ($log as &$l) {
+   $pieces=explode(":", $l);
+   $day=$pieces[0];
+   $bits=explode(" ", $day);
+   $d=$bits[0];
+
+   $days[$d]=0;
+}
+
+      # enter hits per day
+
+foreach ($log as &$l) {
+   $pieces=explode(":", $l);
+   $day=$pieces[0];
+   $bits=explode(" ", $day);
+   $d=$bits[0];
+   $days[$d]=$days[$d]+1;
+}
+
 echo "<h2>Historic View</h2>";
 
+echo "<center>";
 
+###### Google chart thingo
+
+echo '<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1.1", {packages:["bar"]});
+      google.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ["Date", "Reads"],';
+
+##### insert data
+
+foreach ($days as $k => $v) {
+    echo "[\"" . $k . "\", " . $v . "],";
+
+}
+
+##### carry on...
+
+        echo ']);
+
+        var options = {
+          title: "Reads by Day",
+          width: 900,
+          legend: { position: "none" },
+          chart: { subtitle: "Total number of email reads over time" },
+          axes: {
+            x: {
+              0: { side: "top", label: "Reads excluding 17 Ways IP Address"} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "90%" }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById("top_x_div"));
+        // Convert the Classic options to Material options.
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      };
+    </script>
+
+    <div id="top_x_div" style="width: 900px; height: 500px;"></div>
+';
+
+echo "</center><br><br>";
 
 ?>
 
