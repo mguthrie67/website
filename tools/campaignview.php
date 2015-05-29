@@ -153,9 +153,9 @@ $totusers = count($users);
 
 # get hits
 
-$percentread = $hit * 100 / $totusers;
-$mpercentread = $mhit * 100 / $totusers;
-$percentreadday = $multiday * 100 / $totusers;
+$percentread = round($hit * 100 / $totusers, 2);
+$mpercentread = round($mhit * 100 / $totusers, 2);
+$percentreadday = round($multiday * 100 / $totusers, 2);
 
 echo "<tr><td>Total targets<td>" . $totusers . "</tr>";
 echo "<tr><td>Percentage who have read our email<td>" . $percentread . "%</tr>";
