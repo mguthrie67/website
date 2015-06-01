@@ -216,6 +216,14 @@ function toggle(elementId) {
         ele.style.display = "none";
     }
     else {
+// close everything
+
+        for (i = 1; i < 8; i++) {
+            var e = document.getElementById("question" + i)
+            e.style.display = "none";
+        }
+
+// open this one
         ele.style.display = "block";
     }
 }
