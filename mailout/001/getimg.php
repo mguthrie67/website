@@ -2,7 +2,7 @@
 
 ###############
 #
-# grab requests for images (usually from emails) and log the access
+# grab requests for urls (usually from emails) and log the access
 #
 ###############
 
@@ -24,17 +24,18 @@ function nogood($filename) {
 # get parameters   #
 ####################
 $token=$_GET["token"];
-$filename=$_GET["file"];
+$url=$_GET["url"];
+$campaign=$_GET["code"];
 
 #################################
 # check fully formed parameters #
 #################################
-if (isset($token) and isset($filename)) {
+if (isset($token) and isset($url) and isset($campaign)) {
 
 #####################
 # check for rascals #
 #####################
-    if (isValid($filename) and file_exists($filename)) {
+    if (isValid($url) and file_exists($filename)) {
 
 #####################
 # ok. get the image #
