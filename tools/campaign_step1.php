@@ -1,17 +1,5 @@
-<html>
-<head>
-<title>Campaign Manager</title>
-    <!-- Stylesheets -->
-    <link href="../css/bootstrap.css" rel="stylesheet">
-    <link href="../css/site.css" rel="stylesheet">
-    <link href="../css/bootstrap-responsive.css" rel="stylesheet">
+<?php include('_header.html');?>
 
-    <!-- Font -->
-    <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
-
-
-</head>
-<body>
 
 <h1>Create New Campaign</h1>
 
@@ -58,15 +46,4 @@ echo '<input type="hidden" name="campaign" value="' . $next . '">';
         </form>
     </div>
 
-
-<script src="../js/jquery.min.js"></script>
-<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="../js/jquery.mobile.customized.min.js"></script>
-<script type="text/javascript" src="../js/camera.js"></script>
-<script src="../js/bootstrap.js"></script>
-<script src="../js/superfish.js"></script>
-        <script type="text/javascript" src="../js/jquery.prettyPhoto.js"></script>
-<script src="../js/htweet.js" type="text/javascript"></script>
-        <script type="text/javascript" src="../js/custom.js"></script>
-</body>
-</html>
+<?php include('_footer.html');?>
