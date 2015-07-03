@@ -1,4 +1,17 @@
-<?php include('_header.html');?>
+<?php
+include('_header.html');
+// security stuff
+require_once("config/db.php");
+require_once("classes/Login.php");
+$login = new Login();
+if ($login->isUserLoggedIn() !== true) {
+    include("views/not_logged_in.php");
+    include('_footer.html');
+    die();
+}
+
+?>
+
 
 
 <h1>Create New Campaign - Step 1</h1>
