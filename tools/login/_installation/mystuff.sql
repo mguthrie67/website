@@ -1,7 +1,10 @@
 create database wayscoma_campaign_dev;
+
+drop table wayscoma_campaign_dev.campaign;
 create table wayscoma_campaign_dev.campaign (
 
   campaign_id int NOT NULL AUTO_INCREMENT,
+  campaign_ref varchar(10) NOT NULL,
   title varchar(80) NOT NULL,
   description varchar(400) NOT NULL,
   start datetime NOT NULL,

@@ -145,12 +145,14 @@ if (isset($_POST['event'])) {
 
         $first=trim(explode(' ',$name)[0]);
 
+        $nicestart=date("l jS \o\\f F Y \a\\t ga",strtotime($start));
+
     # to them
         $headers = "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-type:text/html;charset=iso-8859-1" . "\r\n";
         $headers .= "From: 17 Ways Events <events@17ways.com.au>\r\n";
         $message = "<p style='font-family:Verdana;font-size:13px;'>";
-        $message .= "Dear " . $first . ",<br><br>Confirming your attendance at the 17 Ways event on " . $start . ". <br><br>Looking forward to seeing you there!<br><br>The 17 Ways Team";
+        $message .= "Dear " . $first . ",<br><br>Confirming your attendance at the 17 Ways event on " . $nicestart . ". <br><br>Looking forward to seeing you there!<br><br>The 17 Ways Team";
  #       @mail($email, "17 Ways Event Confirmation: " . $title , $message,$headers);
         @mail("mark.guthrie@17ways.com.au", "17 Ways Event Confirmation: " . $title , $message,$headers);
 
@@ -177,15 +179,15 @@ if (isset($_POST['event'])) {
 ###########################################################
 
     if(isset($_GET['event'])) {
-        $id=$_GET['event'];
+        $ref=$_GET['event'];
         $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_CAMPAIGN);
 
-        $sql = "select title, description,start,finish,location
+        $sql = "select campaign_id,title, description,start,finish,location
                  from campaign
-                 where campaign_id=$id";
+                 where campaign_ref='$ref'";
 
         if(!$results = $db->query($sql)){
-            echo "<h1>Oops! No matching event found</h1>";
+            echo "<h1>Oops!! No matching event found</h1>";
             echo "Please contact us to find out about upcoming events.";
         } else {
 
@@ -194,11 +196,12 @@ if (isset($_POST['event'])) {
             echo "Please contact us to find out about upcoming events.";
             } else {
                 $row=mysqli_fetch_row($results);
-                $title=$row[0];
-                $description=str_replace("\n", "<br>", $row[1]);
-                $start=$row[2];
-                $finish=$row[3];
-                $location=$row[4];
+                $id=$row[0];
+                $title=$row[1];
+                $description=str_replace("\n", "<br>", $row[2]);
+                $start=$row[3];
+                $finish=$row[4];
+                $location=$row[5];
 
 
 
