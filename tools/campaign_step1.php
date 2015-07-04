@@ -1,9 +1,9 @@
 <?php
-include('_header.html');
 // security stuff
 require_once("config/db.php");
 require_once("classes/Login.php");
 $login = new Login();
+include('_header.html');
 if ($login->isUserLoggedIn() !== true) {
     include("views/not_logged_in.php");
     include('_footer.html');
@@ -24,28 +24,29 @@ if ($login->isUserLoggedIn() !== true) {
 <table>
     <tr>
         <td>Title
-        <td><input class="span7" type="text" name="title" value=""  required/>
+        <td><input class="span7" type="text" name="title" value="" maxlength="80" required/>
     </tr>
     <tr>
         <td>Description
-        <td><textarea input class="span7" name="description" value=""  rows="6" cols="30" required/></textarea>
+        <td><textarea input class="span7" name="description" value="" maxlength="400" rows="6" cols="30" required/></textarea>
     </tr>
     <tr>
     <tr>
         <td>Start
-        <td><input class="span7" type="text" name="start" value="" placeholder="Change me to a date and time  picker" required/>
+        <td><input class="span7" type="text" id ="datepicker" name="start" value="" placeholder="YYYY-MM-DD HH:MM:SS" required/>
     </tr>
     <tr>
         <td>Finish
-        <td><input class="span7" type="text" name="finish" value="" placeholder="Change me to a date and time  picker" required/>
+        <td><input class="span7" type="text" id="datepicker2" name="finish" value="" placeholder="YYYY-MM-DD HH:MM:SS" required/>
     </tr>
         <td>Location
-        <td><input class="span7" type="text" name="location" value=""  required/>
+        <td><input id="location" class="span7" type="text" name="location" value="" maxlength="100"  onkeydown="updateMap()" required/>
     </tr>
 </table>
 
-<div id="map"><iframe width="100%" height="310" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-                      src="https://www.google.com.au/maps/place/The+Royal+George,+320+George+St,+Sydney+NSW+2000"></iframe><br />
+
+<div id="map">
+
 </div>
 
 

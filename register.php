@@ -87,8 +87,25 @@
 			</div>
 			<div class="container">
 
+
 <?php
+
+###########################################
+# PHP Code
+###########################################
 require_once("tools/config/db.php");
+
+function NotSafe($string)
+{
+    if(preg_match('/[^a-zA-Z0-9. +@_]/', $string) == 0)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
 
 # we are either linked to with a get register.php?event=23, or we are calling ourselves with a post (hidden parameters)
 # for the first we show a form, for the second we just register
@@ -99,10 +116,18 @@ if (isset($_POST['event'])) {
     $email=$_POST['email'];
     $phone=$_POST['phone'];
 
+
+    if (NotSafe($event) || NotSafe($name) || NotSafe($email) || NotSafe($phone)) {
+        echo "Invalid characters in input. Please remove any special characters and try again.";
+        die();
+    }
+
 # update entry
+    date_default_timezone_set("Australia/Sydney");
+    $now=date("Y-m-d H:i:s");
     $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_CAMPAIGN);
     $sql = "INSERT INTO event_registration (campaign_id, name, email, phone, date_of_registration)
-            VALUES($event, '$name', '$email', '$phone', '1967-05-03 12:00:00')";
+            VALUES($event, '$name', '$email', '$phone', '$now')";
 
     if (mysqli_query($db, $sql)) {
 
@@ -125,22 +150,24 @@ if (isset($_POST['event'])) {
         $headers .= "Content-type:text/html;charset=iso-8859-1" . "\r\n";
         $headers .= "From: 17 Ways Events <events@17ways.com.au>\r\n";
         $message = "<p style='font-family:Verdana;font-size:13px;'>";
-        $message .= "Dear " . $first . ",<br>Confirming your attendance at the 17 Ways event on " . $start . ". <br><br>Looking forward to seeing you there!<br><br>The 17 Ways Team";
-#        @mail($email, "17 Ways Event Confirmation: " . $title , $message,$headers);
+        $message .= "Dear " . $first . ",<br><br>Confirming your attendance at the 17 Ways event on " . $start . ". <br><br>Looking forward to seeing you there!<br><br>The 17 Ways Team";
+ #       @mail($email, "17 Ways Event Confirmation: " . $title , $message,$headers);
         @mail("mark.guthrie@17ways.com.au", "17 Ways Event Confirmation: " . $title , $message,$headers);
 
     # to us
         $message = "<p style='font-family:Verdana;font-size:13px;'>";
         $message .= "New attendee: $name ($email : $phone)";
-#        @mail($email, "17 Ways Event Confirmation: " . $title , $message,$headers);
-        @mail(MAIL_GROUP, "17 Ways Event Confirmation: " . $title , $message,$headers);
+#        @mail('"' . MAIL_GROUP . '"', "17 Ways Event Confirmation: " . $title , $message,$headers);
+        @mail("mark.guthrie@17ways.com.au", "17 Ways Event Confirmation: " . $title , $message,$headers);
 
 
         echo "Thank you for registering, " . $first . ".";
         echo "<br><br>A confirmation email has been sent to you.";
+        echo "<br><br><a href='calendar.php?event=" . $event . "'>Click here to download a calendar invite as a reminder.<br><br><img src='images/tools/ics.png'></a>";
+
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($db);
-        echo "Sorry. An error has occurred. Please call us on 1300 17WAYS or email us at <a href='mailto:events@17ways.com.au'>events@17ways.com.au</a> to confirm your registration.";
+        echo "<br><br>Sorry. An error has occurred. Please call us on 1300 17WAYS or email us at <a href='mailto:events@17ways.com.au'>events@17ways.com.au</a> to confirm your registration.";
     }
 
 } else {
@@ -176,8 +203,11 @@ if (isset($_POST['event'])) {
 
 
                 echo "<h1>$title</h1>";
+                echo "<p>Starts: " . $start . "</p>";
+                echo "<p>Ends: " . $finish . "</p>";
                 echo "<p>$description</p>";
 
+                echo "<h3>Register Now!</h3>";
                 echo '<div id="fields">';
                 echo '<form method="post">';
                 echo '<input type="hidden" name="event" value="' . $id . '">';
@@ -185,7 +215,7 @@ if (isset($_POST['event'])) {
                 echo '<input class="span7" type="text" name="email" value="" placeholder="Email (required)" required/>';
                 echo '<input class="span7" type="text" name="phone" value="" placeholder="Phone number (required)" required/>';
                 echo '<div class="clear"></div>';
-                echo '<input type="submit" class="contact_btn" value="Submit" />';
+                echo '<input type="submit" class="contact_btn" value="Register" />';
                 echo '<div class="clear"></div>';
                 echo '</form>';
                 echo '</div>';
@@ -196,8 +226,8 @@ if (isset($_POST['event'])) {
 
                 echo '<div id="map"><iframe width="100%" height="310" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"';
                 echo 'src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBimDKYQtLr5Us6EbldvgtMqROoYrXAn9U&q=' . $location . '"></iframe><br />';
-                echo '<small><a href="https://www.google.com.au/maps/place/167+Phillip+St,+Sydney+NSW+2000">View Larger Map</a></small></div>';
-                echo '</div>';
+                echo '<small><a href="https://www.google.com.au/maps/place/' . $location . '">View Larger Map</a></small></div>';
+                #echo '</div>';
             }
         }
     } else {

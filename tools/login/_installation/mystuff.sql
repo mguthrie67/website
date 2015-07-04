@@ -17,7 +17,7 @@ create table wayscoma_campaign_dev.event_registration (
   campaign_id int NOT NULL,
   name varchar(100) NOT NULL,
   email varchar(100) NOT NULL,
-  phone varchar(15) NOT NULL,
+  phone varchar(20) NOT NULL,
   date_of_registration datetime NOT NULL,
   PRIMARY KEY (id)
 );

@@ -1,9 +1,9 @@
 <?php
-include('_header.html');
 // security stuff
 require_once("config/db.php");
 require_once("classes/Login.php");
 $login = new Login();
+include('_header.html');
 if ($login->isUserLoggedIn() !== true) {
     include("views/not_logged_in.php");
     include('_footer.html');
@@ -25,7 +25,7 @@ $sql = "INSERT INTO campaign (title, description,start,finish,location)
 VALUES ('$title','$description','$start','$finish','$location')";
 
 if (mysqli_query($db, $sql)) {
-    echo "New record created successfully";
+    echo " ";
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($db);
     die();
@@ -42,7 +42,7 @@ $row=mysqli_fetch_row($results);
 $campaign_id=$row[0];
 
 echo "<h2>Congratulations! Your Campaign has been created.</h2>\n";
-echo "<p>Use this URL to register: <a href='http://17ways.com.au/register.php?event=$campaign_id'>http://17ways.com.au/register?event=$campaign_id</a><p>\n";
+echo "<p>Use this URL to register: <a href='http://17ways.com.au/register.php?event=$campaign_id'>http://17ways.com.au/register.php?event=$campaign_id</a><p>\n";
 echo "<h3>Details</h3>\n";
 echo "<table><tr><td>Title<td>$title</tr>\n";
 echo "<tr><td>Description<td>$description</tr>\n";

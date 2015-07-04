@@ -219,11 +219,20 @@ function toggle(elementId) {
 // close everything
 
         for (i = 1; i < 8; i++) {
-            var e = document.getElementById("question" + i)
+            var e = document.getElementById("question" + i);
             e.style.display = "none";
         }
 
 // open this one
         ele.style.display = "block";
+    }
+}
+
+function updateMap() {
+    var loc = document.getElementById("location").value;
+    loc=loc.replace(" ", "+");
+
+    if (loc.length>8) {
+        document.getElementById("map").innerHTML = "<iframe width='100%' height='310' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://www.google.com/maps/embed/v1/search?key=AIzaSyBimDKYQtLr5Us6EbldvgtMqROoYrXAn9U&q=" + loc + "'></iframe><br />";
     }
 }
