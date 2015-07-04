@@ -68,33 +68,27 @@ echo "</table>\n";
 <input type="button" id="atButton" value="Send Email to Attendees" onclick="document.getElementById('addattendees').style.display = 'block'; document.getElementById('atButton').style.display = 'none';">
 
 <div id="addattendees" style="display: none;">
-<br><br>
-
+<h2>Compose Email</h2>
     <div id="fields">
         <form action="campaign_step3.php" method="post">
 
 <table>
     <tr>
-        <td>Title
-        <td><input class="span7" type="text" name="title" value="" maxlength="80" required/>
+        <td>Subject
+        <td><input class="span7" type="text" id="subject" name="subject" value="" maxlength="80" required/>
     </tr>
     <tr>
-        <td>Description
-        <td><textarea input class="span7" name="description" value="" maxlength="400" rows="6" cols="30" required/></textarea>
+        <td>Text
+        <td><textarea input class="span7" id="body" name="body" value="" maxlength="4000" rows="6" cols="30" required/></textarea>
     </tr>
     <tr>
-    <tr>
-        <td>Start
-        <td><input class="span7" type="text" id ="datepicker" name="start" value="" placeholder="YYYY-MM-DD HH:MM:SS" required/>
-    </tr>
-    <tr>
-        <td>Finish
-        <td><input class="span7" type="text" id="datepicker2" name="finish" value="" placeholder="YYYY-MM-DD HH:MM:SS" required/>
-    </tr>
-        <td>Location
-        <td><input id="location" class="span7" type="text" name="location" value="" maxlength="100"  onkeydown="updateMap()" required/>
-    </tr>
 </table>
+
+    <div class="clear"></div>
+    <input type="submit" class="contact_btn" value="Test" onclick="sendTestMail(); return false;"/>
+    <div class="clear"></div>
+
+<div id="StatusArea"></div>
 
 </div>
 </div>

@@ -236,3 +236,19 @@ function updateMap() {
         document.getElementById("map").innerHTML = "<iframe width='100%' height='310' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://www.google.com/maps/embed/v1/search?key=AIzaSyBimDKYQtLr5Us6EbldvgtMqROoYrXAn9U&q=" + loc + "'></iframe><br />";
     }
 }
+
+function sendTestMail() {
+    var xmlhttp = new XMLHttpRequest();
+    var vars = "subject="+document.getElementById("subject").value+"&body="+document.getElementById("body").value;
+
+    document.getElementById("StatusArea").innerHTML = "Trying...";
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            document.getElementById("StatusArea").innerHTML = xmlhttp.responseText;
+        }
+    }
+    xmlhttp.open("POST", "sendmail.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send(vars);
+}

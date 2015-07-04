@@ -40,7 +40,7 @@ if ($login->isUserLoggedIn() !== true) {
         <td><input class="span7" type="text" id="datepicker2" name="finish" value="" placeholder="YYYY-MM-DD HH:MM:SS" required/>
     </tr>
         <td>Location
-        <td><input id="location" class="span7" type="text" name="location" value="" maxlength="100"  onkeydown="updateMap()" required/>
+        <td><input id="location" class="span7" type="text" name="location" value="" maxlength="100"  onkeyup="updateMap()" required/>
     </tr>
 </table>
 
