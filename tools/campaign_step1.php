@@ -14,26 +14,12 @@ if ($login->isUserLoggedIn() !== true) {
 
 
 
-<h1>Create New Campaign - Step 1</h1>
+<h1>Create New Campaign - Step 1. Basic Information</h1>
 
 
 
     <div id="fields">
         <form action="campaign_step2.php" method="post">
-
-<?php
-
-// Get next campaign number by looking in the file system
-
-// items in the mailout directory
-$files=array_diff(scandir("../mailout"), array('..','.','dev'));
-$top=intval(max($files));
-$top=$top+1;
-$next=sprintf("%'.03d", $top);
-
-echo '<input type="hidden" name="campaign" value="' . $next . '">';
-?>
-
 
 <table>
     <tr>
@@ -46,11 +32,15 @@ echo '<input type="hidden" name="campaign" value="' . $next . '">';
     </tr>
     <tr>
     <tr>
-        <td>When
-        <td><input class="span7" type="text" name="when" value="" placeholder="Change me to a date and time  picker" required/>
+        <td>Start
+        <td><input class="span7" type="text" name="start" value="" placeholder="Change me to a date and time  picker" required/>
     </tr>
-        <td>Where
-        <td><input class="span7" type="text" name="where" value=""  required/>
+    <tr>
+        <td>Finish
+        <td><input class="span7" type="text" name="finish" value="" placeholder="Change me to a date and time  picker" required/>
+    </tr>
+        <td>Location
+        <td><input class="span7" type="text" name="location" value=""  required/>
     </tr>
 </table>
 
