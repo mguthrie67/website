@@ -203,17 +203,18 @@ if (isset($_POST['event'])) {
                 $finish=$row[4];
                 $location=$row[5];
 
-
+                $nicestart=date("l jS \o\\f F Y \a\\t ga",strtotime($start));
+                $nicefinish=date("l jS \o\\f F Y \a\\t ga",strtotime($finish));
 
                 echo "<h1>$title</h1>";
-                echo "<p>Starts: " . $start . "</p>";
-                echo "<p>Ends: " . $finish . "</p>";
+                echo "<p>Starts: " . $nicestart . "</p>";
+                echo "<p>Ends: " . $nicefinish . "</p>";
                 echo "<p>$description</p>";
 
                 echo "<h3>Register Now!</h3>";
                 echo '<div id="fields">';
                 echo '<form method="post">';
-                echo '<input type="hidden" name="event" value="' . $id . '">';
+                echo '<input type="hidden" name="event" value="' . $event . '">';
                 echo '<input class="span7" type="text" name="name" value="" placeholder="Name (required)" required />';
                 echo '<input class="span7" type="text" name="email" value="" placeholder="Email (required)" required/>';
                 echo '<input class="span7" type="text" name="phone" value="" placeholder="Phone number (required)" required/>';
