@@ -35,6 +35,41 @@ class crm
         #$contacts = $i->getContacts(array("ids" => array('FIRST_NAME=\'Brian\'')));
     }
 
+/*******************************
+* get name, company by id      *
+*******************************/
+    public function getContactbyId($id)
+    {
+        $c = $this->insightly->getContact($id);
+
+        $orgname="Unknown";
+
+        if (is_numeric($c->DEFAULT_LINKED_ORGANISATION)) {
+            $orgname = $this->getOrganisationfromId($c->DEFAULT_LINKED_ORGANISATION);
+        }
+
+        $array = array(
+            "id" => $id,
+            "name" => $c->FIRST_NAME . " " . $c->LAST_NAME,
+            "organisation" => $orgname,
+        );
+
+        $cinfo=$c->CONTACTINFOS;
+
+        foreach ($cinfo as $con) {
+            if (strcasecmp($con->TYPE,"EMAIL")==0  && strcasecmp($con->LABEL,"WORK")==0) {
+                $array["email"] = $con->DETAIL;
+            }
+        }
+
+        return $array;
+
+    }
+
+
+
+
+
 
 /*******************************
 * get name, id, company by tag *
@@ -47,6 +82,38 @@ class crm
         );
 
         $contacts = $this->insightly->getContacts($array);
+
+        return $this->parseContactList($contacts);
+
+    }
+
+/***********************************
+* get name, id, company by project *
+***********************************/
+    public function getContactsbyProject($projectId)
+    {
+
+        $proj = $this->insightly->getProject($projectId);
+
+        $ret=array();
+
+        $ids=array();
+
+// get all of the ids and call the API once - too slow otherwise
+        foreach ($proj->LINKS as $l) {
+            array_push($ids, $l->CONTACT_ID);
+        }
+
+// Get details for ids
+        $contacts = $this->insightly->getContacts($array);
+
+        return $this->parseContactList($contacts);
+
+    }
+
+
+    public function parseContactList($contacts)
+    {
 
         $ret=array();
 
@@ -75,25 +142,22 @@ class crm
 
         }
 
-     return $ret;
+        return $ret;
 
     }
 
-/***********************************
-* get name, id, company by project *
-***********************************/
-    public function getContactsbyProject($projectId)
-    {
 
-        $proj = $this->insightly->getProject($projectId);
+    public function test() {
 
-        $ret=array();
+       $ids = array(124650965, 124650937);
 
-        foreach ($proj->LINKS as $l) {
-            array_push($ret, $l->CONTACT_ID);
-        }
+       $array = array(
+            "ids" => $ids,
+        );
 
-     return $ret;
+        $contacts = $this->insightly->getContacts($array);
+
+        var_dump($contacts);
 
     }
 

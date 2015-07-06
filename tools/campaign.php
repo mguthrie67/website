@@ -11,14 +11,22 @@ include('_header.html');
 #    die();
 #}
 
-echo "<h3>Security is off</h3>";
+#echo "<h3>Security is off</h3>";
 
 $crm = new crm();
+
+#$dets = $crm->getContactbyId(124650965);
+
+#var_dump($dets);
+
+#die();
 
 $dets = $crm->getContactsbyProject(2378067);
 
 var_dump($dets);
 
+
+#$crm->test();
 
 die();
 
