@@ -3,6 +3,8 @@
 /*************************************
  * Class crm
  * handles the Insightly stuff
+ * provides a higher level API than
+ * Insightly gives us.
  *************************************/
 class crm
 {
@@ -26,11 +28,8 @@ class crm
 *******************************/
     public function getOrganisationfromId($id)
     {
-#        $org = $this->insightly->getOrganizations(array("ids" => array('0=\'$id\'')));
         $org = $this->insightly->getOrganization($id);
         return $org->ORGANISATION_NAME;
-
-#        var_dump($org);
 
         #$contacts = $i->getContacts(array("ids" => array('FIRST_NAME=\'Brian\'')));
     }
@@ -68,9 +67,6 @@ class crm
 
 
 
-
-
-
 /*******************************
 * get name, id, company by tag *
 *******************************/
@@ -95,8 +91,6 @@ class crm
 
         $proj = $this->insightly->getProject($projectId);
 
-        $ret=array();
-
         $ids=array();
 
 // get all of the ids and call the API once - too slow otherwise
@@ -111,8 +105,78 @@ class crm
 
     }
 
-
+#####
+##
+## Take a contact list and return the bits we want
+## including looking the company name from the id
+##
+#####
     public function parseContactList($contacts)
+    {
+
+        $name=array();
+        $org=array();
+        $email=array();
+
+        foreach ($contacts as $c) {
+
+// build the easy bit
+
+            $id=$c->CONTACT_ID;
+            $name[$id] => $c->FIRST_NAME . " " . $c->LAST_NAME;
+
+// Get the email if we have one
+
+            $cinfo=$c->CONTACTINFOS;
+            foreach ($cinfo as $con) {
+                if ($con->TYPE=="EMAIL"  && $con->LABEL=="WORK") {
+                    $email[$id] = $con->DETAIL;
+                }
+            }
+        }
+
+// Now get the company name
+
+// get all of the ids and call the API once - too slow otherwise
+// Slight problem is that some people don't have a company and the API
+// will blow up if we give it an invalid company so we need to have a list
+// of company ids mapped to contacts
+
+        $ids=array();
+
+        foreach ($contacts as $c) {
+
+            if (is_numeric($c->DEFAULT_LINKED_ORGANISATION)) {
+                array_push($ids, $c->DEFAULT_LINKED_ORGANISATION);
+            }
+
+        }
+
+// now we have our list of org ids - call API
+
+        $orgs=$this->insightly->getOrganizations($ids);
+
+// gives us a list of orgs - strip out names
+                    foreach ($proj->LINKS as $l) {
+                        array_push($ids, $l->CONTACT_ID);
+                    }
+
+            // Get details for ids
+                    $contacts = $this->insightly->getContacts($array);
+
+                    return $this->parseContactList($contacts);
+
+
+
+            array_push($ret, $array);
+
+        }
+
+        return $ret;
+
+    }
+
+    public function parseContactListOLD($contacts)
     {
 
         $ret=array();

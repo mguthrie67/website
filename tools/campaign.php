@@ -1,5 +1,9 @@
 <?php
 // security stuff
+
+
+// Test module for crm class
+
 require_once("config/db.php");
 require_once("classes/Login.php");
 require_once("classes/crm.php");
@@ -15,21 +19,29 @@ include('_header.html');
 
 $crm = new crm();
 
+####
+# Get a single contact
+#
+# Works ok
+###
 #$dets = $crm->getContactbyId(124650965);
-
 #var_dump($dets);
-
 #die();
 
-$dets = $crm->getContactsbyProject(2378067);
+####
+# Get a list of contacts by project
+#
+# Not working yet - project call returns id of company not name. Need a fast way to get this.
+####
+#$dets = $crm->getContactsbyProject(2378067);
+#var_dump($dets);
 
-var_dump($dets);
-
-
-#$crm->test();
-
-die();
-
+#####
+#
+# Get contact by tag
+#
+# Works ok
+#####
 $dets = $crm->getContactsbyTag("Type-Provider");
 
 foreach ($dets as $d) {
@@ -39,8 +51,6 @@ foreach ($dets as $d) {
     echo "<p>Organisation: " . $d["organisation"] . "</p>";
 }
 
-
-// var_dump($contacts);
 
 ?>
 
