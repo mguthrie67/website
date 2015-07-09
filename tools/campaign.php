@@ -34,7 +34,9 @@ $crm = new crm();
 # Not working yet - project call returns id of company not name. Need a fast way to get this.
 ####
 #$dets = $crm->getContactsbyProject(2378067);
+#$dets = $crm->getContactsbyProject(2495408);
 #var_dump($dets);
+#die();
 
 #####
 #
@@ -42,6 +44,9 @@ $crm = new crm();
 #
 # Works ok
 #####
+
+echo "<h1>Get by Tag</h1>";
+
 $dets = $crm->getContactsbyTag("Type-Provider");
 
 foreach ($dets as $d) {
@@ -50,6 +55,19 @@ foreach ($dets as $d) {
     echo "<p>Email: " . $d["email"] . "</p>";
     echo "<p>Organisation: " . $d["organisation"] . "</p>";
 }
+
+echo "<h1>Get by Project</h1>";
+
+$dets = $crm->getContactsbyProject(2495408);
+foreach ($dets as $d) {
+    echo "<h3>" . $d["name"] . "</h3>";
+    echo "<p>ID: " . $d["id"] . "</p>";
+    echo "<p>Email: " . $d["email"] . "</p>";
+    echo "<p>Organisation: " . $d["organisation"] . "</p>";
+}
+
+
+
 
 
 ?>

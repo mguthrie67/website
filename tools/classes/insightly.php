@@ -497,6 +497,46 @@ class Insightly{
     return $request->asJSON();
   }
 
+
+
+    public function FixedgetOrganizations($options = null){
+      $email = isset($options["email"]) ? $options["email"] : null;
+      $tag = isset($options["tag"]) ? $options["tag"] : null;
+      $ids = isset($options["ids"]) ? $options["ids"] : null;
+
+      $request = $this->GET("/v2.1/Organizations");
+
+      // handle standard OData options
+      $this->buildODataQuery($request, $options);
+
+      // handle other options
+      if($email != null){
+        $request->queryParam("email", $email);
+      }
+      if($tag != null){
+        $request->queryParam("tag", $tag);
+      }
+      if($ids != null){
+        $s = "";
+        foreach($ids as $key => $value){
+          if($key > 0){
+            $s = $s . ",";
+          }
+          $s = $s . $value;
+        }
+        $request->queryParam("ids", $s);
+      }
+
+      return $request->asJSON();
+    }
+
+
+
+
+
+
+
+
   public function getOrganization($id){
     return $this->GET("/v2.1/Organisations/$id")->asJSON();
   }
