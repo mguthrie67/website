@@ -12,6 +12,9 @@ include('_header.html');
 
 ?>
 
+
+  <script type="text/javascript" src="../js/custom.js"></script>
+
   <script type="text/javascript" src="../js/bower_components/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="../js/bower_components/moment/min/moment.min.js"></script>
   <script type="text/javascript" src="../js/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -28,21 +31,12 @@ include('_header.html');
     <div id="fields">
         <form action="campaign_step2.php" method="post">
 
-<div class="container">
-    <div class="row">
-        <div class='col-sm-6'>
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
-        </div>
         <script type="text/javascript">
             $(function () {
-                $('#datetimepicker1').datetimepicker();
+                $('#datetimepickerstart').datetimepicker();
+            });
+            $(function () {
+                $('#datetimepickerfinish').datetimepicker();
             });
         </script>
     </div>
@@ -55,17 +49,34 @@ include('_header.html');
         <td><input class="span7" type="text" name="title" value="" maxlength="80" required/>
     </tr>
     <tr>
-        <td>Description
+        <td>Description&nbsp;
         <td><textarea input class="span7" name="description" value="" maxlength="400" rows="6" cols="30" required/></textarea>
     </tr>
     <tr>
     <tr>
         <td>Start
-        <td><input class="span7" type="text" id ="datepicker" name="start" value="" placeholder="YYYY-MM-DD HH:MM:SS" required/>
+        <td>
+
+                        <div class='input-group date' id='datetimepickerstart'>
+                            <input type='text' class="form-control" name="start"/>
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+
+
+
     </tr>
     <tr>
         <td>Finish
-        <td><input class="span7" type="text" id="datepicker2" name="finish" value="" placeholder="YYYY-MM-DD HH:MM:SS" required/>
+        <td>
+
+                        <div class='input-group date' id='datetimepickerfinish'>
+                            <input type='text' class="form-control" name="finish"/>
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+
+
     </tr>
         <td>Location
         <td><input id="location" class="span7" type="text" name="location" value="" maxlength="100"  onkeyup="updateMap()" required/>
@@ -116,15 +127,6 @@ include('_header.html');
 </div>
 <!--//footer-->
 
-<script type="text/javascript" src="../js/bower_components/jquery.easing/js/jquery.easing.min.js"></script>
-<script type="text/javascript" src="../js/jquery.mobile.customized.min.js"></script>
-<script src="../js/bootstrap.js"></script>
-<script src="../js/superfish.js"></script>
-<script type="text/javascript" src="../js/jquery.prettyPhoto.js"></script>
-<script src="../js/htweet.js" type="text/javascript"></script>
-<script type="text/javascript" src="../js/custom.js"></script>
-
-  <!-- ... -->
 
 
 </body>
