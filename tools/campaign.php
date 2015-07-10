@@ -53,7 +53,7 @@ foreach ($dets as $d) {
     echo "<h3>" . $d["name"] . "</h3>";
     echo "<p>ID: " . $d["id"] . "</p>";
     echo "<p>Email: " . $d["email"] . "</p>";
-    echo "<p>Organisation: " . $d["organisation"] . "</p>";
+    echo "<p>Organisation: " . $d["org"] . "</p>";
 }
 
 echo "<h1>Get by Project</h1>";
@@ -63,7 +63,7 @@ foreach ($dets as $d) {
     echo "<h3>" . $d["name"] . "</h3>";
     echo "<p>ID: " . $d["id"] . "</p>";
     echo "<p>Email: " . $d["email"] . "</p>";
-    echo "<p>Organisation: " . $d["organisation"] . "</p>";
+    echo "<p>Organisation: " . $d["org"] . "</p>";
 }
 
 

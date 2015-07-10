@@ -91,19 +91,12 @@ class crm
 
         $proj = $this->insightly->getProject($projectId);
 
-        echo "<h1>" . $proj->PROJECT_NAME . "</h1>\n\n";
-
         $ids=array();
 
 // get all of the ids and call the API once - too slow otherwise
         foreach ($proj->LINKS as $l) {
             array_push($ids, $l->CONTACT_ID);
         }
-
-        echo "<h2>Calling GetContacts with these ids</h2>\n\n";
-
-        print_r($ids);
-
 
 // Get details for ids
 
@@ -125,12 +118,6 @@ class crm
 #####
     public function parseContactList($contacts)
     {
-
-        echo "<h2>Inside parseContactList - was given:</h2>\n\n";
-
-        print_r($contacts);
-
-        echo "<h3>-----</h3>";
 
         $name=array();
         $orgname=array();
@@ -185,15 +172,9 @@ class crm
             "ids" => $orgids,
         );
 
-        print_r($big_ids);
+// API IS BROKEN. FIXED BY COPYING getContacts and changing the url to get getOrganisations
 
         $orgs=$this->insightly->FixedgetOrganizations($big_ids);
-
-        echo "<h1>--------<br>Rsponse from getorg</h1>\n\n";
-
-        print_r($orgs);
-
-        echo "<h1>----</h1>\n\n";
 
 //  get the id to company name mappings out of the json
 
@@ -218,18 +199,14 @@ class crm
 
         $ret=array();
 
-        echo "<h3>Email list</h3>\n\n";
-        print_r($email);
-        echo "<h3>Org list</h3>\n\n";
-        print_r($orgname);
-
-        echo "<h3>....</h3>\n\n";
-
         foreach ($contacts as $c) {
 
             $array=array();
             $array['id']=$c->CONTACT_ID;
             $array['name']=$name[$c->CONTACT_ID];
+
+
+
             if (array_key_exists($c->CONTACT_ID, $orgname)) {
                 $array['org']=$orgname[$c->CONTACT_ID];
             } else {
@@ -246,55 +223,6 @@ class crm
         }
 
         return $ret;
-
-    }
-
-    public function parseContactListOLD($contacts)
-    {
-
-        $ret=array();
-
-        foreach ($contacts as $c) {
-
-            $orgname="Unknown";
-
-            if (is_numeric($c->DEFAULT_LINKED_ORGANISATION)) {
-                $orgname = $this->getOrganisationfromId($c->DEFAULT_LINKED_ORGANISATION);
-            }
-
-            $array = array(
-                "id" => $c->CONTACT_ID,
-                "name" => $c->FIRST_NAME . " " . $c->LAST_NAME,
-                "organisation" => $orgname,
-            );
-
-            $cinfo=$c->CONTACTINFOS;
-            foreach ($cinfo as $con) {
-                if ($con->TYPE=="EMAIL"  && $con->LABEL=="WORK") {
-                    $array["email"] = $con->DETAIL;
-                }
-            }
-
-            array_push($ret, $array);
-
-        }
-
-        return $ret;
-
-    }
-
-
-    public function test() {
-
-       $ids = array(124650965, 124650937);
-
-       $array = array(
-            "ids" => $ids,
-        );
-
-        $contacts = $this->insightly->getContacts($array);
-
-        var_dump($contacts);
 
     }
 

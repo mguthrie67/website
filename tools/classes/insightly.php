@@ -499,12 +499,17 @@ class Insightly{
 
 
 
+
+
+
+
+
     public function FixedgetOrganizations($options = null){
       $email = isset($options["email"]) ? $options["email"] : null;
       $tag = isset($options["tag"]) ? $options["tag"] : null;
       $ids = isset($options["ids"]) ? $options["ids"] : null;
 
-      $request = $this->GET("/v2.1/Organizations");
+      $request = $this->GET("/v2.1/Organisations");
 
       // handle standard OData options
       $this->buildODataQuery($request, $options);
