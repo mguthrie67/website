@@ -16,8 +16,8 @@ date_default_timezone_set("Australia/Sydney");
 
 $title= $_POST["title"];
 $description= $_POST["description"];
-$start=$_POST["start"];
-$finish=$_POST["finish"];
+$start=$_POST["start"] . ":00";           # add seconds on
+$finish=$_POST["finish"] . ":00";
 $location=$_POST["location"];
 
 # connect to DB
