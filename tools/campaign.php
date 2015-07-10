@@ -45,6 +45,7 @@ $crm = new crm();
 # Works ok
 #####
 
+
 echo "<h1>Get by Tag</h1>";
 
 $dets = $crm->getContactsbyTag("Type-Provider");

@@ -77,6 +77,7 @@ class crm
             "tag" => $tag,
         );
 
+
         $contacts = $this->insightly->getContacts($array);
 
         return $this->parseContactList($contacts);

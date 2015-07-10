@@ -1556,6 +1556,7 @@ class InsightlyRequest{
     // This may be useful for debugging
     //curl_setopt($this->curl, CURLOPT_VERBOSE, true);
 
+
     $url =  InsightlyRequest::URL_BASE . $this->url_path . $this->buildQueryString();
     curl_setopt($this->curl, CURLOPT_URL, $url);
     curl_setopt($this->curl, CURLOPT_HTTPHEADER, $this->headers);
