@@ -38,13 +38,6 @@ if (mysqli_query($db, $sql)) {
     die();
 }
 
-# get new id
-#$sql="select max(campaign_id) from campaign";
-#
-#if(!$results = $db->query($sql)){
-#    die('There was an error running the query [' . $db->error . ']');
-#}
-
 #$row=mysqli_fetch_row($results);
 #$campaign_id=$row[0];
 
@@ -62,35 +55,40 @@ echo "<tr><td>Finish<td>$nicefinish</tr>\n";
 echo "<tr><td>Location<td>$location</tr>\n";
 echo "</table>\n";
 
+echo "<br><br>";
+echo "<input type='button' id='atButton' value='Send Email to Attendees' onclick=\"document.getElementById('addattendees').style.display = 'block'; document.getElementById('atButton').style.display = 'none';\">";
+
+# get new id
+$sql="select max(campaign_id) from campaign";
+
+if(!$results = $db->query($sql)){
+    die('There was an error running the query [' . $db->error . ']');
+}
+
+$row=mysqli_fetch_row($results);
+$id=$row[0];
+
+echo "<div id='addattendees' style='display: none;'>";
+echo "<h2>Compose Campaign Email</h2>";
+echo "<table>";
+echo "    <tr>";
+echo "        <td width='40\%'>";
+echo "            <input type='button' value='Easy' onclick=\"parent.location='campaign_step3_easy.php?id=" . $id . "'\">";
+echo "        <td width='20\%'>";
+echo "        <td width='40\%'>";
+echo "            <input type='button' value='Advanced' onclick=\"parent.location='campaign_step3_advanced.php?id=" . $id . "'\">";
+echo "    </tr>";
+echo "    <tr>";
+echo "                <td>The Easy option has all of the basic HTML already defined. You just need to add your text and any pictures";
+echo "                    that you want to include.";
+echo "<td>";
+echo "        <td>The advanced option allows you to write your own HTML.";
+echo "    </tr>";
+echo "</table>";
+
+
+echo "</div>";
+echo "</div>";
+
+include('_footer.html');
 ?>
-
-<br><br>
-<input type="button" id="atButton" value="Send Email to Attendees" onclick="document.getElementById('addattendees').style.display = 'block'; document.getElementById('atButton').style.display = 'none';">
-
-<div id="addattendees" style="display: none;">
-<h2>Compose Email</h2>
-    <div id="fields">
-        <form action="campaign_step3.php" method="post">
-
-<table>
-    <tr>
-        <td>Subject
-        <td><input class="span7" type="text" id="subject" name="subject" value="" maxlength="80" required/>
-    </tr>
-    <tr>
-        <td>Text
-        <td><textarea input class="span7" id="body" name="body" value="" maxlength="4000" rows="6" cols="30" required/></textarea>
-    </tr>
-    <tr>
-</table>
-
-    <div class="clear"></div>
-    <input type="submit" class="contact_btn" value="Test" onclick="sendTestMail(); return false;"/>
-    <div class="clear"></div>
-
-<div id="StatusArea"></div>
-
-</div>
-</div>
-
-<?php include('_footer.html');?>

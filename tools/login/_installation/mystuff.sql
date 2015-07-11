@@ -26,6 +26,14 @@ create table event_registration (
   PRIMARY KEY (id)
 );
 
+drop table event_email;
+create table event_email (
+  campaign_id int NOT NULL,
+  subject varchar(200),
+  body text,
+  PRIMARY KEY (campaign_id)
+);
+
 drop table systememail;
 create table systememail (
 

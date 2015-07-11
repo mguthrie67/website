@@ -107,6 +107,7 @@ if ($login->isUserLoggedIn() !== true) {
 
 
   <script type="text/javascript" src="../js/custom.js"></script>
+  <script type="text/javascript" src="../js/tools.js"></script>
 
   <script type="text/javascript" src="../js/bower_components/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="../js/bower_components/moment/min/moment.min.js"></script>
