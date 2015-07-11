@@ -65,8 +65,37 @@ function uploadFile() {
 }
 
 function testWebMail(id) {
-    var strWindowFeatures = "location=yes,height=570,width=520,scrollbars=yes,status=yes";
-    var URL = "testweb.php?id=" + id +"&subject="+document.getElementById("subject").value+"&body="+document.getElementById("body").value;
-    alert(URL);
-    var win = window.open(URL, "_blank", strWindowFeatures);
+//  Open a window and post to the testweb.php script to show a preview.
+
+
+    var form = document.createElement("form");
+    form.setAttribute("method", "post");
+    form.setAttribute("action", "testweb.php");
+
+// setting form target to a window named 'formresult'
+    form.setAttribute("target", "formresult");
+
+    var field1 = document.createElement("input");
+    field1.setAttribute("name", "subject");
+    field1.setAttribute("value", document.getElementById("subject").value);
+    form.appendChild(field1);
+
+// Can't work out how to use textarea so convert \n to <br> and use a standard input
+
+    var str = document.getElementById("body").value;
+    str = str.replace(/(?:\r\n|\r|\n)/g, '<br />');
+
+    var field2 = document.createElement("input");
+    field2.setAttribute("name", "body");
+    field2.setAttribute("value", str);
+    form.appendChild(field2);
+    document.body.appendChild(form);
+
+// creating the 'formresult' window with custom features prior to submitting the form
+    window.open("testweb.php", 'formresult', 'scrollbars=no,menubar=no,height=800,width=1000,resizable=yes,toolbar=no,status=no');
+
+    form.submit();
+
+
+
 }

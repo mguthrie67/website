@@ -95,6 +95,8 @@
 ###########################################
 require_once("tools/config/db.php");
 
+date_default_timezone_set("Australia/Sydney");
+
 function NotSafe($string)
 {
     if(preg_match('/[^a-zA-Z0-9. +@_]/', $string) == 0)
@@ -214,7 +216,7 @@ if (isset($_POST['event'])) {
                 echo "<h3>Register Now!</h3>";
                 echo '<div id="fields">';
                 echo '<form method="post">';
-                echo '<input type="hidden" name="event" value="' . $event . '">';
+                echo '<input type="hidden" name="event" value="' . $id . '">';
                 echo '<input class="span7" type="text" name="name" value="" placeholder="Name (required)" required />';
                 echo '<input class="span7" type="text" name="email" value="" placeholder="Email (required)" required/>';
                 echo '<input class="span7" type="text" name="phone" value="" placeholder="Phone number (required)" required/>';

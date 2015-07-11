@@ -9,6 +9,7 @@ if ($login->isUserLoggedIn() !== true) {
 }
 
 $subject = $_POST["subject"];
+
 $body = $_POST["body"];
 
 $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_CAMPAIGN);
@@ -25,10 +26,8 @@ $email_after_subject=$row[1];
 $email_after_salutation=$row[2];
 $email_after_message=$row[3];
 
-$message = $email_before_subject . $subject .  $email_after_subject . "<p>Dear Test Person,</p><br>" . $email_after_salutation
-           . $body . $email_after_message;
+$message = $email_before_subject . $subject .  $email_after_subject  . $email_after_salutation . $body . $email_after_message;
 
 echo $message;
-
 
 ?>

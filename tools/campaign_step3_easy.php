@@ -64,7 +64,8 @@ if(!$results = $db->query($sql)){
 if ($results->num_rows==0){
 // no match so set up defaults from campaign information
 
-    $body = "Hi [name],\n\nPlease join us on " . $nicestart . " at " . $location . " for our latest event.\n\n" . $description . "\n\n regards\n\n[me]";
+    $body = "Hi [name],\n\nPlease join us on " . $nicestart . " at " . $location . " for our latest event.\n\nTo register click on this link <a href='http://17ways.com.au/register.php?event=$campaign_ref'>http://17ways.com.au/register.php?event=$campaign_ref</a>"
+     . "\n\n" . $description . "\n\n regards\n\n[me]";
     $subject = $title;
 
 } else {
@@ -122,10 +123,10 @@ echo "    </tr>\n";
 echo "</table><br><br>\n";
 
 echo "    <div class='clear'></div>\n";
-echo "    <input type='submit' class='contact_btn' value='Test Web' onclick='testWebMail(" . $id . "); return false;'/>\n";
-echo "    <input type='submit' class='contact_btn' value='Test Email' onclick='sendTestMail(); return false;'/>\n";
+echo "    <input type='submit' class='contact_btn' value='Preview in Browser' onclick='testWebMail(" . $id . "); return false;'/>\n";
+echo "    <input type='submit' class='contact_btn' value='Preview in Email' onclick='sendTestMail(); return false;'/>\n";
 echo "    <input type='submit' class='contact_btn' value='Save' onclick='saveMail(" . $id . "); return false;'/>\n";
-echo "    <input type='submit' class='contact_btn' value='Next' onclick='sendTestMail(); return false;'/>\n";
+echo "    <input type='submit' class='contact_btn' value='Finish' onclick='sendTestMail(); return false;'/>\n";
 echo "    <div class='clear'></div>\n";
 
 echo "<div id='StatusArea'></div>\n";
