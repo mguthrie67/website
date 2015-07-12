@@ -80,10 +80,9 @@ if ($results->num_rows==0){
 echo "<p>Use this URL to register users : <a href='http://17ways.com.au/register.php?event=$campaign_ref'>http://17ways.com.au/register.php?event=$campaign_ref</a><br><br>Or add attendees below to send them automated emails.<p>\n";
 echo "<h3>Your Campaign</h3>\n";
 echo "<table><tr><td>Title<td>$title</tr>\n";
-echo "<tr><td>Description<td>$description</tr>\n";
 echo "<tr><td>Start<td>$nicestart</tr>\n";
 echo "<tr><td>Finish<td>$nicefinish</tr>\n";
-echo "<tr><td>Location<td>$location</tr>\n";
+echo "<tr><td>Location&nbsp;&nbsp;<td>$location</tr>\n";
 echo "</table>\n";
 
 echo "<br><br>\n";
@@ -96,12 +95,13 @@ echo "Tip: you can use the easy tool to build a basic message and then use the a
 echo "    <div id='fields'>\n";
 echo "        <form action='campaign_step3.php' id='file-form' method='post'>\n";
 
+
 echo "<table>\n";
 
 echo "<tr><td>Sender<td>";
 
-echo "<input type='radio' style='color: black;' name='sender' value='You'>You";
-echo "<input type='radio' style='color: black;' name='sender' value='Events@17ways.com.au'>Events@17ways.com.au</tr>";
+echo "<select id='from' style='font-size: 11px;'> <option value='You'>You";
+echo "<option value='Events@17ways.com.au'>Events@17ways.com.au</select></tr>";
 
 
 echo "    <tr>\n";
@@ -110,7 +110,7 @@ echo "        <td><input class='span7' type='text' id='subject' name='subject' v
 echo "    </tr>\n";
 echo "    <tr>\n";
 echo "        <td>Text\n";
-echo "        <td><textarea input class='span7' id='body' name='body' maxlength='4000' rows='6' cols='30' required/>" . $body . "</textarea>\n";
+echo "        <td><textarea input class='span7' id='body' name='body' maxlength='4000' rows='20' cols='30' required/>" . $body . "</textarea>\n";
 echo "    </tr>\n";
 echo "    <tr>\n";
 echo "        <td>Upload Pictures\n";

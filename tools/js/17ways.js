@@ -1,0 +1,4 @@
+function updateMap() {
+    alert("aaaa");
+}
+

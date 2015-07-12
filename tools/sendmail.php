@@ -8,8 +8,18 @@ if ($login->isUserLoggedIn() !== true) {
     die("Error - not logged in!");
 }
 
+// Get name and email address from session
+$email=$_SESSION["user_email"];
+$name=$_SESSION["user_name"];
+
 $subject = $_POST["subject"];
 $body = $_POST["body"];
+$from=$_POST["from"];
+
+// inject variable
+
+$body = str_replace("[name]", $name, $body);
+$body = str_replace("[me]", $from, $body);
 
 $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_CAMPAIGN);
 
@@ -25,22 +35,14 @@ $email_after_subject=$row[1];
 $email_after_salutation=$row[2];
 $email_after_message=$row[3];
 
-$message = $email_before_subject . $subject .  $email_after_subject . "<p>Dear Test Person,</p><br>" . $email_after_salutation
+$message = $email_before_subject . $subject .  $email_after_subject . $email_after_salutation
            . $body . $email_after_message;
-
-#### TESTING
-
-#$myfile = fopen("c:\\temp\\testmail.html", "w") or die("Unable to open file!");
-#fwrite($myfile, $message);
-#fclose($myfile);
-
-#### TESTING
 
 $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=iso-8859-1" . "\r\n";
 $headers .= "From: 17 Ways Events <events@17ways.com.au>" . "\r\n";
 
- if  (mail("mark.guthrie@17ways.com.au", $subject , $message,$headers)) {
+ if  (mail($email, $subject , $message,$headers)) {
     echo "Mail Sent";
  } else {
     echo "Error sending mail.";

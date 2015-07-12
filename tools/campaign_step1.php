@@ -106,21 +106,21 @@ if ($login->isUserLoggedIn() !== true) {
 
 
 
-  <script type="text/javascript" src="../js/custom.js"></script>
-  <script type="text/javascript" src="../js/tools.js"></script>
+  <script type="text/javascript" src="js/custom.js"></script>
+  <script type="text/javascript" src="js/tools.js"></script>
 
-  <script type="text/javascript" src="../js/bower_components/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="../js/bower_components/moment/min/moment.min.js"></script>
-  <script type="text/javascript" src="../js/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="../js/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+  <script type="text/javascript" src="js/bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bower_components/moment/min/moment.min.js"></script>
+  <script type="text/javascript" src="js/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
 
 
-  <link rel="stylesheet" href="../js/bower_components/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../js/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+  <link rel="stylesheet" href="js/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="js/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
 <!-- Stylesheets -->
-    <link href="../css/bootstrap.css" rel="stylesheet">
-    <link href="../css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="../css/site.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet">
 
 
 <h1>Create New Campaign - Step 1. Basic Information</h1>

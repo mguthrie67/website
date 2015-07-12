@@ -9,7 +9,7 @@ function updateMap() {
 
 function sendTestMail() {
     var xmlhttp = new XMLHttpRequest();
-    var vars = "subject="+document.getElementById("subject").value+"&body="+document.getElementById("body").value;
+    var vars = "subject="+document.getElementById("subject").value+"&body="+document.getElementById("body").value+"&from="+document.getElementById("from").value;
 
     document.getElementById("StatusArea").innerHTML = "Trying...";
 
@@ -89,6 +89,12 @@ function testWebMail(id) {
     field2.setAttribute("name", "body");
     field2.setAttribute("value", str);
     form.appendChild(field2);
+
+    var field3 = document.createElement("input");
+    field3.setAttribute("name", "from");
+    field3.setAttribute("value", document.getElementById("from").value);
+    form.appendChild(field3);
+
     document.body.appendChild(form);
 
 // creating the 'formresult' window with custom features prior to submitting the form

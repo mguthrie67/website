@@ -8,9 +8,18 @@ if ($login->isUserLoggedIn() !== true) {
     die("Error - not logged in!");
 }
 
-$subject = $_POST["subject"];
+// Get name and email address from session
+$email=$_SESSION["user_email"];
+$name=$_SESSION["user_name"];
 
+$subject = $_POST["subject"];
 $body = $_POST["body"];
+$from=$_POST["from"];
+
+// inject variable
+
+$body = str_replace("[name]", $name, $body);
+$body = str_replace("[me]", $from, $body);
 
 $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_CAMPAIGN);
 
