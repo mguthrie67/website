@@ -109,7 +109,7 @@ echo "        <td>Subject\n";
 echo "        <td><input class='span7' type='text' id='subject' name='subject' value='" . $subject . "' maxlength='80' required/>\n";
 echo "    </tr>\n";
 echo "    <tr>\n";
-echo "        <td>Text\n";
+echo "        <td style='vertical-align: top;'>Text\n";
 echo "        <td><textarea input class='span7' id='body' name='body' maxlength='4000' rows='20' cols='30' required/>" . $body . "</textarea>\n";
 echo "    </tr>\n";
 echo "    <tr>\n";
@@ -126,7 +126,7 @@ echo "    <div class='clear'></div>\n";
 echo "    <input type='submit' class='contact_btn' value='Preview in Browser' onclick='testWebMail(" . $id . "); return false;'/>\n";
 echo "    <input type='submit' class='contact_btn' value='Preview in Email' onclick='sendTestMail(); return false;'/>\n";
 echo "    <input type='submit' class='contact_btn' value='Save' onclick='saveMail(" . $id . "); return false;'/>\n";
-echo "    <input type='submit' class='contact_btn' value='Finish' onclick='sendTestMail(); return false;'/>\n";
+echo "    <input type='submit' class='contact_btn' value='Next' onclick='sendTestMail(); return false;'/>\n";
 echo "    <div class='clear'></div>\n";
 
 echo "<div id='StatusArea'></div>\n";

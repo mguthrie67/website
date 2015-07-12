@@ -18,7 +18,7 @@ function sendTestMail() {
             document.getElementById("StatusArea").innerHTML = xmlhttp.responseText;
         }
     }
-    xmlhttp.open("POST", "sendmail.php", true);
+    xmlhttp.open("POST", "campaign_sendmail.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send(vars);
 }
@@ -34,7 +34,7 @@ function saveMail(id) {
             document.getElementById("StatusArea").innerHTML = xmlhttp.responseText;
         }
     }
-    xmlhttp.open("POST", "saveemail.php", true);
+    xmlhttp.open("POST", "campaign_saveemail.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send(vars);
 }
@@ -51,7 +51,7 @@ function uploadFile() {
 //    var fileData = new FormData(document.getElementById("fileToUpload"));
     var xhr = new XMLHttpRequest();
 
-    xhr.open("POST", "uploadImage.php", true);
+    xhr.open("POST", "campaign_uploadImage.php", true);
 //    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 //    xhr.setRequestHeader('Accept', 'application/json');
 
@@ -70,7 +70,7 @@ function testWebMail(id) {
 
     var form = document.createElement("form");
     form.setAttribute("method", "post");
-    form.setAttribute("action", "testweb.php");
+    form.setAttribute("action", "campaign_testweb.php");
 
 // setting form target to a window named 'formresult'
     form.setAttribute("target", "formresult");
@@ -98,7 +98,7 @@ function testWebMail(id) {
     document.body.appendChild(form);
 
 // creating the 'formresult' window with custom features prior to submitting the form
-    window.open("testweb.php", 'formresult', 'scrollbars=no,menubar=no,height=800,width=1000,resizable=yes,toolbar=no,status=no');
+    window.open("campaign_testweb.php", 'formresult', 'scrollbars=no,menubar=no,height=800,width=1000,resizable=yes,toolbar=no,status=no');
 
     form.submit();
 

@@ -79,6 +79,7 @@ class Registration
                 // escaping, additionally removing everything that could be (html/javascript-) code
                 $user_name = $this->db_connection->real_escape_string(strip_tags($_POST['user_name'], ENT_QUOTES));
                 $user_email = $this->db_connection->real_escape_string(strip_tags($_POST['user_email'], ENT_QUOTES));
+                $user_realname = $this->db_connection->real_escape_string(strip_tags($_POST['user_realname'], ENT_QUOTES));
 
                 $user_password = $_POST['user_password_new'];
 
@@ -95,13 +96,13 @@ class Registration
                     $this->errors[] = "Sorry, that username / email address is already taken.";
                 } else {
                     // write new user's data into database
-                    $sql = "INSERT INTO users (user_name, user_password_hash, user_email)
-                            VALUES('" . $user_name . "', '" . $user_password_hash . "', '" . $user_email . "');";
+                    $sql = "INSERT INTO users (user_name, user_password_hash, user_email, user_realname, user_active)
+                            VALUES('" . $user_name . "', '" . $user_password_hash . "', '" . $user_email . "' , '" . $user_realname . "', 0);";
                     $query_new_user_insert = $this->db_connection->query($sql);
 
                     // if user has been added successfully
                     if ($query_new_user_insert) {
-                        $this->messages[] = "Your account has been created successfully. You can now log in.";
+                        $this->messages[] = "Your account has been created successfully. Ask Mark to activate it for you.";
                     } else {
                         $this->errors[] = "Sorry, your registration failed. Please go back and try again.";
                     }

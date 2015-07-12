@@ -10,7 +10,12 @@ if ($login->isUserLoggedIn() !== true) {
 
 // Get name and email address from session
 $email=$_SESSION["user_email"];
-$name=$_SESSION["user_name"];
+
+$fullname=explode(" ", $_SESSION["user_realname"]);
+$name=$fullname[0];
+
+$fullname=explode(" ", $_SESSION["user_realname"]);
+$from_name=$fullname[0];
 
 $subject = $_POST["subject"];
 $body = $_POST["body"];
@@ -19,7 +24,10 @@ $from=$_POST["from"];
 // inject variable
 
 $body = str_replace("[name]", $name, $body);
-$body = str_replace("[me]", $from, $body);
+
+if ($from=="You") {
+    $body = str_replace("[me]", $from_name, $body);
+}
 
 $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_CAMPAIGN);
 
