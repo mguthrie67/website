@@ -123,7 +123,7 @@ if ($login->isUserLoggedIn() !== true) {
     <link href="css/site.css" rel="stylesheet">
 
 
-<h1>Create New Campaign - Step 1. Basic Information</h1>
+<h1>Create New Campaign:<br>Step 1. Basic Information</h1>
 
 
 

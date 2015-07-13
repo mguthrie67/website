@@ -102,6 +102,8 @@ function testWebMail(id) {
 
     form.submit();
 
+// delete form
 
+    form.parentNode.removeChild(form);
 
 }

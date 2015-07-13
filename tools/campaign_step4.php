@@ -90,6 +90,30 @@ echo "</table>\n";
 
 echo "<br><br>\n";
 
+echo "        <form action='campaign_step5.php' id='file-form' method='post'>\n";
+
+
+echo "<table>\n";
+
+echo "    <tr>\n";
+echo "        <td>Tag\n";
+echo "        <td><input class='span7' type='text' id='tag' name='tag' value='' maxlength='80'/>\n";
+echo "    </tr>\n";
+echo "    <tr>\n";
+echo "        <td>Project ID\n";
+echo "        <td><input class='span7' type='text' id='tag' name='tag' value='' maxlength='80'/>\n";
+echo "    </tr>\n";
+echo "</table><br><br>\n";
+
+echo "    <div class='clear'></div>\n";
+echo "    <input type='submit' class='contact_btn' value='Load' onclick='testWebMail(" . $id . "); return false;'/>\n";
+echo "    <input type='submit' class='contact_btn' value='Send' onclick='sendTestMail(); return false;'/>\n";
+echo "    <div class='clear'></div>\n";
+
+echo "<div id='StatusArea'></div>\n";
+
+echo "</div>\n";
+
 
 include('_footer.html');
 
