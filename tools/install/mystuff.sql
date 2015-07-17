@@ -1,5 +1,12 @@
 use wayscoma_campaign_dev;
 
+drop table insightly_company_lookup;
+create table insightly_company_lookup (
+    company_id int NOT NULL,
+    company_name varchar(200),
+    PRIMARY KEY (company_id)
+);
+
 drop table campaign;
 create table campaign (
 

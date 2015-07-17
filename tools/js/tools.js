@@ -41,8 +41,6 @@ function saveMail(id) {
 
 function uploadFile() {
 
-//    alert("hello");
-
     var form = document.getElementById("file-form");
     var formData = new FormData(form);
 
@@ -106,4 +104,20 @@ function testWebMail(id) {
 
     form.parentNode.removeChild(form);
 
+}
+
+function getInsightly() {
+    var xmlhttp = new XMLHttpRequest();
+    var vars = "type="+document.getElementById("type").value+"&search="+document.getElementById("search").value;
+
+    document.getElementById("StatusArea").innerHTML = "Trying...";
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            document.getElementById("StatusArea").innerHTML = xmlhttp.responseText;
+        }
+    }
+    xmlhttp.open("POST", "campaign_getInsightly.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send(vars);
 }

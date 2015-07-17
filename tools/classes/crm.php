@@ -90,6 +90,8 @@ class crm
     public function getContactsbyProject($projectId)
     {
 
+    echo "inside";
+
         $proj = $this->insightly->getProject($projectId);
 
         $ids=array();
