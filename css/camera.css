@@ -236,6 +236,13 @@
 	left: 21px;
 	background:url(../images/caption_bg.png) repeat;
 }
+.camera_caption3 {
+	position: absolute;
+	z-index:100 !important;
+	bottom: 15%;
+	left: 21px;
+	background:url(../images/caption_bg.png) repeat;
+}
 .slide_descr {
 	display:block;
 	padding: 20px 23px;
