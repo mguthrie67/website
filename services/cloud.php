@@ -51,7 +51,7 @@ Dipping your toe in is a precursor to a full dive. How will your organisation lo
 <dl>
     <dt>End-to-End Analysis of Cost and Benefit</dt>
         <dd>We can give you the whole picture including ROI and TCO analysis that includes the knock-on effects such as impact on other
-            teams and early termination of existing contracts.</dd>
+            teams and early termination of existing contracts. We can also provide RTO and RPO calculations based upon your choice of provider.</dd>
     <dt>Vendor Management</dt>
         <dd>With cloud adoption comes the need to depend upon a vendor for your critical systems. We have experience with initial negotiations,
         getting the best deal (and price isn't the key factor), setting up the relationship for ongoing success and planning for termination
@@ -65,6 +65,8 @@ Dipping your toe in is a precursor to a full dive. How will your organisation lo
         <dd>No we aren't a dating agency but it feels a bit like that when you are choosing a partner for your cloud solutions.
         We can ask the right questions to find someone who will be a good partner for you. We know the main players well and can find a good fit for you.
         </dd>
+    <dt>Private, Public, Hybrid</dt>
+        <dd>Let us help you find the right mix of cloud technologies based upon your usage patterns, risk appetite, recovery requirements and shoe size.</dd>
     <dt>Following Through</dt>
         <dd>Most cloud pitches include $xM of cost saving based upon eliminating processes, functions or headcount. We have done this for
         other organisations and can help you to realise your predicted benefits with appropriate implementations.
