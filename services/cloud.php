@@ -8,7 +8,7 @@ use cases or fail to follow through and retire your legacy systems then cloud ca
 <p>
 Let <a href="../index.html">17 Ways</a> help you to get it right.
 </p>
-<img src="../images/services/umbrella.jpg" alt="Cloud IT Umbrella" width="400px">
+<img src="../images/services/umbrella.jpg" alt="Cloud IT Umbrella" width="600px">
 <blockquote>We'll hold the umbrella for you to get through the initial storms and help you to become successful.
 </blockquote>
 <p>
