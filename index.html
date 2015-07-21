@@ -97,7 +97,7 @@
                         <div data-src="images/slider/cloud%20implementation.jpg">
 
                             <div class="camera_caption3 fadeIn ">
-                                <div class="slide_descr">Need help with the Cloud?<br/>We offer much more than just migration services.</div>
+                                <div class="slide_descr">Using the Cloud?<br/>We can help you get it right.</div>
                             </div>
                         </div>
 
@@ -109,7 +109,7 @@
                     </div>
                     <div data-src="images/slider/slide3.jpg">
                         <div class="camera_caption2 fadeIn">
-                            <div class="slide_descr">IT Misfiring?<br/>We can tune technology, processes and organisations.</div>
+                            <div class="slide_descr">IT Misfiring?<br/>Let us tune it.</div>
                         </div>
                     </div>
                     <div data-src="images/slider/slide4.jpg">
@@ -119,11 +119,12 @@
                     </div>
                     <div data-src="images/slider/slide5.jpg">
                         <div class="camera_caption2 fadeIn">
-                            <div class="slide_descr">Technology choices to make?<br/>Let us help you get them right.</div>
+                            <div class="slide_descr">IT decisions?<br/>Get them right with us.</div>
                         </div>
                     </div>
                 </div><!-- #camera_wrap_1 -->
             </div>
+
                 <div class="clear"></div>
 
 
@@ -137,16 +138,17 @@
                 <div class="contact_form">
                     <div id="note"></div>
                     <div id="fields">
-                        <form action="send_form_email.php" method="post">
-                            <input class="span7" type="text" name="name" value="" placeholder="Name" />
-                            <input class="span7" type="text" name="company" value="" placeholder="Company" />
-                            <input class="span7" type="text" name="email" value="" placeholder="Email or Phone" />
+                        <form action="send_form_free_consultancy.php" method="post">
+                            <input class="span7" type="text" id="name" name="name" value="" placeholder="Name" required />
+                            <input class="span7" type="text" id="company" name="company" value="" placeholder="Company" required/>
+                            <input class="span7" type="text" id="email" name="email" value="" placeholder="Email" required/>
                             <div class="clear"></div>
-                            <input type="submit" class="btn btn-inverse" value="Submit" />
+                            <input type="submit" onclick="sendConsultancy(); return false;" class="btn btn-primary" value="Submit" />
                             <div class="clear"></div>
                         </form>
                     </div>
                 </div>
+                <div id="StatusArea"></div>
             </div>
 
             <h3>Services</h3>
@@ -157,11 +159,11 @@
                         <li class="span2 post_prev" style="width: 160px;">
                             <a class="post_img" href="javascript:void(0);"><img src="images/slider/cloud%20implementation%20-%20small.jpg" /></a>
                             <a class="title" href="javascript:void(0);">Need help with the Cloud?</a>
-                             We take the hype out of the cloud and help you make sound business decisions.
+                             We take the hype out of the cloud and help you make sound business decisions. Get the full value on your investment.
                         </li>
                         <li class="span2 post_prev" style="width: 160px;">
                             <a class="post_img" href="javascript:void(0);"><img src="images/slider/project%20rescue%20-%20small.jpg" /></a>
-                            <a class="title" href="javascript:void(0);">Does your project need rescuing?</a>
+                            <a class="title" href="javascript:void(0);">Does your project need rescued?</a>
                              With experience in multi-year, multi-million dollar projects and running PMO's of 100+ projects, we can make the hard calls needed to get your projects back on track.
                         </li>
                         <li class="span2 post_prev" style="width: 160px;">
@@ -176,7 +178,7 @@
                         <li class="span2 post_prev" style="width: 160px;">
                             <a class="post_img" href="javascript:void(0);"><img src="images/slider/technology%20choices%20-%20small.jpg" /></a>
                             <a class="title" href="javascript:void(0);">What technology do I choose? </a>
-                            17 Ways can help you choose the right technology partners for your business. We can help with technology selection, RFPs, vendor selection, licensing and negotiation. We can review your existing IT and determine where too next.                         </li>
+                            17 Ways can help you choose the right technology partners for your business. We can help with technology selection, RFPs, vendor selection, licensing and negotiation. We can review your existing IT and determine where to next.                         </li>
                         <div class="clear"></div>
                     </ul>
                 </div>
@@ -188,23 +190,23 @@
                 <div class="wrap" style="margin:10px;">
                     <ul class="row">
                         <li class="span2 post_prev" style="width: 160px;">
-                            <a class="post_img" href="javascript:void(0);"><img src="images/slider/vce%20small.jpg" /></a>
-                            <a class="title" href="javascript:void(0);">VCE Vblock Systems</a>
-                            As an authorised VCE partner with implementations across VDI, Database-as-a-Service and Core Banking, 17 Ways have the experience to help you build and get the most out of an enterprise grade solution VCE solution
+                            <a class="post_img" href="VCE"><img src="images/slider/vce%20small.jpg" /></a>
+                            <a class="title" href="VCE">VCE Vblock Systems</a>
+                            As an authorised VCE partner with implementations across VDI, Database-as-a-Service and Core Banking, 17 Ways have the experience to help you build and get the most out of an enterprise grade VCE solution.
                         </li>
                         <li class="span2 post_prev" style="width: 160px;">
-                            <a class="post_img" href="javascript:void(0);"><img src="images/slider/avayalogo%20-%20small.jpg" /></a>
-                            <a class="title" href="javascript:void(0);">Avaya</a>
-                            Avaya are a leading provider of multi-channel business communications solutions. Leading the way to a new era of engagement. Meet a transformed Avaya. Mobile. Cloud. Effortless. Cool Avaya Stuff .
+                            <a class="post_img" href="Avaya"><img src="images/slider/avayalogo%20-%20small.jpg" /></a>
+                            <a class="title" href="Avaya">Avaya</a>
+                            Avaya are a leading provider of multi-channel business communications solutions. From world leading fabric networking solutions to contact centre products Avaya can connect your business and customers at all levels.
                         </li>
                         <li class="span2 post_prev" style="width: 160px;">
-                            <a class="post_img" href="javascript:void(0);"><img src="images/slider/simplivity%20small.png" /></a>
-                            <a class="title" href="javascript:void(0);">SimpliVity</a>
-                            Join the Web Scale revolution with SimpliVity’s hyperconverged solution. SimpliVity brings cloud-like economics to the data center with it’s scalable, modular 2U building blocks running on commodity x86 hardware.
+                            <a class="post_img" href="Simplivity"><img src="images/slider/simplivity%20small.png" /></a>
+                            <a class="title" href="Simplivity">SimpliVity</a>
+                            Join the Web Scale revolution with SimpliVity’s hyperconverged solution. SimpliVity brings cloud-like economics to the Data Centre with it’s scalable, modular 2U building blocks running on customised x86 hardware.
                         </li>
                         <li class="span2 post_prev" style="width: 160px;">
-                            <a class="post_img" href="javascript:void(0);"><img src="images/slider/sciencelogic%20-%20small.png" /></a>
-                            <a class="title" href="javascript:void(0);">ScienceLogic</a>
+                            <a class="post_img" href="ScienceLogic"><img src="images/slider/sciencelogic%20-%20small.png" /></a>
+                            <a class="title" href="ScienceLogic">ScienceLogic</a>
                             Monitor everything, everywhere with ScienceLogic and 17 Ways. Multicloud monitoring and dependency mapping for AWS, Microsoft Azure and on-premises IT elements.
 
                     </ul>
