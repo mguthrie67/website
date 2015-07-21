@@ -51,7 +51,7 @@ $(document).ready(function () {
         }).appendTo("nav#main_menu select");
     });
     //Slider
-    $('#camera_wrap_1').camera();
+    $('#camera_wrap_1').camera({height: '30%'});
     //make responsive dropdown menu actually work			
     $("nav#main_menu select").change(function () {
         window.location = $(this).find("option:selected").val();
@@ -228,3 +228,7 @@ function toggle(elementId) {
     }
 }
 
+function showhide(id) {
+    var e = document.getElementById(id);
+    e.style.display = (e.style.display == 'block') ? 'none' : 'block';
+}
