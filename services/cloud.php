@@ -74,7 +74,7 @@ Dipping your toe in is a precursor to a full dive. How will your organisation lo
     <dt>Alternatives</dt>
         <dd>You wouldn't look at a house and buy it without considering others. Committing to the cloud is a major undertaking and you should
         look at the alternatives, even if it is only to be sure that you are doing the right thing. We are experts in converged and hyper-converged
-        systems. Even if you only use us for your free half day of consulting, we can help you to review your cloud solution to make sure it really\
+        systems. Even if you only use us for your free half day of consulting, we can help you to review your cloud solution to make sure it really
         is right for the problems that you face.
         </dd>
     <dt>Cloud Rescue</dt>
