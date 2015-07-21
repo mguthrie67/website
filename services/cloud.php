@@ -1,14 +1,14 @@
 <?php include("_header.html"); ?>
 
 <h1>Cloud for the Real World</h1>
-
+<img src="../images/services/umbrella.jpg" alt="Cloud IT Umbrella" width="600px">
 <p>Cloud technology offers real opportunity for companies that can implement it correctly. But if you pick the wrong
 use cases or fail to follow through and retire your legacy systems then cloud can be a very expensive folly.
 </p>
 <p>
 Let <a href="../index.html">17 Ways</a> help you to get it right.
 </p>
-<img src="../images/services/umbrella.jpg" alt="Cloud IT Umbrella" width="600px">
+
 <blockquote>We'll hold the umbrella for you to get through the initial storms and help you to become successful.
 </blockquote>
 <p>
