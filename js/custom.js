@@ -249,3 +249,22 @@ function sendConsultancy() {
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send(vars);
 }
+function sendConsultancySpecific() {
+
+    var xmlhttp = new XMLHttpRequest();
+    var vars = "company="+document.getElementById("company").value
+              +"&request="+window.location.href
+              +"&email="+document.getElementById("email").value
+              +"&name="+document.getElementById("name").value;
+
+    document.getElementById("StatusArea").innerHTML = "Trying...";
+
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            document.getElementById("StatusArea").innerHTML = xmlhttp.responseText;
+        }
+    }
+    xmlhttp.open("POST", "send_form_free_consultancy_subpage.php", true);
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send(vars);
+}
