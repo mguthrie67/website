@@ -22,7 +22,8 @@ $(document).ready(function() {
   // Link functinoality
     var openSlider = function() {
         link = $(this);
-        var openHeight = link.prev('.entry-content').data('fullHeight') + 'px';
+        var openHeight = link.prev('.entry-content').data('fullHeight') + 40;
+        openHeight = openHeight + 'px';
         link.prev('.entry-content').animate({'height': openHeight}, {duration: duration }, easing);
         link.text(lessText).addClass('open').removeClass('closed');
         link.unbind('click', openSlider);
