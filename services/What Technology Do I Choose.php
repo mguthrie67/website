@@ -5,7 +5,7 @@
 
 <div class="container">
     <div style="float: left;">
-        <img src="../images/services/umbrella.jpg" alt="Cloud IT Umbrella" width="400px">
+        <img src="../images/services/umbrella.jpg" alt="technology%20choice" width="400px">
     </div>
     <div id='consultancy' class="span4" style="background-color: #C0C0C0; padding:0px 10px 0px 10px; float: right;">
         <h3>Free half day consultation session</h3>
@@ -117,7 +117,7 @@ help you to get it right.
  <div class="clear"></div>
 
 <h3>
-Contact us today to find out how we can help you to get the most out of your Cloud programs. We offer a free, no obligation introductory
+Contact us today to find out how we can help you to make rthe right technology choices. We offer a free, no obligation introductory
 consultation for up to half a day on any aspect of technology.
 </h3>
 

@@ -5,7 +5,7 @@
 
 <div class="container">
     <div style="float: left;">
-        <img src="../images/services/umbrella.jpg" alt="Cloud IT Umbrella" width="400px">
+        <img src="../images/services/broken%20technology.jpg" alt="broken technology" width="400px">
     </div>
     <div id='consultancy' class="span4" style="background-color: #C0C0C0; padding:0px 10px 0px 10px; float: right;">
         <h3>Free half day consultation session</h3>
@@ -173,7 +173,7 @@ We can help diagnose your provisioning tool and process issues and help you get 
  <div class="clear"></div>
 
 <h3>
-Contact us today to find out how we can help you to get the most out of your Cloud programs. We offer a free, no obligation introductory
+Contact us today to find out how we can help you to get your technology tuned. We offer a free, no obligation introductory
 consultation for up to half a day on any aspect of technology.
 </h3>
 

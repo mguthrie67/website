@@ -31,7 +31,7 @@ $message .= "<tr><td><strong>Company: </strong><td>".$company."</tr></table><br>
 if (@mail($send_email_to, $subject, $message,$headers)) {
     echo "Thank you, we'll be in touch soon.";
 } else {
-    echo "Error sending email. Please call use on 1300 17WAYS or email us at info@17ways.com.au to get your free appointment.";
+    echo "Error sending email. Please call us on 1300 17WAYS or email us at info@17ways.com.au to get your free appointment.";
 }
 
 ?>

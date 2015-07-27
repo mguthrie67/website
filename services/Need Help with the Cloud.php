@@ -5,7 +5,7 @@
 
 <div class="container">
     <div style="float: left;">
-        <img src="../images/services/umbrella.jpg" alt="Cloud IT Umbrella" width="400px">
+        <img src="../images/services/cloud%20help.jpg" alt="Cloud help" width="400px">
     </div>
     <div id='consultancy' class="span4" style="background-color: #C0C0C0; padding:0px 10px 0px 10px; float: right;">
         <h3>Free half day consultation session</h3>
@@ -32,7 +32,7 @@
 </div>
 
 <div class="welcome_block">
-    <p class="fleft">We'll hold the umbrella for you to get through the initial storms and help you to become successful.</p>
+    <p class="fleft">Success on the Cloud is more than just migrating applications.</p>
     <div class="clear"></div>
 </div>
 
@@ -43,46 +43,7 @@ use cases or fail to follow through and retire your legacy systems then cloud ca
 Let <a href="../index.html">17 Ways</a> help you to get it right.
 </p>
 
-<p>
-It is probably best to describe us as "Cloud Cynics". That doesn't mean that we are against cloud technology in any way,
-in fact we are long time supporters and use it for all of our own infrastructure, it's more a reflection of our experience and the fact
-that we have seen the dangers in getting it wrong by attempting to put the wrong things into the cloud or failing to understand
-the full scope of what needs to be done to be successful. Cloud is a great addition to your options as an IT professional but you need to get it right.
-</P>
-<p>
-For a fuller description of our views on cloud please read our CEO article <a href="../Library/CEO/Cloud%20vs%20Converged.html">Cloud vs Converged.</a>
-</P>
 
-                <div class="welcome_block">
-                    <p class="fleft"> We can help you to use cloud for the right things and
-                                     follow through to get the best outcome.</p>
-                    <div class="clear"></div>
-                </div>
-
-<h2>Our Experience</h2>
-A few examples of our successes with cloud so far:
-<dl>
-    <dt>SaaS (Trading)</dt>
-        <dd>Implemented 3 different SaaS solutions for trading systems in the Middle East, Australia and New Zealand between 2005 and 2011.</dd>
-    <dt>SaaS (Salesforce)</dt>
-        <dd>Integrated Salesforce into an inhouse FX trading application used at multiple companies.</dd>
-    <dt>IaaS</dt>
-        <dd>Built the internal VDI and VMWare farm solutions for a major Investment Bank.</dd>
-    <dt>IaaS</dt>
-        <dd>Currently advising an Australian household name on a cloud migration program.</dd>
-    <dt>PaaS</dt>
-        <dd>Built the Oracle, Sybase and SQLServer solutions for a major Investment Bank.</dd>
-
- </dl>
-
-<h2>What We Have Learnt</h2>
-<p>Here are 3 of the main things to consider:</p>
-<ol>
-<li>As with all technologies, consider the options and make a decision based on the head and not the heart. </li>
-<li>Don't worry about what failure will look like, worry about what success will look like. How will you need to change WHEN cloud becomes mainstream for you.
-Dipping your toe in is a precursor to a full dive. How will your organisation look once you are immersed.</li>
-<li>Do a full cost benefit case and plan to follow through with any cost savings that involve retiring old systems or restructuring your teams.</li>
-</ol>
 
 <h2>How We Can Help You</h2>
 

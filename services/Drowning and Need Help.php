@@ -118,7 +118,7 @@ Business engagement is not traditionally a core strength of IT functions. While 
  <div class="clear"></div>
 
 <h3>
-Contact us today to find out how we can help you to get the most out of your Cloud programs. We offer a free, no obligation introductory
+Contact us today to find out how we can help you with your workload. We offer a free, no obligation introductory
 consultation for up to half a day on any aspect of technology.
 </h3>
 

@@ -5,7 +5,7 @@
 
 <div class="container">
     <div style="float: left;">
-        <img src="../images/services/rescue.jpg" alt="Project Rescue" width="400px">
+        <img src="../images/services/project%20rescue.jpg" alt="Project Rescue" width="400px">
     </div>
     <div id='consultancy' class="span4" style="background-color: #C0C0C0; padding:0px 10px 0px 10px; float: right;">
         <h3>Free half day consultation session</h3>
@@ -30,7 +30,7 @@
         <div id="StatusArea"></div>
     </div>
 </div>
-
+<br>
 <div class="welcome_block">
     <p class="fleft">If your project needs help, call 17 Ways.</p>
     <div class="clear"></div>
@@ -45,42 +45,11 @@ under-deliver.
 So if you find yourself involved in a project that is going badly, don't worry. You are in the majority. However don't let this fact make you complacent,
 17% of large projects go so badly that they threaten the viability of the whole company.</p>
 <p>
-We have decades of experience running projects of all sizes and types, experience that positions us well to help you with your project issues.
-</>
+We have decades of experience running projects of all types and size, from multi-million dollar programs spanning several years to joint ventures and new company set ups.
+Our experience positions us well to help you with your project issues.
+</p>
 
 
-
-                <div class="welcome_block">
-                    <p class="fleft">We can help you get your project back on track, or salvage the parts that can be saved.</p>
-                    <div class="clear"></div>
-                </div>
-
-<h2>Our Experience</h2>
-A few examples of our successes with projects:
-<dl>
-    <dt>Software</dt>
-        <dd>Multi-year, multi-million dollar program to completely redevelop FX trading applications for an Investment Bank. Completed successfully and structured in a way that the ROI
-        was delivered part way through the project.</dd>
-    <dt>Infrastructure</dt>
-        <dd>Development and implementation of PaaS for a bank. Completed on time and within budget and successfully tracked against a 5 year adoption program.</dd>
-    <dt>Join Ventures</dt>
-        <dd>Joint ventures in New Zealand, Hong Kong and The Middle East to implement trading and risk management systems. Significant business value delivered.</dd>
-    <dt>Separations</dt>
-        <dd>Separation programs to allow acquisitions to operate without support from the old parent company.</dd>
-    <dt>Packages</dt>
-        <dd>Selection, evaluation, implementation and rollout of software packages for use cases such as DNS Management, Systems Management, SDLC and trading systems.</dd>
- </dl>
-
-
-<h2>What We Have Learnt</h2>
-<p>Here are some of the main things to consider for a successful project:</p>
-<ol>
-<li>Spend longer than you think you need on getting the requirements right upfront. Don't be tempted to jump in until you know what you are trying to achieve.</li>
-<li>Break large projects up into smaller chunks and deliver benefit as quickly as you can.</li>
-<li>Stay flexible. Work very closely with your stakeholders and encourage flexibility on both sides.</li>
-<li>Rely on a good project manager over a good project methodology.</li>
-<li>Be honest about progress and issues. All projects go up and down, the failures are usually the ones who hide the downs.</li>
-</ol>
 
 <h2>How We Can Help You</h2>
 
@@ -171,6 +140,7 @@ skills and experience to help you.
 
 
  <div class="clear"></div>
+
 
 <h3>
 Contact us today to find out how we can help you to get your projects back on track or assist you in any other way with your project management requirements. We offer a free, no obligation introductory
