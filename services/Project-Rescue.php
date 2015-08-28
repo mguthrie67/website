@@ -1,4 +1,7 @@
-<?php include("_header.html"); ?>
+<?php include("_header1.html"); ?>
+    <title>Project Rescue | 17 Ways</title>
+    <meta name="description" content="IT Projects in trouble? Let 17 Ways help you to get back on track.">
+<?php include("_header2.html"); ?>
 
 <h1>Project Rescue</h1>
 <p>With experience in multi-year, multi-million dollar projects and running PMO's of 100+ projects, we can make the hard calls needed to get your projects back on track.<p>
@@ -85,7 +88,7 @@ Our experience positions us well to help you with your project issues.
             <div class="entry-content">
                 <p><img src="../images/services/icons/talking.jpg" width="80px" align="left"/>
 We can help to build and sell the message about your project including ROI, risk mitigation, evaluation of alternatives and the cost of doing nothing.
-Without effective sponsorship projects rarely succeed. We can lots of experience of dealing with senior business staff and can help you to
+Without effective sponsorship projects rarely succeed. We have lots of experience of dealing with senior business staff and can help you to
 get that sponsorship.
          </p>
             </div><!-- end .entry-content -->
@@ -96,7 +99,7 @@ get that sponsorship.
             <div class="entry-content">
                 <p><img src="../images/services/icons/calculator2.jpg" width="80px" align="left"/>
 We can help you work out the real cost of your project, as well as the full value proposition. In our experience people start projects
-with an overoptimistic view of the effort and cost. TCO is often really on a partial cost as knock on effects to other areas are not
+with an overoptimistic view of the effort and cost. TCO is often really based on a partial cost as knock on effects to other areas are not
 fully considered. The same is also true of the benefits case. Let us help you to get to the true costs and benefits of your project.
          </p>
             </div><!-- end .entry-content -->
@@ -116,7 +119,7 @@ skills and abilities to the right parts, at the right time, is a complex thing t
             <h3 class="entry-title">PMO </h3>
             <div class="entry-content">
                 <p><img src="../images/services/icons/graph.jpg" width="80px" align="left"/>
-Need help with your Project Management Office? We can help you to get the best our of centralised project management including reporting,
+Need help with your Project Management Office? We can help you to get the best out of centralised project management including reporting,
  cost management and set up of tools. We have run large scale PMO functions with 100+ concurrent projects. We can help you to get your PMO
  set up effectively.
          </p>

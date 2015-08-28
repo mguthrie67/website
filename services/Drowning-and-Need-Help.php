@@ -1,4 +1,7 @@
-<?php include("_header.html"); ?>
+<?php include("_header1.html"); ?>
+    <title>Saving You From Drowning | 17 Ways</title>
+    <meta name="description" content="We can help you with your IT when you have too much on your plate. Due Diligence, RFPs, Acquisitions or just being overwhelmed.">
+<?php include("_header2.html"); ?>
 
 <h1>Drowning and Need Help?</h1>
 <p>Has something come up that is just too big for you to handle? Or perhaps it's the straw that broke the camel's back and you are finding that you can't get through
@@ -6,7 +9,7 @@ everything that needs to be done. When it is all too much for you, give us a cal
 
 <div class="container">
     <div style="float: left;">
-        <img src="../images/services/umbrella.jpg" alt="Cloud IT Umbrella" width="400px">
+        <img src="../images/services/drowning.jpg" alt="Cloud IT Umbrella" width="400px">
     </div>
     <div id='consultancy' class="span4" style="background-color: #C0C0C0; padding:0px 10px 0px 10px; float: right;">
         <h3>Free half day consultation session</h3>

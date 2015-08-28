@@ -1,4 +1,8 @@
-<?php include("_header.html"); ?>
+<?php include("_header1.html"); ?>
+    <title>Technology Tuning Service | 17 Ways</title>
+    <meta name="description" content="Tuning of IT systems, processes or organisation structures. We can help you to get the best return for your IT investment.">
+<?php include("_header2.html"); ?>
+
 
 <h1>Help! My Technology is Broken</h1>
 <p>We have the experience and the independent perspective to help fix broken or poor performing infrastructure and systems.<p>

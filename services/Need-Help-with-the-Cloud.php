@@ -1,4 +1,7 @@
-<?php include("_header.html"); ?>
+<?php include("_header1.html"); ?>
+    <title>Cloud Services | 17 Ways</title>
+    <meta name="description" content="Lots of companies can help you to migrate applications to the Cloud, but that's only the start .We can help you to get the full value of your Cloud investments.">
+<?php include("_header2.html"); ?>
 
 <h1>Need Help with the Cloud?</h1>
 <p>At 17 Ways we offer Cloud Services for the real world. Let us help you with your Cloud adoption.<p>

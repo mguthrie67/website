@@ -1,11 +1,14 @@
-<?php include("_header.html"); ?>
+<?php include("_header1.html"); ?>
+    <title>Technology Choices | 17 Ways</title>
+    <meta name="description" content="We can advise you on which technologies, partners and processes to use for your organisation.">
+<?php include("_header2.html"); ?>
 
 <h1>What Technology Do I Choose?</h1>
 <p>Technology choices are difficult to get right and have long lasting consequences. Let us help you with your critical decisions.<p>
 
 <div class="container">
     <div style="float: left;">
-        <img src="../images/services/umbrella.jpg" alt="technology%20choice" width="400px">
+        <img src="../images/services/technology%20choice.jpg" alt="technology choice" width="400px">
     </div>
     <div id='consultancy' class="span4" style="background-color: #C0C0C0; padding:0px 10px 0px 10px; float: right;">
         <h3>Free half day consultation session</h3>
@@ -30,7 +33,7 @@
         <div id="StatusArea"></div>
     </div>
 </div>
-
+<br>
 <div class="welcome_block">
     <p class="fleft">We can advise you on any technology choice that you need to make.</p>
     <div class="clear"></div>
@@ -117,7 +120,7 @@ help you to get it right.
  <div class="clear"></div>
 
 <h3>
-Contact us today to find out how we can help you to make rthe right technology choices. We offer a free, no obligation introductory
+Contact us today to find out how we can help you to make the right technology choices. We offer a free, no obligation introductory
 consultation for up to half a day on any aspect of technology.
 </h3>
 
