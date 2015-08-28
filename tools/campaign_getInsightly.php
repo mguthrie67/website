@@ -22,7 +22,7 @@ echo $search;
 
 if ($type == "Project ID") {
     $dets = $crm->getContactsbyProject($search);
-} elseif ($type == "tag") {
+} elseif ($type == "Tag") {
     $dets = $crm->getContactsbyTag($search);
 }
 
