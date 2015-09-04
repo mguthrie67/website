@@ -110,8 +110,25 @@
 # Read current directory
 #$directory = '.';
 
+$filearray=array();       # control the order of the items by using the date line insite the files
+
 # go through each file and read it
 foreach (glob("../Meta/*.meta") as $f) {
+
+    $filehandle=@fopen($f, 'r');
+    if ($filehandle) {
+          $x=explode(":", fgets($filehandle,1024));   # break first line into key : value
+          $filearray[$f] = $x[1];
+       }
+       fclose($filehandle);
+}
+
+# Now sort it
+arsort($filearray);
+
+# read files again and process them in date order
+
+foreach ($filearray as $f => $dd) {
 
 # Format of file is key : value
 # the first 5 lines have the meta data and the rest of the file is the actual article
