@@ -29,7 +29,7 @@ users with your site, they won't be able to find you unless the site works on a 
     smartphone screen. You need a compelling reason for people to use your app or you are wasting time and money on building one.
 </p>
 <div class="clear"></div>
-<blockquote>The UN estimates that more people have access to mobile phones than toilets. Getting the right message about your product out there is extremely important.</blockquote>
+<blockquote>The UN estimates that more people have access to mobile phones than toilets. You need to make sure that your message works properly on a mobile platform.</blockquote>
 <p>
     Here are a few common mistakes and alternatives that you should consider first:
 </p>
@@ -223,7 +223,159 @@ apps but frankly it wouldn't make much difference if there wasn't. My brother is
 think he got it free.</p>
 <blockquote>Whatever platform you develop for, none of your code or skills will be transferable to any other platform.</blockquote>
 <p></p>
+<table class="basictable">
+    <thead>
+    <tr>
+        <th>Pros</th>
+        <th>Cons</th>
+    <tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Fastest, highest function solution. Able to do anything.</td>
+        <td>Long lead time on development.</td>
+    </tr>
+    <tr>
+        <td>Good access to developers across all platforms.</td>
+        <td>Not portable. Will only work on the platform for which you develop. </td>
+    </tr>
+    <tr>
+        <td>Very advanced development tools with good debugging and performance analysis.</td>
+        <td>Requires low level programming and a full understanding of the APIs provided.</td>
+    </tr>
+    </tbody>
+</table>
+
+<h3>Hybrid Tools</h3>
+<p>
+Hybrid tools offer the promise of developing once and deploying to multiple mobile platforms. This is a very appealing option
+if you want to develop for more than one platform at the same time. It does however come with some downsides. Firstly, you are
+going to have to pick a technology in a fast moving market, which is always a problem for early adoptors. Secondly the
+abstraction layers introduce performance overhead, so if you aren't careful your app won't work well, especially on
+older devices. The third major problem can be finding experienced developers, although this may not be too big an issue
+if you pick a tool that uses a well known technology such as Java or HTML5.
+</p>
+<p>
+    <h4>So how does it work?</h4>
+</p>
+<p>
+    Actually there are lots of ways to do this, but let's look at one of the leading products, <a href="http://phonegap.com">Phonegap</a>, and see how it works.
+    The basic premise is that you can now do a lot with HTML5, CSS and JavaScript running inside a browser. What if we took all of that and
+    ran it inside the same sort of container as the browser but without the browser controls (back, history, address bar, etc) and with access to some
+    of the things that browser isn't allowed to do, like using the camera and talking to other apps.
+</p>
+<img src="../../images/Library/TECH/phonegap.jpg">
+<p>
+So now you can basically build an app that goes to the edge of the screen without the browser being present, but you can use all
+    of the nice things that you used to build your web pages plus you can use the Phoneapp API to do the things that a native app
+    can do.
+</p>
+<p>
+    <h4>What's the downside?</h4>
+</p>
+<p>
+    Initially there was quite a lot of downside to this kind of approach. The classes that implement the browser features (UIWebView for IOS
+    and Android.webkit.WebView for Android) were not built to be full app environments, they were intended to allow you to show some HTML inside
+    a real app. As such they didn't perform very well and were missing things such as Just In Time (JIT) compilation for JavaScript. This has improved
+    and now that this type of hybrid app is using it in this way, there is more effort to improve performance. The second issue was that most
+    web developers were addicted to frameworks such as DOJO and jQuery. These are quite big libraries and using them impacted performance while
+    not using them impacted productivity and hurt the feelings of the developers. Thankfully now there are options such as <a href="http://jquerymobile.com">jQuery Mobile</a>
+    and <a href="htpp://sencha.com/products/touch">Sencha Touch</a> which are built for the mobile world. They even allow you to build cut down
+    runtime versions that only have the features you are actually using.
+</p>
+<p>
+    All of this innovation is making hybrid development much more feasible but there are still obstacles to overcome to make this as easy as
+    we would like. Also don't believe the "write once, deploy everywhere" hype as you will still need to do a lot of testing and tweaking
+    across the different platforms.
+</p>
+<blockquote>It seems like every week there is an announcement about some major platform either moving to, or moving away from the hybrid approach. Increased
+performance and/or productivity is usually the reason in both directions.</blockquote>
+<p>If you want to look at this space then in addition to <a href="http://phonegap.com">Phonegap</a> you should also consider
+    <a href="http://www.appcelerator.com/product/">Titanium</a>, <a href="http://www.kony.com/products/studio">Kony</a>,
+    <a href="http://xamarin.com">Xamarin</a> and <a href="http://www.telerik.com/appbuilder">Icenium</a>.</p>
 <div class="clear"></div>
+<table class="basictable">
+    <thead>
+    <tr>
+        <th>Pros</th>
+        <th>Cons</th>
+    <tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Very customisable, suitable for building any type of app.</td>
+        <td>Technology is still emerging. Many different players.</td>
+    </tr>
+    <tr>
+        <td>Uses known languages and tools.</td>
+        <td>Performance can be poor.</td>
+    </tr>
+    <tr>
+        <td>Cross-platform without additional development.</td>
+        <td>Look and feel can be different between IOS and Android.</td>
+    </tr>
+    </tbody>
+</table>
+<h3>Back End</h3>
+<p>Whether you choose to build a native or a hybrid app, for most purposes the mobile environment won't be enough for you,
+you will need some kind of back end for your application that you access over the web. This is to give you persistence (database)
+    and communication outside your mobile device.
+</P>
+<img src="../../images/Library/TECH/backend.jpg">
+<p>
+While on the face of it this might seem like a whole load more hassle, in fact it is extremely good news. The back end technologies are
+very advanced and if you structure your application properly then you can put a lot of the business logic (in theory all of it) in to the
+back end. This protects you against making the wrong choices in your front end technology as there will be less to port to a new
+technology if you get it wrong.
+</p>
+<p>
+Node.js is getting a lot of attention and allows you to write your backend code in the same technology that you are using for
+your frontend (JavaScript), however personally I'd stick to something more established like Java, Python or PHP. REST seems to be
+winning as the protocol and JSON as the payload but before I start World War III here, this isn't really the purpose of this
+article any way. Write it in whatever you like, you won't go far wrong.
+</p>
+
+
+<h2>Summary</h2>
+Let's present this in the way that we like to think about it, the problem first and then the solution.
+<table class="basictable">
+    <thead>
+    <tr>
+        <th>Problem</th>
+        <th>Description</th>
+        <th>Solution</th>
+        <th>Discussion</th>
+    <tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="font-weight: bold">Content Push to Smartphones</td>
+        <td>Getting your updates to as many people as possible.</td>
+        <td style="font-weight: bold">Social Media</td>
+        <td>Concentrate on your content and the number of subscribers that you can attract. Leave the technology
+        part to Facebook, Twitter and LinkedIn.</td>
+    </tr>
+    <tr>
+        <td style="font-weight: bold">Searchable and browsable content for mobiles</td>
+        <td>Social media only really allows you to push simple updates usually with a single message. Here you are
+        building a set of information that you want your customers to be able to browse through.</td>
+        <td style="font-weight: bold">Responsive Website</td>
+        <td>Build a website that works effectively on smaller screens. Don't waste your users time with an
+        app if a bookmarked web page will do just as well.</td>
+    </tr>
+    <tr>
+        <td style="font-weight: bold">Real Application</td>
+        <td>You have an idea for something that requires serious development. You are building a unique
+        application that your users will want to use regularly.</td>
+        <td style="font-weight: bold">It Depends</td>
+        <td>There really isn't a clear answer here. We suggest you do some of your own research before
+        making a decision. Hybrid apps are quite appealing and we lean in this direction, but it isn't
+        by any means clear. Whatever you do make sure you get your backend technology right and try to
+        put as much logic as you can into this layer.</td>
+    </tr>
+    </tbody>
+</table>
+
 <h3>References</h3>
 <a href="http://www.statista.com/statistics/258160/number-of-new-apps-submitted-to-the-itunes-store-per-month/">
 http://www.statista.com/statistics/258160/number-of-new-apps-submitted-to-the-itunes-store-per-month/</a>
@@ -241,4 +393,10 @@ http://www.statista.com/statistics/276623/number-of-apps-available-in-leading-ap
 http://www.comscore.com/Insights/Blog/Major-Mobile-Milestones-in-May-Apps-Now-Drive-Half-of-All-Time-Spent-on-Digital</a>
 <br>
 
+<a href="http://venturebeat.com/2011/08/16/linkedin-node/">
+http://venturebeat.com/2011/08/16/linkedin-node/</a>
+<br>
+
+<a href="http://arnab.ch/blog/2011/12/phonegap-how-does-it-work/">
+http://arnab.ch/blog/2011/12/phonegap-how-does-it-work/</a>
     <?php include('../_footer.html');?>
