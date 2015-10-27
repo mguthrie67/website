@@ -41,12 +41,26 @@ if (mysqli_query($db, $sql)) {
 #$row=mysqli_fetch_row($results);
 #$campaign_id=$row[0];
 
-$nicestart=date("l jS \o\\f F Y \a\\t ga",strtotime($start));
-$nicefinish=date("l jS \o\\f F Y \a\\t ga",strtotime($finish));
+$nicestart=date("l jS \o\\f F Y \a\\t g:ia",strtotime($start));
+$nicefinish=date("l jS \o\\f F Y \a\\t g:ia",strtotime($finish));
 
+
+# use a relative path for the links but we need to print an absolute path
+# i.e. we want to print http://17ways.com.au/register.php for prod but http://17ways.com.au/UAT/register.php for UAT
+# So we strip of the /tools/campaign_step2.php part from the end.
+
+$ME="/tools/" . basename(__FILE__);
+
+$MYPATH=substr($_SERVER['REQUEST_URI'], 0, strrpos($_SERVER['REQUEST_URI'], $ME));
+
+$URL="http://".$_SERVER['HTTP_HOST'].$MYPATH;
 
 echo "<h2>Congratulations! Your Campaign has been created.</h2>\n";
-echo "<p>Use this URL to register users : <a href='http://17ways.com.au/register.php?event=$campaign_ref'>http://17ways.com.au/register.php?event=$campaign_ref</a><br><br>Or add attendees below to send them automated emails.<p>\n";
+echo "<p>Use this URL to register users : <a href='";
+echo $URL;
+echo "/register.php?event=$campaign_ref'>";
+echo $URL;
+echo "/register.php?event=$campaign_ref</a><br><br>Or add attendees below to send them automated emails.<p>\n";
 echo "<h3>Details</h3>\n";
 echo "<table><tr><td>Title<td>$title</tr>\n";
 echo "<tr><td>Description<td>$description</tr>\n";
@@ -88,7 +102,7 @@ echo "</table>";
 
 
 echo "</div>";
-echo "</div>";
+
 
 include('_footer.html');
 ?>

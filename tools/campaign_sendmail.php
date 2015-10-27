@@ -20,6 +20,7 @@ $from=$_POST["from"];
 
 $body = str_replace("[name]", $name, $body);
 $body = str_replace("[me]", $from, $body);
+$body = str_replace("\n", "<br>", $body);
 
 $db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_CAMPAIGN);
 

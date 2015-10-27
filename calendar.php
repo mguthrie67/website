@@ -17,7 +17,8 @@ function NotSafe($string)
 }
 
 function dateToCal($timestamp) {
-  return "TZID=Australia/Sydney:" . date('Ymd\THis', $timestamp);
+ # return "TZID=Australia/Sydney:" . date('Ymd\THis', $timestamp);
+  return date('Ymd\THis', $timestamp);
 }
 
 // Escapes a string of characters
@@ -39,7 +40,7 @@ if (isset($_GET['event'])) {
 
     $sql = "select title, description,start,finish,location
              from campaign
-             where campaign_id=$event";
+             where campaign_ref='$event'";
 
     if(!$results = $db->query($sql)){
         echo "<h1>Oops! No matching event found</h1>";
@@ -52,7 +53,9 @@ if (isset($_GET['event'])) {
         } else {
             $row=mysqli_fetch_row($results);
             $title=$row[0];
-            $description="A 17 Ways Event. For more details visit http://17ways.com.au/register.php?event=" . $event . " Or call us on 1300 17WAYS";
+
+            $description="A 17 Ways Event.\\nFor more details visit http://17ways.com.au/register.php?event=" . $event . "\\n\\nOr call us on 1300 17WAYS.";
+
             $start=strtotime($row[2]);
             $finish=strtotime($row[3]);
             $location=$row[4];
@@ -67,16 +70,18 @@ if (isset($_GET['event'])) {
             echo "PRODID:17Ways\r\n";
             echo "CALSCALE:GREGORIAN\r\n";
             echo "TZID:AUS Eastern Standard Time\r\n";
+
             echo "BEGIN:VEVENT\r\n";
-            echo "DTEND:" . dateToCal($finish) . "\r\n";
+            echo 'DTSTART;TZID="AUS Eastern Standard Time":' . dateToCal($start) . "\r\n";
+            echo 'DTEND;TZID="AUS Eastern Standard Time":' . dateToCal($finish) . "\r\n";
             echo "UID:" . uniqid() . "\r\n";
             echo "DTSTAMP:" . dateToCal(time()) . "\r\n";
             echo "LOCATION:" . escapeString($location). "\r\n";
             echo "DESCRIPTION:" . escapeString($description) . "\r\n";
             echo "URL;VALUE=URI:" . escapeString($uri) . "\r\n";
             echo "SUMMARY:" . escapeString($title). "\r\n";
-            echo "DTSTART:" . dateToCal($start) . "\r\n";
             echo "END:VEVENT\r\n";
+
             echo "END:VCALENDAR\r\n";
        }
     }

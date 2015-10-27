@@ -149,6 +149,18 @@ if (isset($_POST['event'])) {
 
         $nicestart=date("l jS \o\\f F Y \a\\t ga",strtotime($start));
 
+# Get the campaign_ref (encrypted thing) to use for the links
+        $sql = "SELECT campaign_ref from campaign where campaign_id=$event";
+
+        if (mysqli_query($db, $sql)) {
+
+            $results = $db->query($sql);
+            $row=mysqli_fetch_row($results);
+            $campaign_ref=$row[0];
+        } else {
+            die("Error occurred. Could not load campaign_ref");
+        }
+
     # to them
         $headers = "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-type:text/html;charset=iso-8859-1" . "\r\n";
@@ -167,7 +179,7 @@ if (isset($_POST['event'])) {
 
         echo "Thank you for registering, " . $first . ".";
         echo "<br><br>A confirmation email has been sent to you.";
-        echo "<br><br><a href='calendar.php?event=" . $event . "'>Click here to download a calendar invite as a reminder.<br><br><img src='images/tools/ics.png'></a>";
+        echo "<br><br><a href='calendar.php?event=" . $campaign_ref . "'>Click here to download a calendar invite as a reminder.<br><br><img src='images/tools/ics.png'></a>";
 
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($db);

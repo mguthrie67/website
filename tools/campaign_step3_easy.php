@@ -52,7 +52,7 @@ $nicestart=date("l jS \o\\f F Y \a\\t ga",strtotime($start));
 $nicefinish=date("l jS \o\\f F Y \a\\t ga",strtotime($finish));
 
 // Connect to database and get any saved information
-$sql = "select subject, body from event_email where campaign_id=" . $id;
+$sql = "select subject, body, sender from event_email where campaign_id=" . $id;
 
 if(!$results = $db->query($sql)){
     echo "<h1>Oops!! Error accessing database.</h1>";
@@ -74,6 +74,7 @@ if ($results->num_rows==0){
 
     $subject=$row[0];
     $body=$row[1];
+    $sender=$row[2];
 
 }
 
@@ -100,9 +101,13 @@ echo "<table>\n";
 
 echo "<tr><td>Sender<td>";
 
-echo "<select id='from' style='font-size: 11px;'> <option value='You'>You";
-echo "<option value='Events@17ways.com.au'>Events@17ways.com.au</select></tr>";
-
+if ($sender=="You"){
+    echo "<select id='sender' style='font-size: 11px;'> <option value='You'>You";
+    echo "<option value='Events@17ways.com.au'>Events@17ways.com.au</select></tr>";
+} else {
+    echo "<select id='from' style='font-size: 11px;'>" ;
+    echo "<option value='Events@17ways.com.au'>Events@17ways.com.au<option value='You'>You</select></tr>";
+}
 
 echo "    <tr>\n";
 echo "        <td>Subject\n";
@@ -110,7 +115,7 @@ echo "        <td><input class='span7' type='text' id='subject' name='subject' v
 echo "    </tr>\n";
 echo "    <tr>\n";
 echo "        <td style='vertical-align: top;'>Text\n";
-echo "        <td><textarea input class='span7' id='body' name='body' maxlength='4000' rows='20' cols='30' required/>" . $body . "</textarea>\n";
+echo "        <td><textarea input class='span7' id='body' name='body' maxlength='4000' rows='20' cols='30' required onChange='step3_off()' onkeyup='step3_off()'/>" . $body . "</textarea>\n";
 echo "    </tr>\n";
 echo "    <tr>\n";
 echo "        <td>Upload Pictures\n";
@@ -123,15 +128,28 @@ echo "    </tr>\n";
 echo "</table><br><br>\n";
 
 echo "    <div class='clear'></div>\n";
-echo "    <input type='submit' class='contact_btn' value='Preview in Browser' onclick='testWebMail(" . $id . "); return false;'/>\n";
-echo "    <input type='submit' class='contact_btn' value='Preview in Email' onclick='sendTestMail(); return false;'/>\n";
-echo "    <input type='submit' class='contact_btn' value='Save' onclick='saveMail(" . $id . "); return false;'/>\n";
-echo "    <input type='submit' class='contact_btn' value='Next' onclick='sendTestMail(); return false;'/>\n";
+echo "    <input type='submit' class='contact_btn' id='testWeb' value='Preview in Browser'  onclick='testWebMail(" . $id . "); return false;'/>\n";
+echo "    <input type='submit' class='contact_btn' id='testMail' value='Preview in Email' onclick='sendTestMail(); return false;'/>\n";
+echo "    <input type='submit' class='contact_btn' id='crap' value='Crap' onclick='var x=Document.getElementById(\"Save\").value; alert(x); return false;'/>\n";
+echo "    <input type='submit' class='contact_btn' id='crap' value='Crap2' onclick='alert(\"ff\"); return false;'/>\n";
+echo "    <input type='submit' class='contact_btn' id='Save' disabled value='Save' onclick='saveMail(" . $id . "); return false;'/>\n";
+echo "    <input type='submit' class='contact_btn' id='Next' value='Next' onclick='sendTestMail(); return false;'/>\n";
 echo "    <div class='clear'></div>\n";
 
 echo "<div id='StatusArea'></div>\n";
 
+
 echo "</div>\n";
+
+echo "<script>\n";
+echo "window.onbeforeunload = function (e) {\n";
+echo "alert(Document.getElementById('Save').enabled); \n";
+echo "if (Document.getElementById('Save').enabled == true) {\n";
+echo "              return 'You have unsaved changes.';\n";
+echo "      };\n";
+echo "              return 'Baaa.';\n";
+echo "};\n";
+echo "</script>\n";
 
 include('_footer.html');
 

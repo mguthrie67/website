@@ -38,6 +38,7 @@ create table event_email (
   campaign_id int NOT NULL,
   subject varchar(200),
   body text,
+  sender varchar(100),
   PRIMARY KEY (campaign_id)
 );
 

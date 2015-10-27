@@ -25,7 +25,7 @@ function sendTestMail() {
 
 function saveMail(id) {
     var xmlhttp = new XMLHttpRequest();
-    var vars = "id="+id+"&subject="+document.getElementById("subject").value+"&body="+document.getElementById("body").value;
+    var vars = "id="+id+"&subject="+document.getElementById("subject").value+"&body="+document.getElementById("body").value+"&sender="+document.getElementById("from").value;
 
     document.getElementById("StatusArea").innerHTML = "Trying...";
 
@@ -37,6 +37,9 @@ function saveMail(id) {
     xmlhttp.open("POST", "campaign_saveemail.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send(vars);
+
+    // enable buttons
+    step3_on();
 }
 
 function uploadFile() {
@@ -120,4 +123,21 @@ function getInsightly() {
     xmlhttp.open("POST", "campaign_getInsightly.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send(vars);
+}
+
+
+function step3_off() {
+// turn off the options if the text has changed. Force a save to re-enable
+    document.getElementById("testWeb").disabled = true;
+    document.getElementById("testMail").disabled = true;
+    document.getElementById("Next").disabled = true;
+    document.getElementById("Save").disabled = false;
+}
+
+function step3_on() {
+// turn oon the options if save has been hit
+    document.getElementById("testWeb").disabled = false;
+    document.getElementById("testMail").disabled = false;
+    document.getElementById("Next").disabled = false;
+    document.getElementById("Save").disabled = true;
 }
